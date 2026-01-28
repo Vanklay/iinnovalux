@@ -1,0 +1,33 @@
+---
+import { getRelatedServices } from '../../data/services';
+import SectionHeader from '../ui/SectionHeader.astro';
+import ServiceCard from './ServiceCard.astro';
+
+interface Props {
+  currentSlug: string;
+  count?: number;
+}
+
+const { currentSlug, count = 3 } = Astro.props;
+const relatedServices = getRelatedServices(currentSlug, count);
+---
+
+<section class="py-20 md:py-28 bg-dark-secondary">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div data-reveal>
+      <SectionHeader
+        label="Découvrir aussi"
+        title="Nos autres services"
+        subtitle="Explorez l'ensemble de nos prestations pour votre maison"
+      />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      {relatedServices.map((service, index) => (
+        <div data-reveal data-reveal-delay={String(index + 1)}>
+          <ServiceCard service={service} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

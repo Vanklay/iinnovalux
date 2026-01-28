@@ -1,0 +1,83 @@
+---
+import '../styles/global.css';
+import Header from '../components/global/Header.astro';
+import Footer from '../components/global/Footer.astro';
+import MobileMenu from '../components/global/MobileMenu.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const { title, description, image = '/og-default.jpg' } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | INNOVALUX SARL-s</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content="fr_LU" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "INNOVALUX SARL-s",
+      "description": "La maintenance de votre maison avec solutions sur mesure",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "76, Haaptstrooss",
+        "addressLocality": "Born",
+        "postalCode": "L-6661",
+        "addressCountry": "LU"
+      },
+      "telephone": "+352621479364",
+      "email": "iinnovalux@gmail.com",
+      "url": "https://iinnovalux.lu"
+    }
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Header />
+    <MobileMenu />
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script>
+      import { initScrollReveal, initHeaderScroll, initMobileMenu } from '../utils/animations';
+
+      document.addEventListener('DOMContentLoaded', () => {
+        initScrollReveal();
+        initHeaderScroll();
+        initMobileMenu();
+      });
+    </script>
+  </body>
+</html>

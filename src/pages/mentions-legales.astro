@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroPage from '../components/sections/HeroPage.astro';
+import { company } from '../data/company';
+---
+
+<BaseLayout
+  title="Mentions légales"
+  description="Mentions légales et politique de confidentialité d'INNOVALUX SARL-s."
+>
+  <HeroPage
+    title="Mentions légales"
+    breadcrumb={[
+      { label: 'Accueil', href: '/' },
+      { label: 'Mentions légales' }
+    ]}
+  />
+
+  <section class="py-16 md:py-24">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-3xl mx-auto prose prose-invert prose-gold">
+        <div class="space-y-12">
+          <!-- Informations légales -->
+          <div data-reveal>
+            <h2 class="font-display font-bold text-2xl text-white mb-6">
+              Informations légales
+            </h2>
+            <div class="bg-dark-tertiary rounded-2xl p-6 border border-white/5 space-y-4 text-gray-medium">
+              <p><strong class="text-white">Raison sociale :</strong> {company.name}</p>
+              <p><strong class="text-white">Forme juridique :</strong> Société à responsabilité limitée simplifiée</p>
+              <p><strong class="text-white">Siège social :</strong> {company.address.full}</p>
+              <p><strong class="text-white">Numéro TVA :</strong> {company.vat}</p>
+              <p><strong class="text-white">Email :</strong> <a href={`mailto:${company.email}`} class="text-gold hover:underline">{company.email}</a></p>
+              <p><strong class="text-white">Téléphone :</strong> <a href={`tel:${company.phoneRaw}`} class="text-gold hover:underline font-mono">{company.phone}</a></p>
+            </div>
+          </div>
+
+          <!-- Hébergement -->
+          <div data-reveal data-reveal-delay="1">
+            <h2 class="font-display font-bold text-2xl text-white mb-6">
+              Hébergement
+            </h2>
+            <p class="text-gray-medium">
+              Ce site est hébergé par [Nom de l'hébergeur], [Adresse de l'hébergeur].
+            </p>
+          </div>
+
+          <!-- Propriété intellectuelle -->
+          <div data-reveal data-reveal-delay="2">
+            <h2 class="font-display font-bold text-2xl text-white mb-6">
+              Propriété intellectuelle
+            </h2>
+            <p class="text-gray-medium">
+              L'ensemble du contenu de ce site (textes, images, logos, graphismes) est la propriété
+              exclusive d'INNOVALUX SARL-s, sauf mentions contraires. Toute reproduction, représentation,
+              modification, publication ou adaptation de tout ou partie des éléments du site est
+              interdite, sauf autorisation écrite préalable.
+            </p>
+          </div>
+
+          <!-- Protection des données -->
+          <div data-reveal data-reveal-delay="3">
+            <h2 class="font-display font-bold text-2xl text-white mb-6">
+              Protection des données personnelles
+            </h2>
+            <div class="space-y-4 text-gray-medium">
+              <p>
+                Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi
+                luxembourgeoise sur la protection des données, vous disposez d'un droit d'accès, de
+                rectification, d'effacement et de portabilité de vos données personnelles.
+              </p>
+              <p>
+                Les données collectées via le formulaire de contact sont utilisées uniquement pour
+                répondre à vos demandes et ne sont pas transmises à des tiers.
+              </p>
+              <p>
+                Pour exercer vos droits ou pour toute question relative à vos données personnelles,
+                contactez-nous à l'adresse : <a href={`mailto:${company.email}`} class="text-gold hover:underline">{company.email}</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Cookies -->
+          <div data-reveal data-reveal-delay="4">
+            <h2 class="font-display font-bold text-2xl text-white mb-6">
+              Cookies
+            </h2>
+            <p class="text-gray-medium">
+              Ce site utilise des cookies strictement nécessaires au fonctionnement du site.
+              Aucun cookie à des fins de suivi ou de publicité n'est utilisé.
+            </p>
+          </div>
+
+          <!-- Crédits -->
+          <div data-reveal data-reveal-delay="5">
+            <h2 class="font-display font-bold text-2xl text-white mb-6">
+              Crédits
+            </h2>
+            <p class="text-gray-medium">
+              Site conçu et développé par <a href="https://slash.lu" target="_blank" rel="noopener noreferrer" class="text-gold hover:underline">slash.lu</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

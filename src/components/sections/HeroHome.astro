@@ -1,0 +1,114 @@
+---
+import Button from '../ui/Button.astro';
+---
+
+<section class="relative h-screen min-h-[600px] flex items-end bg-dark-primary overflow-hidden">
+  <!-- Background image -->
+  <div class="absolute inset-0">
+    <img
+      src="/images/hero-image.jpg"
+      alt=""
+      class="w-full h-full object-cover"
+    />
+    <!-- Elevated gradient overlay - starts higher -->
+    <div class="absolute inset-0 bg-gradient-to-t from-dark-primary via-dark-primary/80 via-50% to-transparent"></div>
+  </div>
+
+  <!-- Content - bottom aligned -->
+  <div class="relative z-10 w-full pb-12 md:pb-20 lg:pb-28">
+    <div class="container mx-auto px-5 md:px-6 lg:px-16">
+
+      <!-- Split layout -->
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-12 lg:gap-20 text-center md:text-left">
+
+        <!-- Left: Main headline -->
+        <div class="max-w-4xl mx-auto md:mx-0">
+          <h1 class="hero-title font-display text-white leading-[0.9] tracking-[-0.02em]">
+            <span class="block text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl">Travaux, Réparation</span>
+            <span class="block text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl">& Maintenance</span>
+            <span class="block text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl italic font-light text-gold mt-2 md:mt-3">au Luxembourg</span>
+          </h1>
+        </div>
+
+        <!-- Right: Tagline -->
+        <div class="hero-tagline lg:max-w-sm lg:pb-4">
+          <div class="flex items-center justify-center md:justify-start gap-4 md:gap-6 mb-4 md:mb-6">
+            <span class="h-px w-8 md:flex-1 bg-white/20"></span>
+            <span class="text-gold text-[10px] md:text-xs tracking-[0.3em] uppercase">Devis gratuit</span>
+            <span class="h-px w-8 md:hidden bg-white/20"></span>
+          </div>
+          <p class="text-white/60 text-base md:text-lg lg:text-xl leading-relaxed">
+            Votre partenaire de confiance pour tous vos travaux de maison. Qualité et professionnalisme.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="flex flex-col sm:flex-row items-center sm:justify-between gap-6 md:gap-8 mt-10 md:mt-16 pt-6 md:pt-8 border-t border-white/10">
+
+        <!-- CTAs -->
+        <div class="hero-cta flex items-center gap-6 md:gap-8">
+          <a
+            href="/contact"
+            class="hero-btn group relative inline-flex items-center gap-3 text-xs md:text-sm text-white tracking-wide uppercase"
+          >
+            <span class="relative w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/30 flex items-center justify-center overflow-hidden">
+              <!-- Background fill animation -->
+              <span class="absolute inset-0 bg-gold scale-0 group-hover:scale-100 transition-transform duration-500 ease-out rounded-full"></span>
+              <!-- Arrow icon -->
+              <svg class="relative z-10 w-4 h-4 md:w-5 md:h-5 transition-all duration-300 group-hover:text-dark-primary group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+            <span class="relative overflow-hidden">
+              <span class="block transition-transform duration-300 group-hover:-translate-y-full">Demander un devis</span>
+              <span class="absolute top-0 left-0 block translate-y-full transition-transform duration-300 group-hover:translate-y-0 text-gold">Demander un devis</span>
+            </span>
+          </a>
+
+          <a
+            href="/services"
+            class="group relative text-xs md:text-sm text-white/50 tracking-wide uppercase overflow-hidden"
+          >
+            <span class="block transition-transform duration-300 group-hover:-translate-y-full group-hover:opacity-0">Nos services</span>
+            <span class="absolute top-0 left-0 block translate-y-full transition-transform duration-300 group-hover:translate-y-0 text-white">Nos services</span>
+          </a>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="hero-scroll hidden md:flex items-center gap-4 text-white/30">
+          <span class="text-[10px] tracking-[0.25em] uppercase">Scroll</span>
+          <div class="w-12 h-px bg-gradient-to-r from-white/30 to-transparent"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Seamless fade to next section -->
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-primary to-transparent pointer-events-none"></div>
+</section>
+
+<style>
+  .hero-title,
+  .hero-tagline,
+  .hero-cta,
+  .hero-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .hero-tagline { animation-delay: 0.15s; }
+  .hero-cta { animation-delay: 0.3s; }
+  .hero-scroll { animation-delay: 0.45s; }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

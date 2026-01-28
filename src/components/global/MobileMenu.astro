@@ -1,0 +1,204 @@
+---
+import { mainNavigation } from '../../data/navigation';
+import { company } from '../../data/company';
+---
+
+<!-- Fullscreen Mobile Menu -->
+<div
+  data-mobile-menu
+  class="fixed inset-0 z-50 pointer-events-none lg:hidden"
+>
+  <!-- Background layers -->
+  <div class="menu-bg-1 absolute inset-0 bg-dark-primary origin-right"></div>
+  <div class="menu-bg-2 absolute inset-0 bg-dark-secondary origin-right"></div>
+
+  <!-- Animated gradient blobs -->
+  <div class="menu-gradient absolute top-[10%] right-[10%] w-[400px] h-[400px] bg-gold/10 rounded-full blur-[100px]"></div>
+  <div class="menu-gradient-2 absolute bottom-[20%] left-[5%] w-[300px] h-[300px] bg-gold/5 rounded-full blur-[80px]"></div>
+
+  <!-- Close Button -->
+  <button
+    data-menu-toggle
+    class="menu-close absolute top-6 right-6 w-12 h-12 flex items-center justify-center z-10"
+    aria-label="Fermer le menu"
+  >
+    <div class="relative w-6 h-6">
+      <span class="absolute top-1/2 left-0 w-full h-0.5 bg-white rounded-full transform -translate-y-1/2 rotate-45 transition-all duration-300 hover:bg-gold"></span>
+      <span class="absolute top-1/2 left-0 w-full h-0.5 bg-white rounded-full transform -translate-y-1/2 -rotate-45 transition-all duration-300 hover:bg-gold"></span>
+    </div>
+  </button>
+
+  <!-- Content -->
+  <div class="menu-content relative h-full flex flex-col justify-between p-8 pt-28 pb-12 opacity-0">
+    <!-- Navigation Links -->
+    <nav class="flex-1 flex flex-col justify-center">
+      <ul class="space-y-2">
+        {mainNavigation.map((item, index) => (
+          <li class="overflow-hidden">
+            <a
+              href={item.href}
+              class:list={[
+                "menu-link block text-4xl font-display transition-all duration-300",
+                item.isButton
+                  ? "text-gold hover:text-gold-light"
+                  : "text-white hover:text-gold"
+              ]}
+              style={`--delay: ${index * 0.08}s`}
+              data-menu-link
+            >
+              <span class="menu-link-text inline-block">
+                {item.label}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Footer -->
+    <div class="menu-footer space-y-6">
+      <div class="h-px bg-white/10"></div>
+
+      <div class="flex items-center justify-between">
+        <a
+          href={`tel:${company.phoneRaw}`}
+          class="flex items-center gap-3 text-white/60 hover:text-gold transition-colors"
+        >
+          <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+          </div>
+          <span class="font-mono text-sm">{company.phone}</span>
+        </a>
+
+        <p class="text-white/30 text-xs">Luxembourg</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Background animations */
+  .menu-bg-1,
+  .menu-bg-2 {
+    transform: scaleX(0);
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .menu-bg-2 {
+    transition-delay: 0.1s;
+  }
+
+  /* Gradient blobs */
+  .menu-gradient,
+  .menu-gradient-2 {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: 0.4s;
+  }
+
+  /* Content */
+  .menu-content {
+    transition: opacity 0.4s ease;
+    transition-delay: 0s;
+  }
+
+  /* Link animation */
+  .menu-link-text {
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--delay);
+  }
+
+  /* Footer animation */
+  .menu-footer {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: 0.4s;
+  }
+
+  /* Close button */
+  .menu-close {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: 0.3s;
+  }
+
+  .menu-close:hover span {
+    background: #F9BD25;
+  }
+
+  /* Open state */
+  :global(.menu-open) [data-mobile-menu] {
+    pointer-events: auto;
+  }
+
+  :global(.menu-open) .menu-bg-1,
+  :global(.menu-open) .menu-bg-2 {
+    transform: scaleX(1);
+  }
+
+  :global(.menu-open) .menu-gradient,
+  :global(.menu-open) .menu-gradient-2 {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  :global(.menu-open) .menu-content {
+    opacity: 1;
+    transition-delay: 0.3s;
+  }
+
+  :global(.menu-open) .menu-link-text {
+    transform: translateY(0);
+  }
+
+  :global(.menu-open) .menu-footer {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  :global(.menu-open) .menu-close {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+
+  /* Hover effects */
+  .menu-link:hover .menu-link-text {
+    transform: translateX(10px);
+  }
+
+  /* Close animation delays */
+  :global(body:not(.menu-open)) .menu-link-text {
+    transition-delay: 0s;
+  }
+
+  :global(body:not(.menu-open)) .menu-footer {
+    transition-delay: 0s;
+  }
+
+  :global(body:not(.menu-open)) .menu-content {
+    transition-delay: 0s;
+  }
+
+  :global(body:not(.menu-open)) .menu-bg-2 {
+    transition-delay: 0s;
+  }
+
+  :global(body:not(.menu-open)) .menu-bg-1 {
+    transition-delay: 0.1s;
+  }
+
+  :global(body:not(.menu-open)) .menu-gradient,
+  :global(body:not(.menu-open)) .menu-gradient-2 {
+    transition-delay: 0s;
+  }
+
+  :global(body:not(.menu-open)) .menu-close {
+    transition-delay: 0s;
+  }
+</style>

@@ -1,0 +1,56 @@
+---
+import StepItem from './StepItem.astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+
+const steps = [
+  {
+    number: 1,
+    title: 'Contact',
+    description: 'Appelez-nous ou remplissez notre formulaire pour nous décrire votre projet.',
+  },
+  {
+    number: 2,
+    title: 'Devis gratuit',
+    description: 'Nous vous proposons un devis détaillé et transparent sous 24h.',
+  },
+  {
+    number: 3,
+    title: 'Intervention',
+    description: 'Nos experts interviennent selon vos disponibilités avec professionnalisme.',
+  },
+  {
+    number: 4,
+    title: 'Satisfaction',
+    description: 'Nous nous assurons de votre entière satisfaction avant de clôturer le projet.',
+  },
+];
+---
+
+<section class="py-20 md:py-28">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div data-reveal>
+      <SectionHeader
+        label="Notre processus"
+        title="Comment ça marche ?"
+        subtitle="Une approche simple et efficace pour répondre à vos besoins"
+      />
+    </div>
+
+    <div class="relative">
+      <!-- Connection line (desktop) -->
+      <div class="hidden md:block absolute top-8 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-gold/0 via-gold/30 to-gold/0"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
+        {steps.map((step, index) => (
+          <div data-reveal data-reveal-delay={String(index + 1)}>
+            <StepItem
+              number={step.number}
+              title={step.title}
+              description={step.description}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

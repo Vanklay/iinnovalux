@@ -1,0 +1,43 @@
+---
+import Breadcrumb from '../global/Breadcrumb.astro';
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  breadcrumb: BreadcrumbItem[];
+}
+
+const { title, subtitle, breadcrumb } = Astro.props;
+---
+
+<section class="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-dark-secondary via-dark-primary to-dark-primary"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-gold/5 blur-[120px] rounded-full"></div>
+
+  <div class="container mx-auto px-4 lg:px-8 relative z-10">
+    <Breadcrumb items={breadcrumb} />
+
+    <h1
+      data-reveal
+      class="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-4"
+    >
+      {title}
+    </h1>
+
+    {subtitle && (
+      <p
+        data-reveal
+        data-reveal-delay="1"
+        class="text-lg md:text-xl text-gray-medium max-w-2xl"
+      >
+        {subtitle}
+      </p>
+    )}
+  </div>
+</section>

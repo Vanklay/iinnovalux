@@ -1,0 +1,168 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  buttonText: string;
+  buttonHref: string;
+}
+
+const { title, subtitle, buttonText, buttonHref } = Astro.props;
+---
+
+<section class="pt-24 md:pt-40 pb-24 md:pb-40 bg-gold relative overflow-hidden">
+  <!-- Dark tint overlay -->
+  <div class="absolute inset-0 bg-dark-primary/15 pointer-events-none"></div>
+
+  <!-- Organic flowing shapes -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <!-- Wandering blob 1 -->
+    <div class="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-gold/40 rounded-full blur-[120px] animate-float-1"></div>
+    <!-- Wandering blob 2 -->
+    <div class="absolute top-[40%] right-[5%] w-[400px] h-[400px] bg-gold/35 rounded-full blur-[100px] animate-float-2"></div>
+    <!-- Wandering blob 3 -->
+    <div class="absolute bottom-[5%] left-[30%] w-[350px] h-[350px] bg-gold/25 rounded-full blur-[90px] animate-float-3"></div>
+  </div>
+
+  <div class="container mx-auto px-5 md:px-6 lg:px-16 relative z-10">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 lg:gap-20">
+
+      <!-- Left: Content -->
+      <div class="max-w-2xl" data-cta-reveal>
+        <!-- Label -->
+        <div class="flex items-center gap-4 mb-6">
+          <span class="h-px w-12 bg-dark-primary/30"></span>
+          <span class="text-dark-primary/70 text-xs tracking-[0.3em] uppercase">Contactez-nous</span>
+        </div>
+
+        <!-- Title -->
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl text-dark-primary leading-[1.1] tracking-tight mb-4">
+          {title}
+        </h2>
+
+        <!-- Subtitle -->
+        {subtitle && (
+          <p class="text-dark-primary/70 text-base md:text-lg lg:text-xl leading-relaxed max-w-lg">
+            {subtitle}
+          </p>
+        )}
+      </div>
+
+      <!-- Right: CTA Button -->
+      <div class="flex-shrink-0" data-cta-reveal data-cta-delay="1">
+        <a
+          href={buttonHref}
+          class="group relative inline-flex items-center gap-4"
+        >
+          <!-- Circle button -->
+          <span class="relative w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-dark-primary/30 flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:border-dark-primary">
+            <!-- Fill animation -->
+            <span class="absolute inset-0 bg-dark-primary scale-0 group-hover:scale-100 transition-transform duration-500 ease-out rounded-full"></span>
+            <!-- Arrow -->
+            <svg class="relative z-10 w-6 h-6 md:w-7 md:h-7 text-dark-primary group-hover:text-gold transition-all duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </span>
+
+          <!-- Text with slide animation -->
+          <span class="relative overflow-hidden">
+            <span class="block text-sm md:text-base tracking-[0.15em] uppercase text-dark-primary transition-transform duration-300 group-hover:-translate-y-full">
+              {buttonText}
+            </span>
+            <span class="absolute top-0 left-0 block text-sm md:text-base tracking-[0.15em] uppercase text-dark-primary/60 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+              {buttonText}
+            </span>
+          </span>
+        </a>
+
+        <!-- Contact info hint -->
+        <div class="flex items-center gap-3 mt-6 text-dark-primary/50">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+          </svg>
+          <span class="text-xs tracking-wide">Réponse sous 24h</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom decorative line -->
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+</section>
+
+<style>
+  [data-cta-reveal] {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: ctaReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  [data-cta-delay="1"] {
+    animation-delay: 0.15s;
+  }
+
+  @keyframes ctaReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Natural floating animations */
+  .animate-float-1 {
+    animation: float1 18s ease-in-out infinite;
+  }
+
+  .animate-float-2 {
+    animation: float2 22s ease-in-out infinite;
+  }
+
+  .animate-float-3 {
+    animation: float3 20s ease-in-out infinite;
+  }
+
+  @keyframes float1 {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(60px, 30px);
+    }
+    50% {
+      transform: translate(100px, -20px);
+    }
+    75% {
+      transform: translate(40px, -40px);
+    }
+  }
+
+  @keyframes float2 {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-50px, 40px);
+    }
+    50% {
+      transform: translate(-80px, 10px);
+    }
+    75% {
+      transform: translate(-30px, -30px);
+    }
+  }
+
+  @keyframes float3 {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(40px, -25px);
+    }
+    50% {
+      transform: translate(-30px, -40px);
+    }
+    75% {
+      transform: translate(-50px, 20px);
+    }
+  }
+</style>

@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/sections/CTABanner.astro';
+import { services } from '../../data/services';
+---
+
+<BaseLayout
+  title="Nos Services"
+  description="Découvrez tous les services professionnels d'INNOVALUX : montage de meubles, débarras, entretien extérieur, petits travaux, déménagement et plus encore."
+>
+  <!-- Hero with Image -->
+  <section class="relative h-[35vh] min-h-[280px] max-h-[350px] overflow-hidden">
+    <!-- Background Image -->
+    <img
+      src="/images/hero-image.jpg"
+      alt="Services INNOVALUX"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-dark-primary/70"></div>
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-dark-primary via-transparent to-dark-primary/50"></div>
+
+    <!-- Content -->
+    <div class="relative h-full flex flex-col justify-end pb-12 md:pb-16">
+      <div class="container mx-auto px-4 lg:px-8">
+        <nav class="mb-6">
+          <ol class="flex items-center gap-2 text-sm">
+            <li><a href="/" class="text-white/40 hover:text-white transition-colors">Accueil</a></li>
+            <li class="text-white/20">/</li>
+            <li class="text-white/60">Services</li>
+          </ol>
+        </nav>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-4">
+          Nos Services
+        </h1>
+        <p class="text-white/60 text-lg max-w-xl">
+          Solutions complètes pour l'entretien et la maintenance de votre maison
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services List -->
+  <section class="py-12 md:py-16">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="space-y-0">
+        {services.map((service, index) => (
+          <a
+            href={`/services/${service.slug}`}
+            class="service-item group block py-10 md:py-14 border-b border-white/5 first:border-t"
+            style={`animation-delay: ${index * 0.1}s`}
+          >
+            <div class="grid md:grid-cols-12 gap-6 md:gap-10 items-start">
+
+              <!-- Number -->
+              <div class="md:col-span-1">
+                <span class="text-white/20 font-mono text-sm">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+              </div>
+
+              <!-- Title & Description -->
+              <div class="md:col-span-7">
+                <h2 class="text-2xl md:text-3xl font-display text-white mb-3 group-hover:text-gold transition-colors">
+                  {service.title}
+                </h2>
+                <p class="text-white/50 leading-relaxed max-w-xl">
+                  {service.fullDescription}
+                </p>
+              </div>
+
+              <!-- Includes Preview -->
+              <div class="md:col-span-3">
+                <div class="space-y-2">
+                  {service.includes.slice(0, 3).map((item) => (
+                    <div class="flex items-center gap-2 text-white/40 text-sm">
+                      <div class="w-1 h-1 rounded-full bg-gold/50"></div>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Arrow -->
+              <div class="md:col-span-1 flex justify-end">
+                <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-gold group-hover:bg-gold transition-all">
+                  <svg class="w-4 h-4 text-white/40 group-hover:text-dark-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </div>
+
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    title="Besoin d'un service ?"
+    subtitle="Contactez-nous pour un devis gratuit"
+    buttonText="Demander un devis"
+    buttonHref="/contact"
+  />
+</BaseLayout>
+
+<style>
+  .service-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

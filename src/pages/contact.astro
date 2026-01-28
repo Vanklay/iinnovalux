@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroPage from '../components/sections/HeroPage.astro';
+import ContactInfo from '../components/sections/ContactInfo.astro';
+import ContactForm from '../components/sections/ContactForm.astro';
+import Map from '../components/sections/Map.astro';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Contactez INNOVALUX SARL-s pour un devis gratuit. Appelez-nous au +352 621 479 364 ou remplissez notre formulaire en ligne."
+>
+  <HeroPage
+    title="Contactez-nous"
+    subtitle="Nous sommes à votre disposition pour répondre à toutes vos questions"
+    breadcrumb={[
+      { label: 'Accueil', href: '/' },
+      { label: 'Contact' }
+    ]}
+  />
+
+  <section class="py-16 md:py-24">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div data-reveal>
+          <ContactInfo />
+        </div>
+        <div data-reveal data-reveal-delay="1">
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Map />
+</BaseLayout>

@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroHome from '../components/sections/HeroHome.astro';
+import ServicesGrid from '../components/sections/ServicesGrid.astro';
+import Stats from '../components/sections/Stats.astro';
+import WhyChooseUs from '../components/sections/WhyChooseUs.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import GalleryPreview from '../components/sections/GalleryPreview.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+import { services } from '../data/services';
+---
+
+<BaseLayout
+  title="Accueil"
+  description="INNOVALUX SARL-s - La solution pour une maison durable. Services professionnels d'entretien, réparations et maintenance au Luxembourg."
+>
+  <HeroHome />
+  <ServicesGrid
+    services={services}
+    label="Nos services"
+    title="Solutions de maintenance et travaux"
+    subtitle="Interventions professionnelles pour l'entretien de votre maison au Luxembourg"
+  />
+  <Stats />
+  <WhyChooseUs />
+  <Testimonials />
+  <GalleryPreview />
+  <CTABanner
+    title="Envie d'un coup de fraîcheur ?"
+    subtitle="Demandez votre devis gratuit dès aujourd'hui"
+    buttonText="Contactez-nous"
+    buttonHref="/contact"
+  />
+</BaseLayout>

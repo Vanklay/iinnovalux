@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroPage from '../components/sections/HeroPage.astro';
+import Stats from '../components/sections/Stats.astro';
+import WhyChooseUs from '../components/sections/WhyChooseUs.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+import { company } from '../data/company';
+---
+
+<BaseLayout
+  title="À propos"
+  description="Découvrez INNOVALUX SARL-s, votre partenaire de confiance pour l'entretien et la maintenance de votre maison au Luxembourg."
+>
+  <HeroPage
+    title="À propos d'INNOVALUX"
+    subtitle="Votre partenaire de confiance pour une maison durable"
+    breadcrumb={[
+      { label: 'Accueil', href: '/' },
+      { label: 'À propos' }
+    ]}
+  />
+
+  <!-- About Content -->
+  <section class="py-16 md:py-24">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Text Content -->
+        <div class="space-y-6" data-reveal>
+          <span class="inline-block text-gold text-sm font-medium uppercase tracking-wider">
+            Notre histoire
+          </span>
+          <h2 class="font-display font-bold text-3xl md:text-4xl text-white">
+            Une équipe passionnée à votre service
+          </h2>
+          <div class="space-y-4 text-gray-medium">
+            <p>
+              INNOVALUX SARL-s est née d'une vision simple : offrir aux habitants du Luxembourg
+              un service de maintenance et d'entretien de qualité, fiable et accessible.
+            </p>
+            <p>
+              Basés à Born, nous intervenons dans tout le Grand-Duché pour vous accompagner
+              dans l'entretien quotidien de votre maison. Du montage de meubles au débarras,
+              en passant par l'entretien extérieur et les petits travaux, nous mettons notre
+              expertise au service de votre confort.
+            </p>
+            <p>
+              Notre engagement : un travail soigné, des prix transparents et une satisfaction
+              client garantie. Chaque projet, petit ou grand, reçoit la même attention et
+              le même professionnalisme.
+            </p>
+          </div>
+        </div>
+
+        <!-- Visual Element - Bento Grid -->
+        <div data-reveal data-reveal-delay="1">
+          <div class="relative">
+            <!-- Animated gradient background -->
+            <div class="absolute -inset-4 pointer-events-none">
+              <div class="absolute top-0 right-0 w-[250px] h-[250px] bg-gold/15 rounded-full blur-[80px] animate-float-1"></div>
+              <div class="absolute bottom-0 left-0 w-[200px] h-[200px] bg-gold/10 rounded-full blur-[60px] animate-float-2"></div>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="relative grid grid-cols-3 grid-rows-3 gap-3 aspect-[4/3]">
+              <!-- Large card - spans 2 cols -->
+              <div class="col-span-2 row-span-1 rounded-2xl bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/20 p-5 flex items-center gap-4 bento-item" style="animation-delay: 0.1s">
+                <div class="w-12 h-12 rounded-xl bg-gold/20 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-white font-display text-base">Service complet</p>
+                  <p class="text-white/40 text-xs">Maison & extérieur</p>
+                </div>
+              </div>
+
+              <!-- Stat card -->
+              <div class="col-span-1 row-span-2 rounded-2xl bg-white/[0.02] border border-white/5 p-4 flex flex-col justify-between bento-item" style="animation-delay: 0.2s">
+                <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-gold font-display text-3xl">5.0</p>
+                  <p class="text-white/30 text-xs">Satisfaction</p>
+                </div>
+              </div>
+
+              <!-- Icon cards row -->
+              <div class="rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center bento-item" style="animation-delay: 0.3s">
+                <svg class="w-7 h-7 text-gold/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                </svg>
+              </div>
+
+              <div class="rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center bento-item" style="animation-delay: 0.4s">
+                <svg class="w-7 h-7 text-gold/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                </svg>
+              </div>
+
+              <!-- Bottom row -->
+              <div class="rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center bento-item" style="animation-delay: 0.5s">
+                <svg class="w-7 h-7 text-gold/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m6 4.125l2.25 2.25m0 0l2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                </svg>
+              </div>
+
+              <!-- Location card - spans 2 cols -->
+              <div class="col-span-2 rounded-2xl bg-white/[0.02] border border-white/5 p-4 flex items-center justify-between bento-item" style="animation-delay: 0.6s">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-white/80 text-sm font-display">Luxembourg</p>
+                    <p class="text-white/30 text-xs">Tout le pays</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="text-gold font-mono text-lg">24h</p>
+                  <p class="text-white/30 text-xs">Réponse</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-16 md:py-24 bg-dark-secondary">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16" data-reveal>
+        <span class="inline-block text-gold text-sm font-medium uppercase tracking-wider mb-4">
+          Nos valeurs
+        </span>
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">
+          Ce qui nous guide au quotidien
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div data-reveal data-reveal-delay="1" class="text-center">
+          <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">Qualité</h3>
+          <p class="text-gray-medium">
+            Nous nous engageons à fournir un travail soigné et durable, avec des matériaux de qualité.
+          </p>
+        </div>
+
+        <div data-reveal data-reveal-delay="2" class="text-center">
+          <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">Transparence</h3>
+          <p class="text-gray-medium">
+            Des devis clairs et détaillés, sans frais cachés. Vous savez exactement ce que vous payez.
+          </p>
+        </div>
+
+        <div data-reveal data-reveal-delay="3" class="text-center">
+          <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">Proximité</h3>
+          <p class="text-gray-medium">
+            Une équipe locale, réactive et à l'écoute de vos besoins. Votre satisfaction est notre priorité.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Stats />
+  <WhyChooseUs />
+
+  <CTABanner
+    title="Prêt à nous faire confiance ?"
+    subtitle="Contactez-nous pour discuter de votre projet"
+    buttonText="Nous contacter"
+    buttonHref="/contact"
+  />
+</BaseLayout>
+
+<style>
+  @keyframes float-1 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -8px); }
+  }
+
+  @keyframes float-2 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-8px, 10px); }
+  }
+
+  .animate-float-1 { animation: float-1 12s ease-in-out infinite; }
+  .animate-float-2 { animation: float-2 15s ease-in-out infinite; }
+
+  @keyframes bento-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .bento-item {
+    opacity: 0;
+    animation: bento-in 0.5s ease-out forwards;
+  }
+</style>

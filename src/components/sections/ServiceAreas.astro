@@ -1,0 +1,40 @@
+---
+const areas = [
+  'Luxembourg-Ville',
+  'Esch-sur-Alzette',
+  'Differdange',
+  'Dudelange',
+  'Ettelbruck',
+  'Diekirch',
+  'Wiltz',
+  'Echternach',
+  'Remich',
+  'Grevenmacher',
+  'Mersch',
+  'Strassen',
+];
+---
+
+<section class="py-16 md:py-20">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center" data-reveal>
+      <span class="inline-block text-gold text-sm font-medium uppercase tracking-wider mb-4">
+        Zone d'intervention
+      </span>
+      <h2 class="font-display font-bold text-2xl md:text-3xl text-white mb-6">
+        Nous intervenons dans tout le Luxembourg
+      </h2>
+      <p class="text-gray-medium mb-8">
+        Notre équipe se déplace dans l'ensemble du Grand-Duché pour répondre à vos besoins.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-3" data-reveal data-reveal-delay="1">
+        {areas.map((area) => (
+          <span class="px-4 py-2 bg-dark-tertiary rounded-full text-sm text-white/70 border border-white/5 hover:border-gold/30 transition-colors">
+            {area}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

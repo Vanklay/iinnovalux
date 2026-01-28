@@ -1,0 +1,132 @@
+---
+const images = [
+  { src: '/realisations/g-1.webp', alt: 'Réalisation INNOVALUX' },
+  { src: '/realisations/g-2.webp', alt: 'Réalisation INNOVALUX' },
+  { src: '/realisations/g-3.webp', alt: 'Réalisation INNOVALUX' },
+  { src: '/realisations/g-4.webp', alt: 'Réalisation INNOVALUX' },
+  { src: '/realisations/g-5.webp', alt: 'Réalisation INNOVALUX' },
+];
+---
+
+<section class="pt-24 pb-32 md:pt-32 md:pb-40 bg-dark-secondary overflow-hidden">
+  <div class="container mx-auto px-4 lg:px-8">
+    <!-- Top border -->
+    <div class="border-t border-white/5 -mt-24 md:-mt-32 mb-24 md:mb-32"></div>
+
+    <!-- Content -->
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <!-- Left: Text -->
+      <div data-reveal class="lg:order-1">
+        <span class="inline-block text-gold text-xs font-medium uppercase tracking-wider mb-3">
+          Portfolio
+        </span>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl text-white mb-6">
+          Nos réalisations récentes
+        </h2>
+        <p class="text-white/50 text-lg leading-relaxed mb-8 max-w-md">
+          Découvrez la qualité de notre travail à travers nos projets réalisés au Luxembourg.
+        </p>
+        <a
+          href="/realisations"
+          class="group inline-flex items-center gap-4"
+        >
+          <span class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-gold group-hover:bg-gold transition-all duration-300">
+            <svg class="w-5 h-5 text-white group-hover:text-dark-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </span>
+          <span class="text-white/60 group-hover:text-white transition-colors">Voir tous les projets</span>
+        </a>
+      </div>
+
+      <!-- Right: Stacked Cards -->
+      <div class="deck-container relative h-[420px] md:h-[480px] lg:order-2" data-reveal>
+        {images.map((image, index) => (
+          <a
+            href="/realisations"
+            class="deck-card absolute left-1/2 top-1/2 w-[240px] md:w-[280px] rounded-2xl overflow-hidden group"
+            data-index={index}
+          >
+            <div class="aspect-[3/4]">
+              <img
+                src={image.src}
+                alt={image.alt}
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-primary/70 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="text-white/50 font-mono text-xs">{String(index + 1).padStart(2, '0')}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .deck-card {
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Stacked state */
+  .deck-card[data-index="0"] {
+    transform: translate(-50%, -50%) rotate(-6deg);
+    z-index: 5;
+  }
+  .deck-card[data-index="1"] {
+    transform: translate(-50%, -50%) rotate(-3deg);
+    z-index: 4;
+  }
+  .deck-card[data-index="2"] {
+    transform: translate(-50%, -50%) rotate(0deg);
+    z-index: 3;
+  }
+  .deck-card[data-index="3"] {
+    transform: translate(-50%, -50%) rotate(3deg);
+    z-index: 2;
+  }
+  .deck-card[data-index="4"] {
+    transform: translate(-50%, -50%) rotate(6deg);
+    z-index: 1;
+  }
+
+  /* Fanned out on hover */
+  .deck-container:hover .deck-card[data-index="0"] {
+    transform: translate(calc(-50% - 140px), calc(-50% + 20px)) rotate(-12deg);
+  }
+  .deck-container:hover .deck-card[data-index="1"] {
+    transform: translate(calc(-50% - 70px), calc(-50% - 5px)) rotate(-6deg);
+  }
+  .deck-container:hover .deck-card[data-index="2"] {
+    transform: translate(-50%, calc(-50% - 15px)) rotate(0deg);
+  }
+  .deck-container:hover .deck-card[data-index="3"] {
+    transform: translate(calc(-50% + 70px), calc(-50% - 5px)) rotate(6deg);
+  }
+  .deck-container:hover .deck-card[data-index="4"] {
+    transform: translate(calc(-50% + 140px), calc(-50% + 20px)) rotate(12deg);
+  }
+
+  /* Individual card hover */
+  .deck-card:hover {
+    z-index: 10 !important;
+    box-shadow:
+      0 30px 60px -20px rgba(0, 0, 0, 0.6),
+      0 0 0 2px rgba(249, 189, 37, 0.4);
+  }
+
+  .deck-container:hover .deck-card:hover {
+    transform: translate(var(--tx, -50%), calc(var(--ty, -50%) - 30px)) rotate(0deg) scale(1.05) !important;
+  }
+
+  .deck-container:hover .deck-card[data-index="0"]:hover { --tx: calc(-50% - 140px); --ty: -50%; }
+  .deck-container:hover .deck-card[data-index="1"]:hover { --tx: calc(-50% - 70px); --ty: -50%; }
+  .deck-container:hover .deck-card[data-index="2"]:hover { --tx: -50%; --ty: -50%; }
+  .deck-container:hover .deck-card[data-index="3"]:hover { --tx: calc(-50% + 70px); --ty: -50%; }
+  .deck-container:hover .deck-card[data-index="4"]:hover { --tx: calc(-50% + 140px); --ty: -50%; }
+</style>
