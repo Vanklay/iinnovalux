@@ -1,17 +1,11 @@
 ---
-import BeforeAfter from '../ui/BeforeAfter.astro';
-
 const images = [
-  { src: '/realisations/petits-travaux/pt-01.webp', alt: 'Petits Travaux' },
   { src: '/realisations/montage-meubles/mm-01.webp', alt: 'Montage Meubles' },
+  { src: '/realisations/petits-travaux/pt-01.webp', alt: 'Petits Travaux' },
   { src: '/realisations/Depannage/dp-01.webp', alt: 'Dépannage' },
+  { src: '/realisations/Exterieur/ex-01.webp', alt: 'Entretien Extérieur' },
   { src: '/realisations/montage-meubles/mm-02.webp', alt: 'Montage Meubles' },
 ];
-
-const beforeAfter = {
-  before: '/realisations/petits-travaux/before-after/before.webp',
-  after: '/realisations/petits-travaux/before-after/after.webp',
-};
 ---
 
 <section class="pt-24 pb-32 md:pt-32 md:pb-40 bg-dark-secondary overflow-hidden">
@@ -48,22 +42,11 @@ const beforeAfter = {
 
       <!-- Right: Stacked Cards -->
       <div class="deck-container relative h-[420px] md:h-[480px] lg:order-2" data-reveal>
-        <!-- Before/After card (center, index 0) -->
-        <div
-          class="deck-card deck-card-ba absolute left-1/2 top-1/2 w-[240px] md:w-[280px] rounded-2xl overflow-hidden"
-          data-index="0"
-        >
-          <div class="aspect-[3/4]">
-            <BeforeAfter before={beforeAfter.before} after={beforeAfter.after} alt="Transformation" class="h-full aspect-auto rounded-none" />
-          </div>
-        </div>
-
-        <!-- Regular image cards -->
         {images.map((image, index) => (
           <a
             href="/realisations"
             class="deck-card absolute left-1/2 top-1/2 w-[240px] md:w-[280px] rounded-2xl overflow-hidden group"
-            data-index={index + 1}
+            data-index={index}
           >
             <div class="aspect-[3/4]">
               <img
@@ -75,7 +58,7 @@ const beforeAfter = {
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-dark-primary/70 via-transparent to-transparent"></div>
             <div class="absolute bottom-4 left-4">
-              <span class="text-white/50 font-mono text-xs">{String(index + 2).padStart(2, '0')}</span>
+              <span class="text-white/50 font-mono text-xs">{String(index + 1).padStart(2, '0')}</span>
             </div>
           </a>
         ))}
@@ -146,10 +129,4 @@ const beforeAfter = {
   .deck-container:hover .deck-card[data-index="2"]:hover { --tx: -50%; --ty: -50%; }
   .deck-container:hover .deck-card[data-index="3"]:hover { --tx: calc(-50% + 70px); --ty: -50%; }
   .deck-container:hover .deck-card[data-index="4"]:hover { --tx: calc(-50% + 140px); --ty: -50%; }
-
-  /* Before/After card specific */
-  .deck-card-ba :global(.before-after-container) {
-    height: 100%;
-    aspect-ratio: unset;
-  }
 </style>
