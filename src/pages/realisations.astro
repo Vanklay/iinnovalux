@@ -1,37 +1,84 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTABanner from '../components/sections/CTABanner.astro';
+import BeforeAfter from '../components/ui/BeforeAfter.astro';
 
-const realisations = [
-  { src: '/realisations/g-1.webp', alt: 'Réalisation IINNOVALUX', category: 'Travaux' },
-  { src: '/realisations/g-2.webp', alt: 'Réalisation IINNOVALUX', category: 'Montage' },
-  { src: '/realisations/g-3.webp', alt: 'Réalisation IINNOVALUX', category: 'Entretien' },
-  { src: '/realisations/g-4.webp', alt: 'Réalisation IINNOVALUX', category: 'Débarras' },
-  { src: '/realisations/g-5.webp', alt: 'Réalisation IINNOVALUX', category: 'Travaux' },
-  { src: '/realisations/g-6.webp', alt: 'Réalisation IINNOVALUX', category: 'Montage' },
-  { src: '/realisations/g-7.webp', alt: 'Réalisation IINNOVALUX', category: 'Entretien' },
-  { src: '/realisations/g-8.webp', alt: 'Réalisation IINNOVALUX', category: 'Débarras' },
-  { src: '/realisations/g-9.webp', alt: 'Réalisation IINNOVALUX', category: 'Travaux' },
-  { src: '/realisations/g-10.webp', alt: 'Réalisation IINNOVALUX', category: 'Montage' },
-  { src: '/realisations/g-11.webp', alt: 'Réalisation IINNOVALUX', category: 'Entretien' },
-  { src: '/realisations/g-12.webp', alt: 'Réalisation IINNOVALUX', category: 'Débarras' },
+// Category data with images
+const categories = [
+  {
+    id: 'petits-travaux',
+    title: 'Petits Travaux',
+    description: 'Réparations, parquet, fixations et améliorations',
+    images: [
+      '/realisations/petits-travaux/pt-01.webp',
+      '/realisations/petits-travaux/pt-02.webp',
+    ],
+    beforeAfter: [
+      { before: '/realisations/petits-travaux/before-after/before.webp', after: '/realisations/petits-travaux/before-after/after.webp' },
+      { before: '/realisations/petits-travaux/before-after2/before.webp', after: '/realisations/petits-travaux/before-after2/after.webp' },
+      { before: '/realisations/petits-travaux/before-after3/before.webp', after: '/realisations/petits-travaux/before-after3/after.webp' },
+      { before: '/realisations/petits-travaux/before-after4/before.webp', after: '/realisations/petits-travaux/before-after4/after.webp' },
+      { before: '/realisations/petits-travaux/before-after5/before.webp', after: '/realisations/petits-travaux/before-after5/after.webp' },
+    ]
+  },
+  {
+    id: 'exterieur',
+    title: 'Entretien Extérieur',
+    description: 'Jardins, abattage d\'arbres et nettoyage',
+    images: [
+      '/realisations/Exterieur/ex-01.webp',
+      '/realisations/Exterieur/ex-02.webp',
+    ],
+    beforeAfter: [
+      { before: '/realisations/Exterieur/before-after/before.webp', after: '/realisations/Exterieur/before-after/after.webp' },
+    ]
+  },
+  {
+    id: 'montage-meubles',
+    title: 'Montage de Meubles',
+    description: 'Assemblage et installation professionnelle',
+    images: [
+      '/realisations/montage-meubles/mm-01.webp',
+      '/realisations/montage-meubles/mm-02.webp',
+      '/realisations/montage-meubles/mm-03.webp',
+      '/realisations/montage-meubles/mm-04.webp',
+    ],
+    beforeAfter: []
+  },
+  {
+    id: 'depannage',
+    title: 'Dépannage',
+    description: 'Interventions d\'urgence 24h/7',
+    images: [
+      '/realisations/Depannage/dp-01.webp',
+      '/realisations/Depannage/dp-02.webp',
+      '/realisations/Depannage/dp-03.webp',
+      '/realisations/Depannage/dp-04.webp',
+      '/realisations/Depannage/dp-05.webp',
+      '/realisations/Depannage/dp-06.webp',
+      '/realisations/Depannage/dp-07.webp',
+      '/realisations/Depannage/dp-08.webp',
+      '/realisations/Depannage/dp-09.webp',
+    ],
+    beforeAfter: []
+  },
 ];
+
+// Collect all before/after for featured section
+const allBeforeAfter = categories.flatMap(c => c.beforeAfter.map(ba => ({ ...ba, category: c.title })));
 ---
 
 <BaseLayout
   title="Nos Réalisations"
-  description="Découvrez nos projets récents : montage de meubles, débarras, entretien extérieur et bien plus. Galerie de nos travaux réalisés au Luxembourg."
+  description="Découvrez nos projets récents : montage de meubles, petits travaux, entretien extérieur et dépannage. Galerie de nos travaux réalisés au Luxembourg."
 >
-  <!-- Animated gradient blobs (spans hero and gallery) -->
-  <div class="absolute top-0 left-0 right-0 h-[150vh] pointer-events-none overflow-visible z-0">
-    <div class="absolute top-[2%] left-[5%] w-[450px] h-[450px] bg-gold/15 rounded-full blur-[100px] animate-float-1"></div>
-    <div class="absolute top-[8%] right-[10%] w-[350px] h-[350px] bg-gold/12 rounded-full blur-[90px] animate-float-2"></div>
-    <div class="absolute top-[20%] left-[40%] w-[400px] h-[400px] bg-gold/10 rounded-full blur-[110px] animate-float-3"></div>
-    <div class="absolute top-[50%] right-[20%] w-[350px] h-[350px] bg-gold/8 rounded-full blur-[100px] animate-float-1"></div>
-  </div>
-
   <!-- Hero -->
-  <section class="relative pt-32 pb-16 md:pt-40 md:pb-20">
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
+    <!-- Animated gradient blobs -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-[5%] left-[5%] w-[400px] h-[400px] bg-gold/15 rounded-full blur-[100px] animate-float-1"></div>
+      <div class="absolute top-[10%] right-[10%] w-[300px] h-[300px] bg-gold/10 rounded-full blur-[80px] animate-float-2"></div>
+    </div>
 
     <div class="relative container mx-auto px-4 lg:px-8">
       <nav class="mb-8">
@@ -45,38 +92,102 @@ const realisations = [
         Nos Réalisations
       </h1>
       <p class="text-white/50 text-lg max-w-xl">
-        Découvrez quelques-uns de nos projets récents au Luxembourg
+        Découvrez la qualité de notre travail à travers nos projets récents au Luxembourg
       </p>
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section class="py-16 md:py-24">
-    <div class="container mx-auto px-4 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        {realisations.map((image, index) => (
-          <a
-            href={image.src}
-            class="gallery-link group block"
-            data-index={index}
-            style={`animation-delay: ${index * 0.05}s`}
-          >
-            <div class="relative overflow-hidden rounded-xl bg-dark-secondary">
-              <div class="aspect-[4/3]">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div class="absolute inset-0 bg-dark-primary/0 group-hover:bg-dark-primary/20 transition-colors duration-300"></div>
+  <!-- Featured Before/After Section -->
+  {allBeforeAfter.length > 0 && (
+    <section class="py-16 md:py-24 bg-dark-secondary">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-12" data-reveal>
+          <span class="inline-block text-gold text-xs font-medium uppercase tracking-wider mb-3">
+            Transformations
+          </span>
+          <h2 class="font-display text-3xl md:text-4xl text-white mb-4">
+            Avant / Après
+          </h2>
+          <p class="text-white/50 max-w-lg mx-auto">
+            Faites glisser pour voir la différence
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {allBeforeAfter.map((item, index) => (
+            <div data-reveal style={`animation-delay: ${index * 0.1}s`}>
+              <BeforeAfter before={item.before} after={item.after} alt={item.category} />
+              <p class="text-white/40 text-sm mt-3 text-center">{item.category}</p>
             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Category Navigation -->
+  <section class="py-8 sticky top-16 z-30 bg-dark-primary/95 backdrop-blur-sm border-b border-white/5">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+        {categories.map((category) => (
+          <a
+            href={`#${category.id}`}
+            class="category-tab px-5 py-2.5 rounded-full bg-white/5 hover:bg-gold/20 text-white/60 hover:text-white text-sm font-medium whitespace-nowrap transition-all"
+          >
+            {category.title}
           </a>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- Categories -->
+  {categories.map((category, catIndex) => (
+    <section id={category.id} class="py-16 md:py-24 scroll-mt-32" class:list={[catIndex % 2 === 1 && 'bg-dark-secondary']}>
+      <div class="container mx-auto px-4 lg:px-8">
+        <!-- Category Header -->
+        <div class="mb-10" data-reveal>
+          <div class="flex items-center gap-4 mb-2">
+            <span class="text-gold font-mono text-sm">{String(catIndex + 1).padStart(2, '0')}</span>
+            <div class="h-px flex-1 bg-white/10"></div>
+          </div>
+          <h2 class="font-display text-2xl md:text-3xl text-white mb-2">
+            {category.title}
+          </h2>
+          <p class="text-white/50">{category.description}</p>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          {category.images.map((image, index) => (
+            <a
+              href={image}
+              class="gallery-item group block rounded-xl overflow-hidden bg-dark-tertiary"
+              data-lightbox={category.id}
+              data-reveal
+              style={`animation-delay: ${index * 0.05}s`}
+            >
+              <div class="aspect-square">
+                <img
+                  src={image}
+                  alt={`${category.title} - Image ${index + 1}`}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div class="absolute inset-0 bg-dark-primary/0 group-hover:bg-dark-primary/30 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <div class="w-10 h-10 rounded-full bg-gold/90 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-dark-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
 
   <CTABanner
     title="Votre projet sera le prochain"
@@ -90,19 +201,19 @@ const realisations = [
 <div id="lightbox" class="fixed inset-0 z-50 opacity-0 pointer-events-none transition-opacity duration-500">
   <div class="absolute inset-0 bg-dark-primary/95"></div>
 
-  <button id="lightbox-close" class="absolute top-6 right-6 z-20 w-10 h-10 flex items-center justify-center text-white/40 hover:text-white transition-colors" aria-label="Fermer">
+  <button id="lightbox-close" class="absolute top-6 right-6 z-20 w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white/60 hover:text-white transition-all" aria-label="Fermer">
     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
       <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>
   </button>
 
-  <button id="lightbox-prev" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center text-white/30 hover:text-white transition-colors" aria-label="Précédent">
+  <button id="lightbox-prev" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/5 hover:bg-gold/20 flex items-center justify-center text-white/40 hover:text-white transition-all" aria-label="Précédent">
     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
       <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
     </svg>
   </button>
 
-  <button id="lightbox-next" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center text-white/30 hover:text-white transition-colors" aria-label="Suivant">
+  <button id="lightbox-next" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/5 hover:bg-gold/20 flex items-center justify-center text-white/40 hover:text-white transition-all" aria-label="Suivant">
     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
       <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
     </svg>
@@ -112,13 +223,16 @@ const realisations = [
     <img id="lightbox-image" src="" alt="" class="max-w-full max-h-full object-contain transition-all duration-300" />
   </div>
 
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/30 text-sm font-mono">
-    <span id="lightbox-current">01</span> / <span id="lightbox-total">12</span>
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4">
+    <span class="text-white/30 text-sm font-mono">
+      <span id="lightbox-current">01</span> / <span id="lightbox-total">12</span>
+    </span>
   </div>
 </div>
 
 <style>
-  .gallery-link {
+  .gallery-item {
+    position: relative;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUp 0.5s ease-out forwards;
@@ -141,14 +255,21 @@ const realisations = [
     50% { transform: translate(-12px, 12px); }
   }
 
-  @keyframes float-3 {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(10px, 8px); }
-  }
-
   .animate-float-1 { animation: float-1 20s ease-in-out infinite; }
   .animate-float-2 { animation: float-2 25s ease-in-out infinite; }
-  .animate-float-3 { animation: float-3 22s ease-in-out infinite; }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-tab.active {
+    background: rgba(249, 189, 37, 0.2);
+    color: white;
+  }
 
   #lightbox.active {
     opacity: 1;
@@ -167,7 +288,8 @@ const realisations = [
 </style>
 
 <script>
-  const galleryLinks = document.querySelectorAll('.gallery-link');
+  // Lightbox functionality
+  const galleryItems = document.querySelectorAll('.gallery-item');
   const lightbox = document.getElementById('lightbox');
   const lightboxImage = document.getElementById('lightbox-image') as HTMLImageElement;
   const lightboxClose = document.getElementById('lightbox-close');
@@ -177,16 +299,16 @@ const realisations = [
   const lightboxTotal = document.getElementById('lightbox-total');
 
   let currentIndex = 0;
-  const images: { src: string; alt: string }[] = [];
+  const images: string[] = [];
 
-  galleryLinks.forEach((link, index) => {
-    const href = link.getAttribute('href');
-    const img = link.querySelector('img');
-    images.push({ src: href || '', alt: img?.getAttribute('alt') || '' });
+  galleryItems.forEach((item) => {
+    const href = item.getAttribute('href');
+    if (href) images.push(href);
 
-    link.addEventListener('click', (e) => {
+    item.addEventListener('click', (e) => {
       e.preventDefault();
-      openLightbox(index);
+      const index = images.indexOf(href || '');
+      if (index >= 0) openLightbox(index);
     });
   });
 
@@ -207,8 +329,8 @@ const realisations = [
   function updateLightboxImage() {
     const image = images[currentIndex];
     if (lightboxImage && image) {
-      lightboxImage.src = image.src;
-      lightboxImage.alt = image.alt;
+      lightboxImage.src = image;
+      lightboxImage.alt = `Image ${currentIndex + 1}`;
     }
     if (lightboxCurrent) lightboxCurrent.textContent = String(currentIndex + 1).padStart(2, '0');
   }
@@ -234,4 +356,21 @@ const realisations = [
     if (e.key === 'ArrowLeft') navigate(-1);
     if (e.key === 'ArrowRight') navigate(1);
   });
+
+  // Category tab active state
+  const categoryTabs = document.querySelectorAll('.category-tab');
+  const sections = document.querySelectorAll('section[id]');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        categoryTabs.forEach(tab => {
+          tab.classList.toggle('active', tab.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -70% 0px' });
+
+  sections.forEach(section => observer.observe(section));
 </script>

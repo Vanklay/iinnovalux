@@ -1,0 +1,124 @@
+---
+interface Props {
+  before: string;
+  after: string;
+  alt?: string;
+  class?: string;
+}
+
+const { before, after, alt = 'Avant / Après', class: className = '' } = Astro.props;
+const id = `ba-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class:list={["before-after-container relative overflow-hidden rounded-2xl select-none", className]} data-before-after={id}>
+  <!-- After Image (Background) -->
+  <div class="after-image">
+    <img src={after} alt={`${alt} - Après`} class="w-full h-full object-cover" loading="lazy" />
+  </div>
+
+  <!-- Before Image (Clipped) -->
+  <div class="before-image absolute inset-0" style="clip-path: inset(0 50% 0 0);">
+    <img src={before} alt={`${alt} - Avant`} class="w-full h-full object-cover" loading="lazy" />
+  </div>
+
+  <!-- Slider Line -->
+  <div class="slider-line absolute top-0 bottom-0 w-0.5 bg-gold" style="left: 50%;">
+    <!-- Handle -->
+    <div class="slider-handle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-gold flex items-center justify-center cursor-grab active:cursor-grabbing shadow-lg">
+      <svg class="w-6 h-6 text-dark-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Labels -->
+  <div class="absolute top-4 left-4 px-3 py-1.5 bg-dark-primary/80 backdrop-blur-sm rounded-full text-xs text-white/80 font-medium uppercase tracking-wider">
+    Avant
+  </div>
+  <div class="absolute top-4 right-4 px-3 py-1.5 bg-gold/90 backdrop-blur-sm rounded-full text-xs text-dark-primary font-medium uppercase tracking-wider">
+    Après
+  </div>
+</div>
+
+<style>
+  .before-after-container {
+    aspect-ratio: 4/3;
+    touch-action: pan-y;
+  }
+
+  .after-image img,
+  .before-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  .slider-line {
+    z-index: 20;
+    transition: none;
+  }
+
+  .slider-handle {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .slider-handle:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 20px rgba(249, 189, 37, 0.5);
+  }
+
+  .before-after-container:active .slider-handle {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-before-after]').forEach((container) => {
+      const beforeImage = container.querySelector('.before-image') as HTMLElement;
+      const sliderLine = container.querySelector('.slider-line') as HTMLElement;
+
+      let isDragging = false;
+
+      const updatePosition = (clientX: number) => {
+        const rect = container.getBoundingClientRect();
+        let percentage = ((clientX - rect.left) / rect.width) * 100;
+        percentage = Math.max(0, Math.min(100, percentage));
+
+        beforeImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+        sliderLine.style.left = `${percentage}%`;
+      };
+
+      // Mouse events
+      container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        updatePosition((e as MouseEvent).clientX);
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        updatePosition(e.clientX);
+      });
+
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+
+      // Touch events
+      container.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        updatePosition((e as TouchEvent).touches[0].clientX);
+      });
+
+      container.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        updatePosition((e as TouchEvent).touches[0].clientX);
+      });
+
+      container.addEventListener('touchend', () => {
+        isDragging = false;
+      });
+    });
+  });
+</script>
