@@ -72,7 +72,7 @@ const { images, showHeader = true } = Astro.props;
   <!-- Close -->
   <button
     id="lightbox-close"
-    class="absolute top-8 right-8 z-20 text-white/40 hover:text-white transition-colors"
+    class="absolute top-8 right-8 z-20 w-12 h-12 flex items-center justify-center text-white/40 hover:text-white transition-colors"
     aria-label="Fermer"
   >
     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -83,7 +83,7 @@ const { images, showHeader = true } = Astro.props;
   <!-- Navigation -->
   <button
     id="lightbox-prev"
-    class="absolute left-8 top-1/2 -translate-y-1/2 z-20 text-white/30 hover:text-white transition-colors"
+    class="absolute left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center text-white/30 hover:text-white transition-colors"
     aria-label="Précédent"
   >
     <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
@@ -93,7 +93,7 @@ const { images, showHeader = true } = Astro.props;
 
   <button
     id="lightbox-next"
-    class="absolute right-8 top-1/2 -translate-y-1/2 z-20 text-white/30 hover:text-white transition-colors"
+    class="absolute right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center text-white/30 hover:text-white transition-colors"
     aria-label="Suivant"
   >
     <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">

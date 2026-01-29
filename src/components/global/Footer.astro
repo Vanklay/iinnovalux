@@ -25,7 +25,7 @@ import { footerNavigation } from '../../data/navigation';
 
       <!-- Services Column -->
       <div>
-        <h4 class="font-display font-bold text-white mb-6">Services</h4>
+        <h2 class="font-display font-bold text-white mb-6 text-base">Services</h2>
         <ul class="space-y-3">
           {footerNavigation.services.map((item) => (
             <li>
@@ -42,7 +42,7 @@ import { footerNavigation } from '../../data/navigation';
 
       <!-- Links Column -->
       <div>
-        <h4 class="font-display font-bold text-white mb-6">Liens utiles</h4>
+        <h2 class="font-display font-bold text-white mb-6 text-base">Liens utiles</h2>
         <ul class="space-y-3">
           {footerNavigation.links.map((item) => (
             <li>
@@ -59,15 +59,15 @@ import { footerNavigation } from '../../data/navigation';
 
       <!-- Contact Column -->
       <div>
-        <h4 class="font-display font-bold text-white mb-6">Contact</h4>
+        <h2 class="font-display font-bold text-white mb-6 text-base">Contact</h2>
         <ul class="space-y-4">
           <li>
             <a
               href={`tel:${company.phoneRaw}`}
-              class="flex items-center gap-3 text-gray-medium hover:text-gold transition-colors text-sm group"
+              class="flex items-center gap-3 text-gray-medium hover:text-gold transition-colors text-sm group min-h-[48px]"
             >
-              <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center group-hover:bg-gold/10 transition-colors">
-                <svg class="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <div class="w-12 h-12 rounded-full bg-dark-tertiary flex items-center justify-center group-hover:bg-gold/10 transition-colors">
+                <svg class="w-5 h-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
@@ -77,10 +77,10 @@ import { footerNavigation } from '../../data/navigation';
           <li>
             <a
               href={`mailto:${company.email}`}
-              class="flex items-center gap-3 text-gray-medium hover:text-gold transition-colors text-sm group"
+              class="flex items-center gap-3 text-gray-medium hover:text-gold transition-colors text-sm group min-h-[48px]"
             >
-              <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center group-hover:bg-gold/10 transition-colors">
-                <svg class="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <div class="w-12 h-12 rounded-full bg-dark-tertiary flex items-center justify-center group-hover:bg-gold/10 transition-colors">
+                <svg class="w-5 h-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
@@ -99,7 +99,7 @@ import { footerNavigation } from '../../data/navigation';
         <div class="mt-8 pt-6 border-t border-white/5">
           <p class="text-white/20 text-[10px] uppercase tracking-widest mb-2">Partenaire</p>
           <a href="https://tack.lu" target="_blank" rel="noopener noreferrer" class="inline-block">
-            <img src="/partner-tack.svg" alt="tack.lu" class="h-7 w-auto opacity-40 hover:opacity-70 transition-opacity" />
+            <img src="/partner-tack.svg" alt="tack.lu" width="80" height="28" class="h-7 w-auto opacity-40 hover:opacity-70 transition-opacity" />
           </a>
         </div>
       </div>
@@ -116,7 +116,7 @@ import { footerNavigation } from '../../data/navigation';
         </p>
         <a href="https://slash.lu" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2 text-white/40 hover:text-white/60 transition-colors text-sm">
           <span>Coded & developed by</span>
-          <img src="/white-slash.svg" alt="Slash" class="h-4 w-auto opacity-60 group-hover:opacity-100 transition-opacity" />
+          <img src="/white-slash.svg" alt="Slash" width="56" height="16" class="h-4 w-auto opacity-60 group-hover:opacity-100 transition-opacity" />
         </a>
       </div>
     </div>
