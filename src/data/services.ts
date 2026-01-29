@@ -19,8 +19,8 @@ export const services: Service[] = [
     icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
       <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
     </svg>`,
-    fullDescription: "Réalisations diverses de petits travaux de maintenance et réparation. Fixations, ajustements, réparations mineures - aucun travail n'est trop petit.",
-    includes: ['Fixations murales (TV, étagères, miroirs)', 'Ajustements de portes et fenêtres', 'Réparations mineures de plomberie', 'Maintenance générale du domicile', 'Installation de luminaires', 'Pose de rideaux et stores'],
+    fullDescription: "Réalisations diverses de petits travaux de maintenance et réparation. Fixations, ajustements, réparations mineures - aucun travail n'est trop petit. Nous contribuons à la valorisation de votre propriété.",
+    includes: ['Fixations murales (TV, étagères, miroirs)', 'Ajustements de portes et fenêtres', 'Réparations mineures de plomberie', 'Maintenance générale du domicile', 'Installation de luminaires', 'Pose de rideaux et stores', 'Pose de parquet flottant'],
     benefits: [
       'Intervention rapide sous 48h',
       'Devis gratuit et transparent',
@@ -63,15 +63,15 @@ export const services: Service[] = [
     icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
       <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
     </svg>`,
-    fullDescription: 'Entretien régulier ou ponctuel de vos espaces extérieurs. Chemins, gazons, haies et surfaces diverses - nous maintenons votre propriété en parfait état.',
-    includes: ['Tonte de gazon régulière', 'Taille de haies et arbustes', 'Désherbage et entretien des massifs', 'Nettoyage des terrasses et allées', 'Ramassage des feuilles', 'Préparation hivernale du jardin'],
+    fullDescription: 'Entretien régulier ou ponctuel de vos espaces extérieurs. Chemins, gazons, haies et surfaces diverses - nous maintenons votre propriété en parfait état et contribuons à sa valorisation.',
+    includes: ['Tonte de gazon régulière', 'Taille de haies et arbustes', 'Désherbage et entretien des massifs', 'Nettoyage des terrasses et allées', 'Ramassage des feuilles', 'Préparation hivernale du jardin', 'Abattage d\'arbres', 'Nettoyage après tempêtes'],
     benefits: [
       'Contrats d\'entretien flexibles',
       'Équipement professionnel',
       'Évacuation des déchets verts',
       'Conseils personnalisés',
     ],
-    details: "Maintenez votre jardin et vos espaces extérieurs en parfait état tout au long de l'année. Notre service d'entretien extérieur s'adresse aux particuliers et aux entreprises au Luxembourg qui souhaitent un jardin soigné sans y consacrer leur temps libre. Nous proposons des contrats d'entretien régulier (hebdomadaire, bi-mensuel ou mensuel) ou des interventions ponctuelles selon vos besoins. Notre équipe dispose de tout l'équipement nécessaire : tondeuses, taille-haies, souffleurs, etc.",
+    details: "Maintenez votre jardin et vos espaces extérieurs en parfait état tout au long de l'année. Notre service d'entretien extérieur s'adresse aux particuliers et aux entreprises au Luxembourg qui souhaitent un jardin soigné sans y consacrer leur temps libre. Nous proposons des contrats d'entretien régulier (hebdomadaire, bi-mensuel ou mensuel) ou des interventions ponctuelles selon vos besoins. Notre équipe dispose de tout l'équipement nécessaire : tondeuses, taille-haies, souffleurs, etc. Nous intervenons également pour l'abattage d'arbres et le nettoyage après tempêtes.",
     faq: [
       { question: "Proposez-vous des contrats annuels ?", answer: "Oui, nous proposons des contrats d'entretien annuels avec un tarif préférentiel et des passages réguliers selon vos besoins." },
       { question: "Que faites-vous des déchets verts ?", answer: "Nous évacuons tous les déchets verts vers les centres de recyclage appropriés. Ce service est inclus dans nos prestations." },
@@ -134,10 +134,10 @@ export const services: Service[] = [
     benefits: [
       'Équipe expérimentée et soigneuse',
       'Véhicules adaptés à chaque besoin',
-      'Assurance transport incluse',
+      'Assurance transport complète incluse',
       'Flexibilité des horaires',
     ],
-    details: "Déménager au Luxembourg ou dans la Grande Région ? Notre service de déménagement s'adapte à vos besoins, que vous ayez besoin d'une aide partielle ou d'une prise en charge complète. Nos équipes sont formées pour manipuler vos biens avec le plus grand soin, des meubles fragiles aux objets de valeur. Nous proposons également la fourniture de cartons et matériel d'emballage, le démontage et remontage de vos meubles, ainsi qu'une solution de stockage temporaire si nécessaire. Chaque déménagement est planifié avec vous pour s'adapter à vos contraintes.",
+    details: "Déménager au Luxembourg ou dans la Grande Région ? Notre service de déménagement s'adapte à vos besoins, que vous ayez besoin d'une aide partielle ou d'une prise en charge complète. Nos équipes sont formées pour manipuler vos biens avec le plus grand soin, des meubles fragiles aux objets de valeur. Tous vos biens sont couverts par notre assurance transport pendant toute la durée du déménagement. Nous proposons également la fourniture de cartons et matériel d'emballage, le démontage et remontage de vos meubles, ainsi qu'une solution de stockage temporaire si nécessaire. Chaque déménagement est planifié avec vous pour s'adapter à vos contraintes.",
     faq: [
       { question: "Déménagez-vous aussi à l'international ?", answer: "Nous intervenons principalement au Luxembourg et dans la Grande Région (Belgique, France, Allemagne). Pour les déménagements plus lointains, contactez-nous pour étudier votre projet." },
       { question: "Les meubles sont-ils assurés pendant le transport ?", answer: "Oui, tous nos déménagements incluent une assurance transport. Une assurance complémentaire est disponible pour les objets de grande valeur." },

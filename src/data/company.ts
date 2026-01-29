@@ -1,5 +1,5 @@
 export const company = {
-  name: 'INNOVALUX SARL-s',
+  name: 'IINNOVALUX SARL-s',
   tagline: 'La solution pour une maison durable',
   address: {
     street: '76, Haaptstrooss',
@@ -16,7 +16,6 @@ export const company = {
   url: 'https://iinnovalux.lu',
   hours: {
     weekdays: 'Lundi - Vendredi: 8h00 - 18h00',
-    saturday: 'Samedi: 9h00 - 14h00',
-    sunday: 'Dimanche: Fermé'
+    emergency: 'Urgences: 24h/7'
   }
 };

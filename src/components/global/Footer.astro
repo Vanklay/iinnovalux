@@ -13,7 +13,7 @@ import { footerNavigation } from '../../data/navigation';
       <!-- Brand Column -->
       <div class="lg:col-span-1">
         <a href="/" class="block mb-6">
-          <img src="/logo.svg" alt="INNOVALUX" class="h-14 w-auto" />
+          <img src="/logo.svg" alt="IINNOVALUX" class="h-14 w-auto" />
         </a>
         <p class="text-gray-medium text-sm mb-4">
           {company.tagline}
@@ -90,8 +90,7 @@ import { footerNavigation } from '../../data/navigation';
           <li class="pt-2">
             <div class="text-white/60 text-xs space-y-1">
               <p>{company.hours.weekdays}</p>
-              <p>{company.hours.saturday}</p>
-              <p>{company.hours.sunday}</p>
+              <p class="text-gold">{company.hours.emergency}</p>
             </div>
           </li>
         </ul>
@@ -102,7 +101,7 @@ import { footerNavigation } from '../../data/navigation';
     <div class="border-t border-white/5 pt-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4">
         <p class="text-white/40 text-sm">
-          &copy; {new Date().getFullYear()} INNOVALUX SARL-s. Tous droits réservés.
+          &copy; {new Date().getFullYear()} IINNOVALUX SARL-s. Tous droits réservés.
         </p>
         <p class="text-white/40 text-sm">
           TVA: {company.vat}
