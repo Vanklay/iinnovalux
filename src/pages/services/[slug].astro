@@ -19,11 +19,16 @@ interface Props {
 }
 
 const { service } = Astro.props;
+
+// SEO-optimized description with location
+const seoDescription = `${service.title} au Luxembourg par IINNOVALUX. ${service.description} Devis gratuit, intervention rapide. +352 621 479 364`;
+const seoKeywords = `${service.title.toLowerCase()} Luxembourg, ${service.slug.replace(/-/g, ' ')} Luxembourg, ${service.includes.slice(0, 3).join(', ').toLowerCase()}, IINNOVALUX`;
 ---
 
 <ServiceLayout
   title={service.title}
-  description={service.fullDescription}
+  description={seoDescription}
+  keywords={seoKeywords}
 >
   <HeroPage
     title={service.title}

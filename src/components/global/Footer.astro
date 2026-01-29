@@ -94,6 +94,14 @@ import { footerNavigation } from '../../data/navigation';
             </div>
           </li>
         </ul>
+
+        <!-- Partner -->
+        <div class="mt-8 pt-6 border-t border-white/5">
+          <p class="text-white/20 text-[10px] uppercase tracking-widest mb-2">Partenaire</p>
+          <a href="https://tack.lu" target="_blank" rel="noopener noreferrer" class="inline-block">
+            <img src="/partner-tack.svg" alt="tack.lu" class="h-7 w-auto opacity-40 hover:opacity-70 transition-opacity" />
+          </a>
+        </div>
       </div>
     </div>
 
@@ -104,11 +112,12 @@ import { footerNavigation } from '../../data/navigation';
           &copy; {new Date().getFullYear()} IINNOVALUX SARL-s. Tous droits réservés.
         </p>
         <p class="text-white/40 text-sm">
-          TVA: {company.vat}
+          TVA: {company.vat} | RCS B204774
         </p>
-        <p class="text-white/40 text-sm">
-          Site créé par <a href="https://slash.lu" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-gold-light transition-colors">slash.lu</a>
-        </p>
+        <a href="https://slash.lu" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2 text-white/40 hover:text-white/60 transition-colors text-sm">
+          <span>Coded & developed by</span>
+          <img src="/white-slash.svg" alt="Slash" class="h-4 w-auto opacity-60 group-hover:opacity-100 transition-opacity" />
+        </a>
       </div>
     </div>
   </div>
