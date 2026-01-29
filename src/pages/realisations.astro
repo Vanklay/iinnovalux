@@ -64,8 +64,6 @@ const categories = [
   },
 ];
 
-// Collect all before/after for featured section
-const allBeforeAfter = categories.flatMap(c => c.beforeAfter.map(ba => ({ ...ba, category: c.title })));
 ---
 
 <BaseLayout
@@ -97,33 +95,6 @@ const allBeforeAfter = categories.flatMap(c => c.beforeAfter.map(ba => ({ ...ba,
     </div>
   </section>
 
-  <!-- Featured Before/After Section -->
-  {allBeforeAfter.length > 0 && (
-    <section class="py-16 md:py-24 bg-dark-secondary">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="text-center mb-12" data-reveal>
-          <span class="inline-block text-gold text-xs font-medium uppercase tracking-wider mb-3">
-            Transformations
-          </span>
-          <h2 class="font-display text-3xl md:text-4xl text-white mb-4">
-            Avant / Après
-          </h2>
-          <p class="text-white/50 max-w-lg mx-auto">
-            Faites glisser pour voir la différence
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {allBeforeAfter.map((item, index) => (
-            <div data-reveal style={`animation-delay: ${index * 0.1}s`}>
-              <BeforeAfter before={item.before} after={item.after} alt={item.category} />
-              <p class="text-white/40 text-sm mt-3 text-center">{item.category}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
 
   <!-- Category Navigation -->
   <section class="py-8 sticky top-16 z-30 bg-dark-primary/95 backdrop-blur-sm border-b border-white/5">
