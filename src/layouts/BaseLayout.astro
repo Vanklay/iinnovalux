@@ -23,8 +23,8 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const fullImageURL = new URL(image, Astro.site);
-const siteName = 'IINNOVALUX SARL-s';
-const fullTitle = title === 'Accueil' ? `${siteName} - Services de maintenance au Luxembourg` : `${title} | ${siteName}`;
+const siteName = 'IINNOVALUX';
+const fullTitle = title === 'Accueil' ? `${siteName} - Bricoleur Luxembourg` : `${title} | ${siteName}`;
 ---
 
 <!DOCTYPE html>
@@ -46,8 +46,8 @@ const fullTitle = title === 'Accueil' ? `${siteName} - Services de maintenance a
     <meta name="ICBM" content="49.7167, 6.1167" />
 
     <!-- Language -->
-    <meta http-equiv="content-language" content="fr-LU" />
-    <link rel="alternate" hreflang="fr-LU" href={canonicalURL} />
+    <meta http-equiv="content-language" content="fr" />
+    <link rel="alternate" hreflang="fr" href={canonicalURL} />
     <link rel="alternate" hreflang="x-default" href={canonicalURL} />
 
     <!-- Open Graph -->
@@ -59,7 +59,7 @@ const fullTitle = title === 'Accueil' ? `${siteName} - Services de maintenance a
     <meta property="og:image:alt" content={`${title} - IINNOVALUX Luxembourg`} />
     <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:locale" content="fr_LU" />
+    <meta property="og:locale" content="fr_FR" />
     <meta property="og:site_name" content={siteName} />
 
     <!-- Twitter -->
