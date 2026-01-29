@@ -6,10 +6,15 @@ import Select from '../ui/Select.astro';
 import Checkbox from '../ui/Checkbox.astro';
 import Button from '../ui/Button.astro';
 
-const serviceOptions = services.map((service) => ({
-  value: service.slug,
-  label: service.title,
-}));
+const serviceOptions = [
+  ...services.map((service) => ({
+    value: service.slug,
+    label: service.title,
+  })),
+  { value: 'valorisation-immobiliere', label: 'Valorisation immobilière' },
+  { value: 'mise-en-conformite', label: 'Mise en conformité' },
+  { value: 'urgence-arbres-tempetes', label: 'Urgence arbres / tempêtes' },
+];
 ---
 
 <div class="bg-dark-tertiary rounded-2xl p-6 md:p-8 border border-white/5">
