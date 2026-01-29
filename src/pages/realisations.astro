@@ -132,8 +132,8 @@ const categories = [
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           <!-- Before/After sliders -->
           {category.beforeAfter.map((item, index) => (
-            <div class="col-span-2 gallery-item" data-reveal style={`animation-delay: ${index * 0.05}s`}>
-              <BeforeAfter before={item.before} after={item.after} alt={category.title} />
+            <div class="gallery-item" data-reveal style={`animation-delay: ${index * 0.05}s`}>
+              <BeforeAfter before={item.before} after={item.after} alt={category.title} class="aspect-square" />
             </div>
           ))}
 

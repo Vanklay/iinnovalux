@@ -42,8 +42,15 @@ const id = `ba-${Math.random().toString(36).substr(2, 9)}`;
 
 <style>
   .before-after-container {
-    aspect-ratio: 4/3;
     touch-action: pan-y;
+  }
+
+  .before-after-container:not(.aspect-square) {
+    aspect-ratio: 4/3;
+  }
+
+  .before-after-container.aspect-square {
+    aspect-ratio: 1/1;
   }
 
   .after-image img,
