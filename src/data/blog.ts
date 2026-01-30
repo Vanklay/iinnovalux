@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'bricoleur-luxembourg-comment-choisir',
     title: 'Comment choisir un bricoleur au Luxembourg ?',
     excerpt: 'Guide complet pour trouver un handyman fiable au Luxembourg. Critères, prix et conseils pour vos travaux de maison.',
-    date: '2025-01-15',
+    date: '2026-01-15',
     category: 'Conseils',
     keywords: 'bricoleur Luxembourg, handyman Luxembourg, choisir bricoleur, travaux maison Luxembourg',
     readTime: 5,
@@ -41,13 +41,6 @@ Méfiez-vous des estimations trop vagues. Un professionnel sérieux vous fournir
 - Les délais d'intervention
 - Les conditions de paiement
 
-### Les prix moyens au Luxembourg
-
-Les tarifs varient selon le type d'intervention :
-- Petits travaux : 40-60€/heure
-- Montage de meubles : 35-50€/heure
-- Travaux spécialisés : 50-80€/heure
-
 ### Pourquoi choisir un professionnel local ?
 
 Opter pour un bricoleur basé au Luxembourg présente plusieurs avantages :
@@ -63,9 +56,9 @@ Basés à Born, nous intervenons dans tout le Luxembourg avec une garantie de qu
   },
   {
     slug: 'montage-meubles-ikea-luxembourg',
-    title: 'Montage de meubles IKEA au Luxembourg : prix et conseils',
-    excerpt: 'Vous avez acheté des meubles IKEA à Arlon ou en ligne ? Découvrez nos conseils et tarifs pour un montage professionnel.',
-    date: '2025-01-10',
+    title: 'Montage de meubles IKEA au Luxembourg : guide complet',
+    excerpt: 'Vous avez acheté des meubles IKEA à Arlon ou en ligne ? Découvrez nos conseils pour un montage professionnel et sécurisé.',
+    date: '2026-01-10',
     category: 'Services',
     keywords: 'montage meubles IKEA Luxembourg, assemblage meubles, monteur meubles, IKEA Arlon',
     readTime: 4,
@@ -88,15 +81,6 @@ Un meuble mal assemblé peut être dangereux, surtout pour les enfants. Un profe
 
 Pièce manquante, notice incompréhensible, outil spécifique requis... Un professionnel sait gérer ces situations.
 
-### Nos tarifs de montage
-
-| Type de meuble | Durée moyenne | Tarif indicatif |
-|---------------|---------------|-----------------|
-| Table / Bureau | 30-60 min | 35-50€ |
-| Lit simple | 1-2h | 50-80€ |
-| Armoire 2 portes | 2-3h | 80-120€ |
-| Cuisine complète | 1-2 jours | Sur devis |
-
 ### Conseils avant le montage
 
 1. **Vérifiez les pièces** dès réception
@@ -113,7 +97,7 @@ Nous intervenons dans tout le Luxembourg : Luxembourg-Ville, Esch-sur-Alzette, D
     slug: 'entretien-jardin-luxembourg-printemps',
     title: 'Préparer son jardin au printemps au Luxembourg',
     excerpt: 'Guide pratique pour l\'entretien de votre jardin luxembourgeois au printemps. Taille, tonte, plantations et conseils locaux.',
-    date: '2025-01-05',
+    date: '2026-01-05',
     category: 'Saisonnier',
     keywords: 'entretien jardin Luxembourg, jardinage printemps, taille haies, tonte pelouse Luxembourg',
     readTime: 6,
@@ -175,7 +159,7 @@ Notre équipe intervient pour tous vos travaux d'entretien extérieur : tonte, t
     slug: 'depannage-urgence-domicile-luxembourg',
     title: 'Dépannage d\'urgence à domicile au Luxembourg',
     excerpt: 'Fuite d\'eau, serrure bloquée, panne électrique ? Guide des interventions d\'urgence et contacts utiles au Luxembourg.',
-    date: '2024-12-20',
+    date: '2025-12-20',
     category: 'Urgences',
     keywords: 'dépannage urgence Luxembourg, urgence domicile, fuite eau, serrure bloquée, électricien urgence',
     readTime: 4,
@@ -232,7 +216,7 @@ Intervention rapide dans tout le Luxembourg, tarifs transparents, et devis gratu
     slug: 'demenagement-luxembourg-conseils',
     title: 'Déménager au Luxembourg : guide pratique complet',
     excerpt: 'Tout savoir pour réussir votre déménagement au Luxembourg. Checklist, démarches administratives et conseils pratiques.',
-    date: '2024-12-15',
+    date: '2025-12-15',
     category: 'Conseils',
     keywords: 'déménagement Luxembourg, déménager Luxembourg, aide déménagement, transport meubles Luxembourg',
     readTime: 7,
@@ -285,71 +269,84 @@ Véhicule assuré et équipe expérimentée pour un déménagement serein.
     `
   },
   {
-    slug: 'prix-travaux-maison-luxembourg-2025',
-    title: 'Prix des travaux de maison au Luxembourg en 2025',
-    excerpt: 'Combien coûtent les travaux de bricolage au Luxembourg ? Tarifs actualisés et conseils pour maîtriser votre budget.',
-    date: '2025-01-20',
-    category: 'Prix',
-    keywords: 'prix travaux Luxembourg, tarif bricoleur, coût rénovation, devis travaux Luxembourg',
+    slug: 'demander-devis-travaux-luxembourg',
+    title: 'Comment demander un devis travaux au Luxembourg',
+    excerpt: 'Guide pour obtenir et comparer des devis de travaux au Luxembourg. Conseils pour bien préparer votre projet.',
+    date: '2026-01-20',
+    category: 'Conseils',
+    keywords: 'devis travaux Luxembourg, demander devis, comparer devis, projet travaux',
     readTime: 5,
     content: `
-## Prix des travaux de maison au Luxembourg en 2025
+## Comment bien demander un devis au Luxembourg
 
-Le Luxembourg a des tarifs spécifiques liés au coût de la vie élevé. Voici un guide des prix actualisés.
+Obtenir un bon devis est essentiel pour réussir vos travaux. Voici nos conseils pour bien préparer votre demande.
 
-### Tarifs horaires moyens
+### Préparer sa demande
 
-| Type de prestation | Tarif horaire |
-|-------------------|---------------|
-| Bricolage général | 45-60€ |
-| Montage de meubles | 40-55€ |
-| Peinture | 35-50€/m² |
-| Jardinage | 40-55€ |
-| Électricité simple | 55-75€ |
-| Plomberie simple | 55-80€ |
+**Définir précisément le besoin**
+- Listez tous les travaux souhaités
+- Prenez des photos de la situation actuelle
+- Notez les dimensions si nécessaire
+- Identifiez les contraintes éventuelles
 
-### Travaux forfaitaires courants
+**Les informations à fournir**
+- Nature exacte des travaux
+- Localisation précise
+- Accès au chantier
+- Délais souhaités
+- Budget indicatif (optionnel)
 
-**Intérieur**
-- Pose d'une étagère : 30-50€
-- Installation d'un luminaire : 40-70€
-- Montage d'un lit : 50-80€
-- Pose de tringle à rideaux : 25-45€
+### Ce que doit contenir un bon devis
 
-**Extérieur**
-- Tonte pelouse (< 500m²) : 40-60€
-- Taille de haie (par mètre linéaire) : 8-15€
-- Nettoyage terrasse : 3-6€/m²
+**Mentions obligatoires**
+- Coordonnées complètes du professionnel
+- Date et durée de validité
+- Description détaillée des travaux
+- Délai d'exécution prévu
+- Conditions de paiement
 
-### Ce qui influence le prix
+**Points à vérifier**
+- Le devis est-il gratuit ?
+- Les matériaux sont-ils inclus ?
+- Y a-t-il des frais de déplacement ?
+- Quelle est la garantie proposée ?
 
-1. **La complexité** du travail
-2. **L'urgence** de l'intervention
-3. **Les matériaux** nécessaires
-4. **L'accessibilité** du lieu
-5. **Le déplacement** (distance)
+### Comparer les devis
 
-### Comment obtenir le meilleur prix ?
+**Ne pas se fier uniquement au prix**
+- Qualité des matériaux proposés
+- Expérience du professionnel
+- Délais d'intervention
+- Avis clients
 
-- Demandez **plusieurs devis** (minimum 3)
-- Regroupez vos travaux pour **une seule intervention**
-- Prévoyez à l'avance (évitez les **majorations urgence**)
-- Fournissez les **matériaux vous-même** si possible
+**Questions à poser**
+- Depuis combien de temps exercez-vous ?
+- Avez-vous des références similaires ?
+- Êtes-vous assuré ?
+- Que se passe-t-il en cas de problème ?
 
-### Notre politique tarifaire
+### Les pièges à éviter
 
-Chez IINNOVALUX :
-- Devis gratuit et sans engagement
-- Tarifs fixes communiqués à l'avance
-- Pas de frais cachés
-- Facturation à l'heure ou au forfait selon votre préférence
+- Devis trop vagues ("travaux divers")
+- Absence de visite préalable pour les gros travaux
+- Demande d'acompte trop important
+- Délais irréalistes
+
+### Notre approche chez IINNOVALUX
+
+- Devis gratuit et détaillé
+- Visite sur place si nécessaire
+- Réponse sous 24-48h
+- Aucun engagement
+
+Contactez-nous pour obtenir votre devis personnalisé.
     `
   },
   {
     slug: 'checklist-maison-hiver-luxembourg',
     title: 'Checklist pour préparer sa maison à l\'hiver au Luxembourg',
     excerpt: 'Protégez votre maison du froid luxembourgeois. Liste des vérifications essentielles avant l\'hiver.',
-    date: '2024-11-15',
+    date: '2025-11-15',
     category: 'Saisonnier',
     keywords: 'préparer maison hiver, entretien maison Luxembourg, chauffage, isolation Luxembourg',
     readTime: 5,
@@ -409,8 +406,8 @@ IINNOVALUX peut réaliser ces vérifications pour vous. Un check-up complet de v
   {
     slug: 'debarras-cave-grenier-luxembourg',
     title: 'Débarras de cave et grenier au Luxembourg',
-    excerpt: 'Comment vider sa cave ou son grenier au Luxembourg ? Solutions, prix et réglementation des encombrants.',
-    date: '2024-12-01',
+    excerpt: 'Comment vider sa cave ou son grenier au Luxembourg ? Solutions et réglementation des encombrants.',
+    date: '2025-12-01',
     category: 'Services',
     keywords: 'débarras cave Luxembourg, vider grenier, encombrants Luxembourg, évacuation déchets',
     readTime: 4,
@@ -464,16 +461,6 @@ IINNOVALUX propose un service complet :
 - Nous évacuons
 - Tarif réduit
 
-### Tarifs indicatifs
-
-| Prestation | Prix |
-|------------|------|
-| Débarras cave (< 10m²) | 150-300€ |
-| Débarras grenier (< 20m²) | 200-400€ |
-| Évacuation par m³ | 50-80€ |
-
-*Les prix incluent le transport et le dépôt en déchetterie.*
-
 ### Écologique et responsable
 
 Nous privilégions toujours le recyclage et le don avant l'élimination. Chaque objet est orienté vers la meilleure filière.
@@ -483,7 +470,7 @@ Nous privilégions toujours le recyclage et le don avant l'élimination. Chaque 
     slug: 'reparation-parquet-luxembourg',
     title: 'Réparation et entretien du parquet au Luxembourg',
     excerpt: 'Parquet rayé, lames abîmées ou grincements ? Guide complet pour réparer et entretenir votre parquet au Luxembourg.',
-    date: '2024-11-01',
+    date: '2025-11-01',
     category: 'Services',
     keywords: 'réparation parquet Luxembourg, entretien parquet, parquet rayé, ponçage parquet',
     readTime: 5,
@@ -548,9 +535,9 @@ Devis gratuit dans tout le Luxembourg.
   },
   {
     slug: 'installer-television-murale-luxembourg',
-    title: 'Installation TV murale au Luxembourg : conseils et prix',
-    excerpt: 'Comment fixer votre télévision au mur en toute sécurité ? Guide pratique et tarifs d\'installation au Luxembourg.',
-    date: '2024-10-20',
+    title: 'Installation TV murale au Luxembourg : guide pratique',
+    excerpt: 'Comment fixer votre télévision au mur en toute sécurité ? Guide complet pour une installation professionnelle.',
+    date: '2025-10-20',
     category: 'Services',
     keywords: 'installation TV murale Luxembourg, fixer télévision mur, support TV, câbles cachés',
     readTime: 4,
@@ -595,14 +582,6 @@ Plusieurs solutions :
 - **Cache-câbles décoratif** : discret et amovible
 - **Prise murale derrière la TV** : solution la plus propre
 
-### Prix d'une installation
-
-| Prestation | Tarif indicatif |
-|------------|-----------------|
-| Installation simple | 60-100€ |
-| Avec cache-câbles | 80-150€ |
-| Avec encastrement | 150-250€ |
-
 ### Pourquoi faire appel à un pro ?
 
 - **Sécurité** : une TV qui tombe peut blesser et se casser
@@ -617,7 +596,7 @@ IINNOVALUX installe votre TV murale dans les règles de l'art. Contactez-nous po
     slug: 'petits-travaux-locataire-luxembourg',
     title: 'Petits travaux : que peut faire un locataire au Luxembourg ?',
     excerpt: 'Quelles réparations incombent au locataire au Luxembourg ? Droits, obligations et conseils pratiques.',
-    date: '2024-10-10',
+    date: '2025-10-10',
     category: 'Conseils',
     keywords: 'travaux locataire Luxembourg, réparations locatives, droits locataire, bail Luxembourg',
     readTime: 6,
@@ -686,7 +665,7 @@ Nos factures détaillées vous permettent de justifier les interventions auprès
     slug: 'elagage-arbres-luxembourg-reglementation',
     title: 'Élagage et abattage d\'arbres au Luxembourg : réglementation',
     excerpt: 'Quelles sont les règles pour couper un arbre au Luxembourg ? Autorisations, périodes et conseils pratiques.',
-    date: '2024-09-25',
+    date: '2025-09-25',
     category: 'Conseils',
     keywords: 'élagage arbres Luxembourg, abattage arbre, autorisation coupe arbre, taille haies Luxembourg',
     readTime: 5,
@@ -753,7 +732,7 @@ Nous vérifions la réglementation applicable et vous conseillons sur les démar
     slug: 'securiser-maison-vacances-luxembourg',
     title: 'Sécuriser sa maison avant les vacances au Luxembourg',
     excerpt: 'Checklist complète pour partir en vacances l\'esprit tranquille. Sécurité, entretien et astuces anti-cambriolage.',
-    date: '2024-09-15',
+    date: '2025-09-15',
     category: 'Conseils',
     keywords: 'sécuriser maison vacances, anti-cambriolage Luxembourg, checklist vacances, protection domicile',
     readTime: 5,
@@ -829,8 +808,8 @@ Contactez-nous pour un service personnalisé pendant vos vacances.
   {
     slug: 'cuisine-equipee-installation-luxembourg',
     title: 'Installation de cuisine équipée au Luxembourg',
-    excerpt: 'Faire installer sa cuisine par un professionnel au Luxembourg. Étapes, prix et conseils pour réussir votre projet.',
-    date: '2024-09-01',
+    excerpt: 'Faire installer sa cuisine par un professionnel au Luxembourg. Étapes et conseils pour réussir votre projet.',
+    date: '2025-09-01',
     category: 'Services',
     keywords: 'installation cuisine Luxembourg, montage cuisine équipée, pose cuisine IKEA, cuisiniste Luxembourg',
     readTime: 6,
@@ -866,16 +845,6 @@ L'installation d'une cuisine équipée demande expertise et précision. Voici ce
 - Branchement lave-vaisselle
 - Vérification étanchéité
 
-### Prix d'une installation
-
-| Type de cuisine | Durée | Tarif indicatif |
-|-----------------|-------|-----------------|
-| Kitchenette | 1 jour | 300-500€ |
-| Cuisine standard | 2-3 jours | 600-1200€ |
-| Grande cuisine | 3-5 jours | 1000-2000€ |
-
-*Hors électroménager et plomberie complexe*
-
 ### Cuisines IKEA au Luxembourg
 
 Nous sommes spécialisés dans le montage des cuisines IKEA :
@@ -883,7 +852,7 @@ Nous sommes spécialisés dans le montage des cuisines IKEA :
 - Connaissance des accessoires et solutions
 - Rapidité d'exécution
 
-### Ce qui peut faire varier le prix
+### Ce qui peut influencer la durée
 
 - Complexité de la découpe du plan de travail
 - Modification de la plomberie existante
@@ -905,7 +874,7 @@ Demandez votre devis gratuit pour l'installation de votre cuisine.
     slug: 'handyman-vs-artisan-difference-luxembourg',
     title: 'Handyman ou artisan : quelle différence au Luxembourg ?',
     excerpt: 'Bricoleur, handyman, artisan... Qui appeler selon vos travaux ? Guide pour faire le bon choix au Luxembourg.',
-    date: '2024-08-20',
+    date: '2025-08-20',
     category: 'Conseils',
     keywords: 'handyman Luxembourg, artisan Luxembourg, différence bricoleur artisan, travaux maison',
     readTime: 4,
@@ -980,7 +949,7 @@ Nous intervenons sur tous les petits travaux et savons vous orienter vers des ar
     slug: 'amenager-terrasse-balcon-luxembourg',
     title: 'Aménager sa terrasse ou son balcon au Luxembourg',
     excerpt: 'Idées et conseils pour transformer votre espace extérieur. Mobilier, plantes et aménagements pratiques.',
-    date: '2024-08-10',
+    date: '2025-08-10',
     category: 'Conseils',
     keywords: 'aménager terrasse Luxembourg, balcon, mobilier extérieur, jardinage balcon',
     readTime: 5,
@@ -1057,7 +1026,7 @@ Contactez-nous pour aménager votre espace extérieur.
     slug: 'urgence-plomberie-que-faire-luxembourg',
     title: 'Urgence plomberie au Luxembourg : les bons réflexes',
     excerpt: 'Fuite d\'eau, canalisation bouchée, chauffe-eau en panne ? Guide des premiers gestes et contacts utiles.',
-    date: '2024-07-25',
+    date: '2025-07-25',
     category: 'Urgences',
     keywords: 'urgence plomberie Luxembourg, fuite eau, plombier urgence, dépannage plomberie',
     readTime: 4,
@@ -1137,7 +1106,7 @@ Pour les interventions complexes, nous vous orientons vers nos plombiers partena
     slug: 'normes-electriques-luxembourg-locataire',
     title: 'Normes électriques au Luxembourg : ce que le locataire doit savoir',
     excerpt: 'Prises, interrupteurs, tableau électrique... Les bases de la sécurité électrique pour les locataires.',
-    date: '2024-07-10',
+    date: '2025-07-10',
     category: 'Conseils',
     keywords: 'normes électriques Luxembourg, sécurité électrique, installation électrique, locataire',
     readTime: 5,
