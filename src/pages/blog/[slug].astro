@@ -1,0 +1,248 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { blogPosts } from '../../data/blog';
+import CTABanner from '../../components/sections/CTABanner.astro';
+import { marked } from 'marked';
+
+export function getStaticPaths() {
+  return blogPosts.map(post => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+
+// Get related posts (same category, excluding current)
+const relatedPosts = blogPosts
+  .filter(p => p.category === post.category && p.slug !== post.slug)
+  .slice(0, 2);
+
+// Parse markdown content
+const htmlContent = marked(post.content);
+---
+
+<BaseLayout
+  title={post.title}
+  description={post.excerpt}
+  keywords={post.keywords}
+  type="article"
+>
+  <!-- Article Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt,
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "author": {
+      "@type": "Organization",
+      "name": "IINNOVALUX"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "IINNOVALUX",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://iinnovalux.lu/logo.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://iinnovalux.lu/blog/${post.slug}`
+    }
+  })} slot="head" />
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-12 md:pt-40 md:pb-16 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-[5%] left-[5%] w-[400px] h-[400px] bg-gold/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <div class="relative container mx-auto px-4 lg:px-8 max-w-4xl">
+      <!-- Breadcrumb -->
+      <nav class="mb-8">
+        <ol class="flex items-center gap-2 text-sm flex-wrap">
+          <li><a href="/" class="text-white/40 hover:text-white transition-colors">Accueil</a></li>
+          <li class="text-white/20">/</li>
+          <li><a href="/blog" class="text-white/40 hover:text-white transition-colors">Conseils</a></li>
+          <li class="text-white/20">/</li>
+          <li class="text-white/60 truncate max-w-[200px]">{post.title}</li>
+        </ol>
+      </nav>
+
+      <!-- Meta -->
+      <div class="flex items-center gap-4 mb-6">
+        <span class="px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-medium">
+          {post.category}
+        </span>
+        <span class="text-white/30 text-sm">
+          {new Date(post.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+        </span>
+        <span class="text-white/30 text-sm">
+          {post.readTime} min de lecture
+        </span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="font-display text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
+        {post.title}
+      </h1>
+
+      <!-- Excerpt -->
+      <p class="text-white/60 text-lg md:text-xl leading-relaxed">
+        {post.excerpt}
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-12 md:py-16">
+    <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
+      <article class="prose prose-invert prose-lg max-w-none" set:html={htmlContent} />
+    </div>
+  </section>
+
+  <!-- Share & CTA -->
+  <section class="py-12 border-t border-white/5">
+    <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-left">
+          <p class="text-white/40 text-sm mb-2">Besoin d'aide pour vos travaux ?</p>
+          <p class="text-white font-display text-xl">Demandez un devis gratuit</p>
+        </div>
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-3 px-6 py-3 bg-gold text-dark-primary font-medium rounded-full hover:bg-gold/90 transition-colors"
+        >
+          Nous contacter
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Posts -->
+  {relatedPosts.length > 0 && (
+    <section class="py-16 md:py-24 bg-dark-secondary">
+      <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
+        <h2 class="font-display text-2xl text-white mb-8">Articles similaires</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {relatedPosts.map((related) => (
+            <a href={`/blog/${related.slug}`} class="group block">
+              <div class="bg-dark-primary rounded-xl border border-white/5 hover:border-gold/30 p-6 transition-all">
+                <span class="text-gold/60 text-xs font-medium">{related.category}</span>
+                <h3 class="font-display text-lg text-white mt-2 mb-3 group-hover:text-gold transition-colors line-clamp-2">
+                  {related.title}
+                </h3>
+                <p class="text-white/40 text-sm line-clamp-2">{related.excerpt}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <CTABanner
+    title="Un projet en tête ?"
+    subtitle="Nos experts sont à votre écoute"
+    buttonText="Demander un devis"
+    buttonHref="/contact"
+  />
+</BaseLayout>
+
+<style is:global>
+  .prose {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .prose h2 {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .prose h3 {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose p {
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+  }
+
+  .prose strong {
+    color: white;
+    font-weight: 600;
+  }
+
+  .prose a {
+    color: #F9BD25;
+    text-decoration: none;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+
+  .prose ul, .prose ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .prose li {
+    margin-bottom: 0.5rem;
+  }
+
+  .prose table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+  }
+
+  .prose th {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .prose td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .prose blockquote {
+    border-left: 3px solid #F9BD25;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .prose code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+
+  /* Checkbox list styling */
+  .prose ul li input[type="checkbox"] {
+    margin-right: 0.5rem;
+  }
+</style>
