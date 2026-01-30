@@ -80,8 +80,36 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
+    <!-- Google Fonts - non-blocking -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      />
+    </noscript>
+
     <!-- Preload hero image for LCP optimization (homepage only) -->
-    {title === 'Accueil' && <link rel="preload" as="image" href="/images/hero-image.webp" type="image/webp" fetchpriority="high" />}
+    {title === 'Accueil' && (
+      <link
+        rel="preload"
+        as="image"
+        href="/images/hero-image-800.webp"
+        imagesrcset="/images/hero-image-480.webp 480w, /images/hero-image-800.webp 800w, /images/hero-image.webp 1415w"
+        imagesizes="100vw"
+        fetchpriority="high"
+      />
+    )}
 
     <!-- LLMs.txt reference -->
     <link rel="author" href="/llms.txt" />

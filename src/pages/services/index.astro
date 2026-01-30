@@ -12,16 +12,17 @@ import { services } from '../../data/services';
   <!-- Hero with Image -->
   <section class="relative h-[35vh] min-h-[280px] max-h-[350px] overflow-hidden">
     <!-- Background Image -->
-    <picture>
-      <source srcset="/images/hero-image.webp" type="image/webp" />
-      <img
-        src="/images/hero-image.jpg"
-        alt="Services de bricolage IINNOVALUX Luxembourg"
-        width="1415"
-        height="1320"
-        class="absolute inset-0 w-full h-full object-cover"
-      />
-    </picture>
+    <img
+      src="/images/hero-image.webp"
+      srcset="/images/hero-image-480.webp 480w,
+              /images/hero-image-800.webp 800w,
+              /images/hero-image.webp 1415w"
+      sizes="100vw"
+      alt="Services de bricolage IINNOVALUX Luxembourg"
+      width="1415"
+      height="1320"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
     <!-- Dark Overlay -->
     <div class="absolute inset-0 bg-dark-primary/70"></div>
     <!-- Gradient Overlay -->
