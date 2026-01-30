@@ -81,7 +81,7 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
     <!-- Preload hero image for LCP optimization (homepage only) -->
-    {title === 'Accueil' && <link rel="preload" as="image" href="/images/hero-image.jpg" fetchpriority="high" />}
+    {title === 'Accueil' && <link rel="preload" as="image" href="/images/hero-image.webp" type="image/webp" fetchpriority="high" />}
 
     <!-- LLMs.txt reference -->
     <link rel="author" href="/llms.txt" />

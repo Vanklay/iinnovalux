@@ -5,16 +5,19 @@ import Button from '../ui/Button.astro';
 <section class="relative h-screen min-h-[600px] flex items-end bg-dark-primary overflow-hidden">
   <!-- Background image -->
   <div class="absolute inset-0">
-    <img
-      src="/images/hero-image.jpg"
-      alt="Services de bricolage et maintenance au Luxembourg"
-      width="1920"
-      height="1080"
-      fetchpriority="high"
-      loading="eager"
-      decoding="async"
-      class="w-full h-full object-cover"
-    />
+    <picture>
+      <source srcset="/images/hero-image.webp" type="image/webp" />
+      <img
+        src="/images/hero-image.jpg"
+        alt="Services de bricolage et maintenance au Luxembourg"
+        width="1415"
+        height="1320"
+        fetchpriority="high"
+        loading="eager"
+        decoding="async"
+        class="w-full h-full object-cover"
+      />
+    </picture>
     <!-- Elevated gradient overlay - starts higher -->
     <div class="absolute inset-0 bg-gradient-to-t from-dark-primary via-dark-primary/80 via-50% to-transparent"></div>
   </div>
