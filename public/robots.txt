@@ -10,10 +10,9 @@ Sitemap: https://iinnovalux.lu/sitemap-index.xml
 # Crawl-delay for polite crawling
 Crawl-delay: 1
 
-# Block common non-essential paths
+# Block non-essential paths
 Disallow: /api/
 Disallow: /_astro/
-Disallow: /404
 
 # Allow all major search engines
 User-agent: Googlebot

@@ -1,0 +1,26 @@
+{
+  "name": "IINNOVALUX - Travaux & Maintenance Luxembourg",
+  "short_name": "IINNOVALUX",
+  "description": "Services professionnels de bricolage, maintenance et travaux au Luxembourg",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1D1B16",
+  "theme_color": "#1B1B19",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["business", "lifestyle"],
+  "lang": "fr",
+  "dir": "ltr"
+}
