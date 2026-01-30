@@ -17,6 +17,7 @@ import Button from '../ui/Button.astro';
       fetchpriority="high"
       loading="eager"
       decoding="async"
+      elementtiming="hero-image"
       class="w-full h-full object-cover"
     />
     <!-- Elevated gradient overlay - starts higher -->
@@ -32,7 +33,7 @@ import Button from '../ui/Button.astro';
 
         <!-- Left: Main headline -->
         <div class="max-w-4xl mx-auto md:mx-0">
-          <h1 class="hero-title font-display text-white leading-[0.9] tracking-[-0.02em]">
+          <h1 class="hero-title font-display text-white leading-[0.9] tracking-[-0.02em]" elementtiming="hero-heading">
             <span class="block text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl">Travaux, Réparation</span>
             <span class="block text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl">& Maintenance</span>
             <span class="block text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl italic font-light text-gold mt-2 md:mt-3">au Luxembourg</span>
@@ -100,8 +101,19 @@ import Button from '../ui/Button.astro';
   <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-primary to-transparent pointer-events-none"></div>
 </section>
 
+<script>
+  // Trigger animations after LCP is detected (requestAnimationFrame ensures render complete)
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.hero-title, .hero-tagline, .hero-cta, .hero-scroll').forEach(el => {
+        el.classList.add('animate');
+      });
+    });
+  });
+</script>
+
 <style>
-  /* Start visible for LCP, animate only if motion is preferred */
+  /* Start visible for LCP - animations triggered by JS after load */
   .hero-title,
   .hero-tagline,
   .hero-cta,
@@ -111,16 +123,16 @@ import Button from '../ui/Button.astro';
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .hero-title,
-    .hero-tagline,
-    .hero-cta,
-    .hero-scroll {
-      animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    .hero-title.animate,
+    .hero-tagline.animate,
+    .hero-cta.animate,
+    .hero-scroll.animate {
+      animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    .hero-tagline { animation-delay: 0.15s; }
-    .hero-cta { animation-delay: 0.3s; }
-    .hero-scroll { animation-delay: 0.45s; }
+    .hero-tagline.animate { animation-delay: 0.15s; }
+    .hero-cta.animate { animation-delay: 0.3s; }
+    .hero-scroll.animate { animation-delay: 0.45s; }
 
     @keyframes fadeUp {
       from {
