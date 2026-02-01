@@ -20,7 +20,6 @@ export const footerNavigation = {
     { label: 'Petits travaux', href: '/services/petits-travaux' },
     { label: 'Déménagement', href: '/services/demenagement' },
     { label: 'Dépannage', href: '/services/depannage' },
-    { label: 'Réparations électriques', href: '/services/reparations-electriques' },
   ],
   links: [
     { label: 'Accueil', href: '/' },
