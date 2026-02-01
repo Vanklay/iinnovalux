@@ -6,6 +6,10 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://iinnovalux.lu',
+  trailingSlash: 'never',
+  build: {
+    format: 'file'
+  },
   vite: {
     plugins: [tailwindcss()]
   },
