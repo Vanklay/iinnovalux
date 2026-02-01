@@ -56,7 +56,7 @@ Basés à Born, nous intervenons dans tout le Luxembourg avec une garantie de qu
   },
   {
     slug: 'montage-meubles-ikea-luxembourg',
-    title: 'Montage de meubles IKEA au Luxembourg : guide complet',
+    title: 'Montage de meubles IKEA : guide complet',
     excerpt: 'Vous avez acheté des meubles IKEA à Arlon ou en ligne ? Découvrez nos conseils pour un montage professionnel et sécurisé.',
     date: '2026-01-10',
     category: 'Services',
@@ -95,7 +95,7 @@ Nous intervenons dans tout le Luxembourg : Luxembourg-Ville, Esch-sur-Alzette, D
   },
   {
     slug: 'entretien-jardin-luxembourg-printemps',
-    title: 'Préparer son jardin au printemps au Luxembourg',
+    title: 'Préparer son jardin au printemps',
     excerpt: 'Guide pratique pour l\'entretien de votre jardin luxembourgeois au printemps. Taille, tonte, plantations et conseils locaux.',
     date: '2026-01-05',
     category: 'Saisonnier',
@@ -214,7 +214,7 @@ Intervention rapide dans tout le Luxembourg, tarifs transparents, et devis gratu
   },
   {
     slug: 'demenagement-luxembourg-conseils',
-    title: 'Déménager au Luxembourg : guide pratique complet',
+    title: 'Déménager au Luxembourg : guide pratique',
     excerpt: 'Tout savoir pour réussir votre déménagement au Luxembourg. Checklist, démarches administratives et conseils pratiques.',
     date: '2025-12-15',
     category: 'Conseils',
@@ -270,7 +270,7 @@ Véhicule assuré et équipe expérimentée pour un déménagement serein.
   },
   {
     slug: 'demander-devis-travaux-luxembourg',
-    title: 'Comment demander un devis travaux au Luxembourg',
+    title: 'Comment demander un devis travaux',
     excerpt: 'Guide pour obtenir et comparer des devis de travaux au Luxembourg. Conseils pour bien préparer votre projet.',
     date: '2026-01-20',
     category: 'Conseils',
@@ -344,7 +344,7 @@ Contactez-nous pour obtenir votre devis personnalisé.
   },
   {
     slug: 'checklist-maison-hiver-luxembourg',
-    title: 'Checklist pour préparer sa maison à l\'hiver au Luxembourg',
+    title: 'Préparer sa maison pour l\'hiver : checklist',
     excerpt: 'Protégez votre maison du froid luxembourgeois. Liste des vérifications essentielles avant l\'hiver.',
     date: '2025-11-15',
     category: 'Saisonnier',
@@ -468,7 +468,7 @@ Nous privilégions toujours le recyclage et le don avant l'élimination. Chaque 
   },
   {
     slug: 'reparation-parquet-luxembourg',
-    title: 'Réparation et entretien du parquet au Luxembourg',
+    title: 'Réparation et entretien du parquet',
     excerpt: 'Parquet rayé, lames abîmées ou grincements ? Guide complet pour réparer et entretenir votre parquet au Luxembourg.',
     date: '2025-11-01',
     category: 'Services',
@@ -535,7 +535,7 @@ Devis gratuit dans tout le Luxembourg.
   },
   {
     slug: 'installer-television-murale-luxembourg',
-    title: 'Installation TV murale au Luxembourg : guide pratique',
+    title: 'Installation TV murale : guide pratique',
     excerpt: 'Comment fixer votre télévision au mur en toute sécurité ? Guide complet pour une installation professionnelle.',
     date: '2025-10-20',
     category: 'Services',
@@ -594,7 +594,7 @@ IINNOVALUX installe votre TV murale dans les règles de l'art. Contactez-nous po
   },
   {
     slug: 'petits-travaux-locataire-luxembourg',
-    title: 'Petits travaux : que peut faire un locataire au Luxembourg ?',
+    title: 'Petits travaux : droits du locataire',
     excerpt: 'Quelles réparations incombent au locataire au Luxembourg ? Droits, obligations et conseils pratiques.',
     date: '2025-10-10',
     category: 'Conseils',
@@ -663,7 +663,7 @@ Nos factures détaillées vous permettent de justifier les interventions auprès
   },
   {
     slug: 'elagage-arbres-luxembourg-reglementation',
-    title: 'Élagage et abattage d\'arbres au Luxembourg : réglementation',
+    title: 'Élagage d\'arbres : réglementation',
     excerpt: 'Quelles sont les règles pour couper un arbre au Luxembourg ? Autorisations, périodes et conseils pratiques.',
     date: '2025-09-25',
     category: 'Conseils',
@@ -730,7 +730,7 @@ Nous vérifions la réglementation applicable et vous conseillons sur les démar
   },
   {
     slug: 'securiser-maison-vacances-luxembourg',
-    title: 'Sécuriser sa maison avant les vacances au Luxembourg',
+    title: 'Sécuriser sa maison avant les vacances',
     excerpt: 'Checklist complète pour partir en vacances l\'esprit tranquille. Sécurité, entretien et astuces anti-cambriolage.',
     date: '2025-09-15',
     category: 'Conseils',
@@ -872,7 +872,7 @@ Demandez votre devis gratuit pour l'installation de votre cuisine.
   },
   {
     slug: 'handyman-vs-artisan-difference-luxembourg',
-    title: 'Handyman ou artisan : quelle différence au Luxembourg ?',
+    title: 'Handyman ou artisan : quelle différence ?',
     excerpt: 'Bricoleur, handyman, artisan... Qui appeler selon vos travaux ? Guide pour faire le bon choix au Luxembourg.',
     date: '2025-08-20',
     category: 'Conseils',
@@ -947,7 +947,7 @@ Nous intervenons sur tous les petits travaux et savons vous orienter vers des ar
   },
   {
     slug: 'amenager-terrasse-balcon-luxembourg',
-    title: 'Aménager sa terrasse ou son balcon au Luxembourg',
+    title: 'Aménager sa terrasse ou son balcon',
     excerpt: 'Idées et conseils pour transformer votre espace extérieur. Mobilier, plantes et aménagements pratiques.',
     date: '2025-08-10',
     category: 'Conseils',
@@ -1024,7 +1024,7 @@ Contactez-nous pour aménager votre espace extérieur.
   },
   {
     slug: 'urgence-plomberie-que-faire-luxembourg',
-    title: 'Urgence plomberie au Luxembourg : les bons réflexes',
+    title: 'Urgence plomberie : les bons réflexes',
     excerpt: 'Fuite d\'eau, canalisation bouchée, chauffe-eau en panne ? Guide des premiers gestes et contacts utiles.',
     date: '2025-07-25',
     category: 'Urgences',
@@ -1104,7 +1104,7 @@ Pour les interventions complexes, nous vous orientons vers nos plombiers partena
   },
   {
     slug: 'normes-electriques-luxembourg-locataire',
-    title: 'Normes électriques au Luxembourg : ce que le locataire doit savoir',
+    title: 'Normes électriques : guide pour locataires',
     excerpt: 'Prises, interrupteurs, tableau électrique... Les bases de la sécurité électrique pour les locataires.',
     date: '2025-07-10',
     category: 'Conseils',
