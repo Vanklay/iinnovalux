@@ -68,7 +68,7 @@ const testimonials: Testimonial[] = [
       <h2 class="text-3xl md:text-4xl font-display text-white tracking-tight mb-4">
         Ils nous font confiance
       </h2>
-      <p class="text-white/40 text-base">
+      <p class="text-white/60 text-base">
         Avis de nos clients au Luxembourg
       </p>
     </div>
@@ -105,7 +105,7 @@ const testimonials: Testimonial[] = [
                 </div>
                 <div>
                   <div class="font-medium text-white">{testimonial.name}</div>
-                  <div class="text-white/40 text-sm">{testimonial.location} · {testimonial.service}</div>
+                  <div class="text-white/60 text-sm">{testimonial.location} · {testimonial.service}</div>
                 </div>
               </div>
 
@@ -115,13 +115,15 @@ const testimonials: Testimonial[] = [
       </div>
 
       <!-- Bullets -->
-      <div class="flex justify-center gap-3 mt-16">
+      <div class="flex justify-center gap-2 mt-16">
         {testimonials.map((_, index) => (
           <button
-            class="testimonial-bullet w-2 h-2 rounded-full bg-white/20 transition-all duration-300"
+            class="testimonial-bullet w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
             data-index={index}
             aria-label={`Témoignage ${index + 1}`}
-          />
+          >
+            <span class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300"></span>
+          </button>
         ))}
       </div>
     </div>
@@ -150,7 +152,7 @@ const testimonials: Testimonial[] = [
     pointer-events: auto;
   }
 
-  .testimonial-bullet.active {
+  .testimonial-bullet.active span {
     background: var(--color-gold, #C9A227);
     width: 24px;
   }
