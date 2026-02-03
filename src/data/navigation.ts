@@ -26,6 +26,7 @@ export const footerNavigation = {
     { label: 'À propos', href: '/a-propos' },
     { label: 'Réalisations', href: '/realisations' },
     { label: 'Conseils & Astuces', href: '/blog' },
+    { label: 'FAQ', href: '/faq' },
     { label: 'Contact', href: '/contact' },
     { label: 'Mentions légales', href: '/mentions-legales' },
   ],

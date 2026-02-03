@@ -271,7 +271,7 @@ Véhicule assuré et équipe expérimentée pour un déménagement serein.
   {
     slug: 'demander-devis-travaux-luxembourg',
     title: 'Comment demander un devis travaux',
-    excerpt: 'Guide pour obtenir et comparer des devis de travaux au Luxembourg. Conseils pour bien préparer votre projet.',
+    excerpt: 'Guide complet pour obtenir et comparer des devis de travaux au Luxembourg. Conseils pratiques pour bien préparer votre projet de rénovation.',
     date: '2026-01-20',
     category: 'Conseils',
     keywords: 'devis travaux Luxembourg, demander devis, comparer devis, projet travaux',
@@ -345,7 +345,7 @@ Contactez-nous pour obtenir votre devis personnalisé.
   {
     slug: 'checklist-maison-hiver-luxembourg',
     title: 'Préparer sa maison pour l\'hiver : checklist',
-    excerpt: 'Protégez votre maison du froid luxembourgeois. Liste des vérifications essentielles avant l\'hiver.',
+    excerpt: 'Protégez votre maison du froid luxembourgeois avec notre checklist complète. Vérifications essentielles chauffage, isolation et sécurité avant l\'hiver.',
     date: '2025-11-15',
     category: 'Saisonnier',
     keywords: 'préparer maison hiver, entretien maison Luxembourg, chauffage, isolation Luxembourg',
@@ -406,7 +406,7 @@ IINNOVALUX peut réaliser ces vérifications pour vous. Un check-up complet de v
   {
     slug: 'debarras-cave-grenier-luxembourg',
     title: 'Débarras de cave et grenier au Luxembourg',
-    excerpt: 'Comment vider sa cave ou son grenier au Luxembourg ? Solutions et réglementation des encombrants.',
+    excerpt: 'Comment vider sa cave ou son grenier au Luxembourg ? Solutions de débarras, tri sélectif, recyclage et réglementation des encombrants.',
     date: '2025-12-01',
     category: 'Services',
     keywords: 'débarras cave Luxembourg, vider grenier, encombrants Luxembourg, évacuation déchets',
@@ -536,7 +536,7 @@ Devis gratuit dans tout le Luxembourg.
   {
     slug: 'installer-television-murale-luxembourg',
     title: 'Installation TV murale : guide pratique',
-    excerpt: 'Comment fixer votre télévision au mur en toute sécurité ? Guide complet pour une installation professionnelle.',
+    excerpt: 'Comment fixer votre télévision au mur en toute sécurité au Luxembourg ? Guide complet avec conseils pour une installation professionnelle.',
     date: '2025-10-20',
     category: 'Services',
     keywords: 'installation TV murale Luxembourg, fixer télévision mur, support TV, câbles cachés',
@@ -595,7 +595,7 @@ IINNOVALUX installe votre TV murale dans les règles de l'art. Contactez-nous po
   {
     slug: 'petits-travaux-locataire-luxembourg',
     title: 'Petits travaux : droits du locataire',
-    excerpt: 'Quelles réparations incombent au locataire au Luxembourg ? Droits, obligations et conseils pratiques.',
+    excerpt: 'Quelles réparations incombent au locataire au Luxembourg ? Droits, obligations légales et conseils pratiques pour l\'entretien de votre logement.',
     date: '2025-10-10',
     category: 'Conseils',
     keywords: 'travaux locataire Luxembourg, réparations locatives, droits locataire, bail Luxembourg',
@@ -664,7 +664,7 @@ Nos factures détaillées vous permettent de justifier les interventions auprès
   {
     slug: 'elagage-arbres-luxembourg-reglementation',
     title: 'Élagage d\'arbres : réglementation',
-    excerpt: 'Quelles sont les règles pour couper un arbre au Luxembourg ? Autorisations, périodes et conseils pratiques.',
+    excerpt: 'Quelles sont les règles pour couper un arbre au Luxembourg ? Autorisations nécessaires, périodes de taille et conseils pratiques d\'élagage.',
     date: '2025-09-25',
     category: 'Conseils',
     keywords: 'élagage arbres Luxembourg, abattage arbre, autorisation coupe arbre, taille haies Luxembourg',
@@ -808,7 +808,7 @@ Contactez-nous pour un service personnalisé pendant vos vacances.
   {
     slug: 'cuisine-equipee-installation-luxembourg',
     title: 'Installation de cuisine équipée au Luxembourg',
-    excerpt: 'Faire installer sa cuisine par un professionnel au Luxembourg. Étapes et conseils pour réussir votre projet.',
+    excerpt: 'Faire installer sa cuisine équipée par un professionnel au Luxembourg. Étapes, prix et conseils pour réussir votre projet cuisine.',
     date: '2025-09-01',
     category: 'Services',
     keywords: 'installation cuisine Luxembourg, montage cuisine équipée, pose cuisine IKEA, cuisiniste Luxembourg',
@@ -873,7 +873,7 @@ Demandez votre devis gratuit pour l'installation de votre cuisine.
   {
     slug: 'handyman-vs-artisan-difference-luxembourg',
     title: 'Handyman ou artisan : quelle différence ?',
-    excerpt: 'Bricoleur, handyman, artisan... Qui appeler selon vos travaux ? Guide pour faire le bon choix au Luxembourg.',
+    excerpt: 'Bricoleur, handyman, artisan spécialisé... Qui appeler selon vos travaux au Luxembourg ? Guide complet pour faire le bon choix.',
     date: '2025-08-20',
     category: 'Conseils',
     keywords: 'handyman Luxembourg, artisan Luxembourg, différence bricoleur artisan, travaux maison',
@@ -948,7 +948,7 @@ Nous intervenons sur tous les petits travaux et savons vous orienter vers des ar
   {
     slug: 'amenager-terrasse-balcon-luxembourg',
     title: 'Aménager sa terrasse ou son balcon',
-    excerpt: 'Idées et conseils pour transformer votre espace extérieur. Mobilier, plantes et aménagements pratiques.',
+    excerpt: 'Idées et conseils pratiques pour transformer votre terrasse ou balcon au Luxembourg. Mobilier, plantes et aménagements extérieurs.',
     date: '2025-08-10',
     category: 'Conseils',
     keywords: 'aménager terrasse Luxembourg, balcon, mobilier extérieur, jardinage balcon',
@@ -1025,7 +1025,7 @@ Contactez-nous pour aménager votre espace extérieur.
   {
     slug: 'urgence-plomberie-que-faire-luxembourg',
     title: 'Urgence plomberie : les bons réflexes',
-    excerpt: 'Fuite d\'eau, canalisation bouchée, chauffe-eau en panne ? Guide des premiers gestes et contacts utiles.',
+    excerpt: 'Fuite d\'eau, canalisation bouchée, chauffe-eau en panne au Luxembourg ? Guide des premiers gestes d\'urgence et contacts utiles.',
     date: '2025-07-25',
     category: 'Urgences',
     keywords: 'urgence plomberie Luxembourg, fuite eau, plombier urgence, dépannage plomberie',
@@ -1105,7 +1105,7 @@ Pour les interventions complexes, nous vous orientons vers nos plombiers partena
   {
     slug: 'normes-electriques-luxembourg-locataire',
     title: 'Normes électriques : guide pour locataires',
-    excerpt: 'Prises, interrupteurs, tableau électrique... Les bases de la sécurité électrique pour les locataires.',
+    excerpt: 'Prises, interrupteurs, tableau électrique... Les bases de la sécurité électrique pour les locataires au Luxembourg. Guide complet.',
     date: '2025-07-10',
     category: 'Conseils',
     keywords: 'normes électriques Luxembourg, sécurité électrique, installation électrique, locataire',

@@ -1,0 +1,198 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroPage from '../components/sections/HeroPage.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+
+const faqs = [
+  {
+    category: 'Général',
+    questions: [
+      {
+        question: 'Dans quelles zones intervenez-vous ?',
+        answer: 'Nous intervenons dans tout le Luxembourg : Luxembourg-Ville, Esch-sur-Alzette, Differdange, Dudelange, Ettelbruck, et toutes les communes environnantes. Notre équipe est basée à Born et se déplace dans tout le pays.'
+      },
+      {
+        question: 'Comment demander un devis ?',
+        answer: 'Vous pouvez demander un devis gratuit via notre formulaire de contact, par téléphone au +352 621 479 364, ou par email. Nous vous répondons généralement sous 24 heures.'
+      },
+      {
+        question: 'Le devis est-il gratuit ?',
+        answer: 'Oui, tous nos devis sont gratuits et sans engagement. Pour les travaux importants, nous nous déplaçons sur place pour évaluer précisément vos besoins.'
+      },
+      {
+        question: 'Quelles langues parlez-vous ?',
+        answer: 'Notre équipe parle français, portugais, anglais, allemand et luxembourgeois. Nous nous adaptons à votre langue de préférence.'
+      },
+      {
+        question: 'Êtes-vous assurés ?',
+        answer: 'Oui, nous disposons d\'une assurance responsabilité civile professionnelle qui couvre tous nos travaux et interventions.'
+      }
+    ]
+  },
+  {
+    category: 'Services',
+    questions: [
+      {
+        question: 'Quels types de travaux réalisez-vous ?',
+        answer: 'Nous proposons une large gamme de services : petits travaux de réparation, montage de meubles (IKEA et autres), entretien extérieur et jardinage, dépannage d\'urgence 24h/7, débarras de caves et greniers, et aide au déménagement.'
+      },
+      {
+        question: 'Montez-vous les meubles IKEA ?',
+        answer: 'Oui, nous sommes spécialisés dans le montage de meubles IKEA : armoires PAX, cuisines METOD, bureaux, lits... Nous montons également les meubles d\'autres marques comme Conforama, BUT, ou les achats en ligne.'
+      },
+      {
+        question: 'Proposez-vous des contrats d\'entretien pour le jardin ?',
+        answer: 'Oui, nous proposons des contrats d\'entretien régulier (hebdomadaire, bi-mensuel ou mensuel) pour la tonte, la taille des haies, le désherbage et l\'entretien général de vos espaces verts.'
+      },
+      {
+        question: 'Intervenez-vous pour les urgences ?',
+        answer: 'Oui, notre service de dépannage est disponible 24h/24 et 7j/7 pour les urgences : fuites d\'eau, serrures bloquées, arbres tombés après tempête, et autres situations urgentes.'
+      },
+      {
+        question: 'Faites-vous le débarras après un décès ou une succession ?',
+        answer: 'Oui, nous accompagnons les familles dans ces moments difficiles. Nous effectuons le tri, le don aux associations partenaires, le recyclage et l\'évacuation complète des biens.'
+      }
+    ]
+  },
+  {
+    category: 'Intervention',
+    questions: [
+      {
+        question: 'Quel est le délai d\'intervention ?',
+        answer: 'Pour les travaux standards, nous intervenons généralement sous 48 à 72 heures. Pour les urgences, nous nous engageons à intervenir dans les 2 heures suivant votre appel.'
+      },
+      {
+        question: 'Fournissez-vous le matériel ?',
+        answer: 'Nous apportons tout l\'outillage nécessaire. Pour le matériel spécifique (visserie, chevilles, pièces de rechange), nous pouvons soit le fournir, soit vous conseiller sur ce qu\'il faut acheter au préalable.'
+      },
+      {
+        question: 'Nettoyez-vous après l\'intervention ?',
+        answer: 'Oui, le nettoyage du chantier est systématiquement inclus dans nos prestations. Nous laissons toujours les lieux propres et rangés.'
+      },
+      {
+        question: 'Pouvez-vous évacuer les déchets ?',
+        answer: 'Oui, nous proposons l\'évacuation des déchets, emballages et encombrants vers les centres de recyclage appropriés. Ce service peut être inclus ou facturé en supplément selon le volume.'
+      },
+      {
+        question: 'Travaillez-vous le week-end ?',
+        answer: 'Nos horaires standards sont du lundi au vendredi de 8h à 18h. Le week-end, nous intervenons uniquement pour les urgences. Contactez-nous pour discuter de vos contraintes horaires.'
+      }
+    ]
+  },
+  {
+    category: 'Paiement',
+    questions: [
+      {
+        question: 'Quels modes de paiement acceptez-vous ?',
+        answer: 'Nous acceptons les paiements par virement bancaire, carte bancaire et espèces. Le paiement s\'effectue généralement à la fin de l\'intervention.'
+      },
+      {
+        question: 'Demandez-vous un acompte ?',
+        answer: 'Pour les petits travaux, aucun acompte n\'est demandé. Pour les projets plus importants (déménagement, gros débarras), un acompte de 30% peut être demandé à la confirmation.'
+      },
+      {
+        question: 'Fournissez-vous une facture ?',
+        answer: 'Oui, nous fournissons systématiquement une facture détaillée conforme à la législation luxembourgeoise, avec notre numéro de TVA et toutes les mentions légales.'
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Questions Fréquentes"
+  description="FAQ IINNOVALUX : réponses à vos questions sur nos services de bricolage, montage meubles, entretien jardin et dépannage au Luxembourg. Devis gratuit."
+  keywords="FAQ bricolage Luxembourg, questions handyman, devis travaux Luxembourg, services maison Luxembourg"
+>
+  <HeroPage
+    title="Questions Fréquentes"
+    subtitle="Trouvez rapidement les réponses à vos questions"
+    breadcrumb={[
+      { label: 'Accueil', href: '/' },
+      { label: 'FAQ' }
+    ]}
+  />
+
+  <section class="py-16 md:py-24">
+    <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
+
+      {faqs.map((section, sectionIndex) => (
+        <div class="mb-12" data-reveal style={`animation-delay: ${sectionIndex * 0.1}s`}>
+          <h2 class="font-display text-2xl text-white mb-6 flex items-center gap-4">
+            <span class="w-8 h-8 rounded-lg bg-gold/20 flex items-center justify-center text-gold text-sm font-mono">
+              {String(sectionIndex + 1).padStart(2, '0')}
+            </span>
+            {section.category}
+          </h2>
+
+          <div class="space-y-4">
+            {section.questions.map((faq, index) => (
+              <details class="faq-item group bg-dark-secondary rounded-xl border border-white/5 hover:border-gold/20 transition-colors">
+                <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none">
+                  <span class="text-white font-medium pr-4">{faq.question}</span>
+                  <span class="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-open:bg-gold/20 transition-colors">
+                    <svg class="w-4 h-4 text-white/60 group-open:text-gold transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-5 pb-5 pt-0">
+                  <p class="text-white/60 leading-relaxed">{faq.answer}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <!-- Contact CTA -->
+      <div class="mt-16 p-8 bg-gradient-to-br from-gold/10 to-transparent rounded-2xl border border-gold/20 text-center" data-reveal>
+        <h3 class="font-display text-xl text-white mb-3">Vous n'avez pas trouvé votre réponse ?</h3>
+        <p class="text-white/60 mb-6">Notre équipe est là pour répondre à toutes vos questions.</p>
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-3 px-6 py-3 bg-gold text-dark-primary font-medium rounded-full hover:bg-gold/90 transition-colors"
+        >
+          Contactez-nous
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <CTABanner
+    title="Prêt à démarrer votre projet ?"
+    subtitle="Demandez votre devis gratuit dès aujourd'hui"
+    buttonText="Demander un devis"
+    buttonHref="/contact"
+  />
+</BaseLayout>
+
+<style>
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item[open] summary {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 0;
+  }
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.flatMap(section =>
+    section.questions.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  )
+})} />
