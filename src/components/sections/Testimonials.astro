@@ -274,3 +274,28 @@ const testimonials: Testimonial[] = [
   carousel?.addEventListener('mouseenter', stopAutoPlay);
   carousel?.addEventListener('mouseleave', startAutoPlay);
 </script>
+
+<!-- Review Schema for testimonials -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "IINNOVALUX SARL-s",
+  "@id": "https://iinnovalux.lu/#business",
+  "review": testimonials.map(testimonial => ({
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": testimonial.rating,
+      "bestRating": 5
+    },
+    "author": {
+      "@type": "Person",
+      "name": testimonial.name
+    },
+    "reviewBody": testimonial.text,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Google"
+    }
+  }))
+})} />

@@ -27,6 +27,7 @@ const htmlContent = marked(post.content);
   description={post.excerpt}
   keywords={post.keywords}
   type="article"
+  breadcrumb={[{ label: 'Accueil', href: '/' }, { label: 'Conseils', href: '/blog' }, { label: post.title }]}
 >
   <!-- Article Schema -->
   <script type="application/ld+json" set:html={JSON.stringify({

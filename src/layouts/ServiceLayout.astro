@@ -1,15 +1,21 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
 interface Props {
   title: string;
   description: string;
   keywords?: string;
+  breadcrumb?: BreadcrumbItem[];
 }
 
-const { title, description, keywords } = Astro.props;
+const { title, description, keywords, breadcrumb } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} keywords={keywords}>
+<BaseLayout title={title} description={description} keywords={keywords} breadcrumb={breadcrumb}>
   <slot />
 </BaseLayout>

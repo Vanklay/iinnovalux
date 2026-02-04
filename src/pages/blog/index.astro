@@ -10,9 +10,10 @@ const categories = [...new Set(blogPosts.map(post => post.category))];
 ---
 
 <BaseLayout
-  title="Conseils & Astuces"
+  title="Conseils et Astuces Bricolage Maison Luxembourg"
   description="Conseils pratiques pour l'entretien de votre maison au Luxembourg. Bricolage, jardinage, déménagement, prix des travaux et astuces de professionnels."
   keywords="conseils bricolage Luxembourg, astuces maison, entretien domicile, prix travaux Luxembourg, blog handyman"
+  breadcrumb={[{ label: 'Accueil', href: '/' }, { label: 'Conseils' }]}
 >
   <!-- Hero -->
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">

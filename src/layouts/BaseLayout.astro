@@ -6,12 +6,18 @@ import MobileMenu from '../components/global/MobileMenu.astro';
 import FloatingContact from '../components/global/FloatingContact.astro';
 import { company } from '../data/company';
 
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
 interface Props {
   title: string;
   description: string;
   image?: string;
   keywords?: string;
   type?: string;
+  breadcrumb?: BreadcrumbItem[];
 }
 
 const {
@@ -19,8 +25,29 @@ const {
   description,
   image = '/og-default.jpg',
   keywords = 'bricoleur Luxembourg, handyman Luxembourg, réparations maison, maintenance domicile, montage meubles, entretien jardin, dépannage urgence, déménagement Luxembourg, petits travaux, IINNOVALUX',
-  type = 'website'
+  type = 'website',
+  breadcrumb = []
 } = Astro.props;
+
+// Generate breadcrumb schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://iinnovalux.lu"
+    },
+    ...breadcrumb.filter(item => item.label !== 'Accueil').map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 2,
+      "name": item.label,
+      ...(item.href ? { "item": `https://iinnovalux.lu${item.href}` } : {})
+    }))
+  ]
+};
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const fullImageURL = new URL(image, Astro.site);
@@ -301,18 +328,7 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
     })} />
 
     <!-- BreadcrumbList Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Accueil",
-          "item": "https://iinnovalux.lu"
-        }
-      ]
-    })} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </head>
   <body class="min-h-screen flex flex-col">
     <!-- Google Tag Manager (noscript) -->

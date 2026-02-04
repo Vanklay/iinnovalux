@@ -20,15 +20,17 @@ interface Props {
 
 const { service } = Astro.props;
 
-// SEO-optimized description with location
+// SEO-optimized title and description with location
+const seoTitle = `${service.title} Luxembourg - Service Professionnel`;
 const seoDescription = `${service.title} au Luxembourg par IINNOVALUX. ${service.description} Devis gratuit, intervention rapide. +352 621 479 364`;
 const seoKeywords = `${service.title.toLowerCase()} Luxembourg, ${service.slug.replace(/-/g, ' ')} Luxembourg, ${service.includes.slice(0, 3).join(', ').toLowerCase()}, IINNOVALUX`;
 ---
 
 <ServiceLayout
-  title={service.title}
+  title={seoTitle}
   description={seoDescription}
   keywords={seoKeywords}
+  breadcrumb={[{ label: 'Accueil', href: '/' }, { label: 'Services', href: '/services' }, { label: service.title }]}
 >
   <HeroPage
     title={service.title}
