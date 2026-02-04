@@ -150,7 +150,13 @@ const testimonials: Testimonial[] = [
 <style>
   .testimonial-track {
     position: relative;
-    min-height: 280px;
+    min-height: 380px;
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-track {
+      min-height: 420px;
+    }
   }
 
   .testimonial-slide {
