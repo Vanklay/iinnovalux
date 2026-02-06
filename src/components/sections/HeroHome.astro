@@ -3,23 +3,25 @@ import Button from '../ui/Button.astro';
 ---
 
 <section class="relative h-screen min-h-[600px] flex items-end bg-dark-primary overflow-hidden">
-  <!-- Background image -->
-  <div class="absolute inset-0">
-    <img
-      src="/images/hero-image.webp"
-      srcset="/images/hero-image-480.webp 480w,
-              /images/hero-image-800.webp 800w,
-              /images/hero-image.webp 1415w"
-      sizes="100vw"
-      alt="Services de bricolage et maintenance au Luxembourg"
-      width="1415"
-      height="1320"
-      fetchpriority="high"
-      loading="eager"
-      decoding="async"
-      elementtiming="hero-image"
-      class="w-full h-full object-cover"
-    />
+  <!-- Background image with parallax -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div id="hero-parallax" class="absolute inset-0 will-change-transform" style="transform: translateY(0); height: 120%;">
+      <img
+        src="/images/hero-image.webp"
+        srcset="/images/hero-image-480.webp 480w,
+                /images/hero-image-800.webp 800w,
+                /images/hero-image.webp 1415w"
+        sizes="100vw"
+        alt="Services de bricolage et maintenance au Luxembourg"
+        width="1415"
+        height="1320"
+        fetchpriority="high"
+        loading="eager"
+        decoding="async"
+        elementtiming="hero-image"
+        class="w-full h-full object-cover"
+      />
+    </div>
     <!-- Elevated gradient overlay - starts higher -->
     <div class="absolute inset-0 bg-gradient-to-t from-dark-primary via-dark-primary/80 via-50% to-transparent"></div>
   </div>
@@ -107,7 +109,7 @@ import Button from '../ui/Button.astro';
               </svg>
             ))}
           </div>
-          <span class="text-xs text-white/50">(21 avis)</span>
+          <span class="text-xs text-white/50">(22 avis)</span>
         </a>
 
       </div>
@@ -128,6 +130,32 @@ import Button from '../ui/Button.astro';
       });
     });
   });
+
+  // Lightweight parallax effect (respects reduced motion)
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    const parallaxEl = document.getElementById('hero-parallax');
+    let ticking = false;
+
+    const updateParallax = () => {
+      const scrollY = window.scrollY;
+      const heroHeight = window.innerHeight;
+
+      // Only apply parallax while hero is visible
+      if (scrollY < heroHeight && parallaxEl) {
+        parallaxEl.style.transform = `translateY(${scrollY * 0.35}px)`;
+      }
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 </script>
 
 <style>
