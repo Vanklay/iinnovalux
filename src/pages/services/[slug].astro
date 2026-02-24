@@ -131,4 +131,42 @@ const seoKeywords = `${service.title.toLowerCase()} Luxembourg, ${service.slug.r
   />
 
   <RelatedServices currentSlug={service.slug} />
+
+  <!-- Service Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.fullDescription,
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://iinnovalux.lu/#business",
+      "name": "IINNOVALUX SARL-s"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Luxembourg"
+    },
+    "serviceType": service.title,
+    "url": `https://iinnovalux.lu/services/${service.slug}`,
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR"
+      }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": service.title,
+      "itemListElement": service.includes.map((item, index) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": item
+        }
+      }))
+    }
+  })} />
 </ServiceLayout>
