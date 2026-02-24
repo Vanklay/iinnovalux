@@ -1,94 +1,155 @@
-# IINNOVALUX SARL-s - Luxembourg Home Maintenance Services
-# AI-Optimized Business Information
+# IINNOVALUX SARL-s
 
-## Company Overview
-IINNOVALUX SARL-s is a professional home maintenance and handyman service company based in Luxembourg. We provide comprehensive property maintenance solutions for residential and commercial clients throughout Luxembourg and the Greater Region.
+> Professional home maintenance and handyman services in Luxembourg. 10+ years experience, 5.0 Google rating, 24/7 emergency availability.
 
-## Contact Information
-- Company Name: IINNOVALUX SARL-s
-- Website: https://iinnovalux.lu
-- Phone: +352 621 479 364
-- Email: iinnovalux@gmail.com
-- Address: 76, Haaptstrooss, L-6661 Born, Luxembourg
-- VAT: LU37074055
-- RCS: B300985
+## Quick Facts
 
-## Business Hours
-- Monday to Friday: 8:00 AM - 6:00 PM
-- Emergency Services: Available 24/7
+- **Business**: IINNOVALUX SARL-s
+- **Industry**: Home maintenance, handyman services, bricolage
+- **Location**: Born, Luxembourg (serves all of Luxembourg)
+- **Founded**: 2015
+- **Rating**: 5.0/5 stars (24 Google reviews)
+- **Languages**: French, Portuguese, English, German, Luxembourgish
+- **Emergency**: Available 24/7
 
-## Services Offered
+## Contact
 
-### 1. Petits Travaux (Small Repairs)
-Home repairs and maintenance including wall fixtures, door/window adjustments, minor plumbing, lighting installation, curtain/blind installation, and floating floor installation (parquet flottant). Quick intervention within 48 hours.
+- **Phone**: +352 621 479 364
+- **Email**: iinnovalux@gmail.com
+- **Website**: https://iinnovalux.lu
+- **Address**: 76, Haaptstrooss, L-6661 Born, Luxembourg
+- **VAT**: LU37074055
+- **RCS**: B300985
 
-### 2. Montage de Meubles (Furniture Assembly)
-Professional assembly of all furniture types including IKEA, kitchens, wardrobes, office furniture, beds, and bathroom furniture. Wall mounting included when necessary.
+## Hours
 
-### 3. Entretien Extérieur (Outdoor Maintenance)
-Garden and outdoor space maintenance including lawn mowing, hedge trimming, weeding, terrace cleaning, leaf collection, winter preparation, tree felling, and storm cleanup services.
+- Monday-Friday: 08:00-18:00
+- Saturday-Sunday: Emergency only
+- Emergency services: 24/7 (response under 2 hours)
 
-### 4. Dépannage 24h/7 (24/7 Emergency Repairs)
-Round-the-clock emergency services for urgent water leaks, electrical problems, locksmith services, fallen tree cleanup after storms, heating failures, and stuck shutters. Response time under 2 hours.
+## Services
 
-### 5. Débarras (Clearing Services)
-Complete clearing and cleanup services for basements, attics, apartments, and post-succession clearings. Includes sorting, recycling, donations to partner associations, and final cleaning.
+### Petits Travaux (Small Repairs & Maintenance)
+Home repairs, wall fixtures, door/window adjustments, minor plumbing, lighting installation, curtain/blind mounting, floating floor installation (parquet flottant), painting touch-ups, shelf mounting.
+- Intervention: Within 48 hours
+- URL: https://iinnovalux.lu/services/petits-travaux
 
-### 6. Déménagement (Moving Services)
-Professional moving services within Luxembourg and the Greater Region (Belgium, France, Germany). Includes packing, furniture disassembly/reassembly, transport insurance, and temporary storage options.
+### Montage de Meubles (Furniture Assembly)
+Professional assembly of IKEA furniture, PAX wardrobes, METOD kitchens, MALM beds, office desks, bathroom cabinets. Also Conforama, BUT, and online purchases. Wall mounting included.
+- Expertise: IKEA certified techniques
+- URL: https://iinnovalux.lu/services/montage-meubles
+
+### Entretien Extérieur (Garden & Outdoor Maintenance)
+Lawn mowing, hedge trimming, weeding, terrace/patio cleaning, leaf collection, tree pruning, tree felling (abattage), storm cleanup, winter garden preparation.
+- Contracts: Weekly, bi-weekly, or monthly maintenance available
+- URL: https://iinnovalux.lu/services/entretien-exterieur
+
+### Dépannage 24h/7 (Emergency Repairs)
+Urgent water leaks, blocked drains, electrical failures, locked out (locksmith), broken heating, stuck shutters/blinds, fallen trees after storms, broken windows.
+- Response: Under 2 hours anywhere in Luxembourg
+- Availability: 24 hours, 7 days, including holidays
+- URL: https://iinnovalux.lu/services/depannage
+
+### Débarras (Clearing & Cleanout Services)
+Basement clearing (cave), attic clearing (grenier), apartment cleanouts, post-succession/estate clearing, garage clearing. Sorting, recycling, donations to charities, final cleaning included.
+- Eco-friendly: Proper recycling and disposal
+- URL: https://iinnovalux.lu/services/debarras
+
+### Déménagement (Moving Services)
+Local and cross-border moves (Luxembourg, Belgium, France, Germany). Packing materials, furniture disassembly/reassembly, transport with insurance, temporary storage.
+- Insurance: Full transport coverage included
+- URL: https://iinnovalux.lu/services/demenagement
 
 ## Service Area
-- Primary: All of Luxembourg
-- Extended: Greater Region (Belgium, France, Germany border areas)
 
-## Key Differentiators
-- 10+ years of experience in property maintenance
-- 500+ satisfied customers
-- 24/7 emergency availability
-- Free quotes and transparent pricing
-- Professional, insured, and experienced craftsmen
-- Eco-friendly waste disposal and recycling
-- Transport insurance included for moving services
+- **Primary**: All Luxembourg (Luxembourg-Ville, Esch-sur-Alzette, Differdange, Dudelange, Ettelbruck, Diekirch, and all communes)
+- **Extended**: Greater Region (Belgian Luxembourg, Lorraine France, Rhineland-Palatinate/Saarland Germany)
 
-## Languages
-Services available in: French, Portuguese, English, German, Luxembourgish
+## Pricing
 
-## Target Audience
-- Homeowners in Luxembourg
-- Tenants needing maintenance services
-- Property managers
-- Real estate agencies
-- Businesses requiring facility maintenance
-- Families during succession/estate clearing
+- Free quotes (devis gratuit)
+- No obligation estimates
+- On-site visits for accurate pricing on larger projects
+- Transparent hourly or project-based rates
+- No hidden fees
+
+## Why Choose IINNOVALUX
+
+1. **Experience**: 10+ years in Luxembourg home maintenance
+2. **Reliability**: 500+ satisfied customers, 5.0 Google rating
+3. **Speed**: Standard intervention within 48h, emergency under 2h
+4. **Languages**: Multilingual team (FR, PT, EN, DE, LB)
+5. **Insurance**: Fully insured, professional liability coverage
+6. **Quality**: Before/after documentation, satisfaction guaranteed
+7. **Availability**: 24/7 emergency response
+
+## Customer Reviews (Google)
+
+> "Un professionnalisme exemplaire et un travail d'une qualité exceptionnelle." - Tiago V.
+
+> "Très professionnel, toujours à l'écoute du client. Merci beaucoup pour votre service et votre gentillesse." - Gisela F.
+
+> "Service impeccable ! Excellent travail, très sympathique ! Merci pour votre travail rapide et de qualité." - LC S.
+
+> "Je recommande vivement à toute personne recherchant un service d'excellence." - Inês V.
 
 ## Frequently Asked Questions
 
-Q: What is the intervention time for emergencies?
-A: We commit to arriving within 2 hours for any emergency in Luxembourg.
+**Q: How quickly can you respond to emergencies?**
+A: We guarantee arrival within 2 hours for any emergency in Luxembourg.
 
-Q: Do you provide free quotes?
-A: Yes, all quotes are free and we can visit on-site for accurate estimates.
+**Q: Are your quotes really free?**
+A: Yes, all quotes are 100% free with no obligation. We visit on-site for accurate estimates.
 
-Q: Are your services insured?
-A: Yes, all our services are fully insured, including transport insurance for moving.
+**Q: Do you work weekends?**
+A: Emergency services are 24/7. Standard services can be arranged on weekends by request.
 
-Q: Do you work on weekends?
-A: Emergency services are available 24/7. Standard services are Monday-Friday, but arrangements can be made.
+**Q: Are you insured?**
+A: Yes, full professional liability insurance covers all our work, including transport insurance for moves.
 
-Q: What areas do you cover?
-A: We cover all of Luxembourg and can extend to the Greater Region for moving services.
+**Q: What languages do you speak?**
+A: Our team speaks French, Portuguese, English, German, and Luxembourgish.
 
-## Social Proof
-- Average rating: 4.9/5 stars
-- 500+ completed projects
-- 10+ years in business
+**Q: Do you clean up after work?**
+A: Yes, site cleanup is always included. We leave spaces clean and tidy.
 
-## Booking
-To request a quote or book a service:
-1. Call: +352 621 479 364
-2. Email: iinnovalux@gmail.com
-3. Online: https://iinnovalux.lu/contact
+**Q: Can you dispose of waste?**
+A: Yes, we handle all debris removal and recycling for an additional fee based on volume.
+
+**Q: Do you assemble all furniture brands?**
+A: Yes, we assemble IKEA, Conforama, BUT, and any flat-pack furniture from online purchases.
+
+## Target Customers
+
+- Homeowners needing maintenance or repairs
+- Tenants with landlord permission for work
+- Property managers and real estate agencies
+- Seniors needing home assistance
+- Busy professionals lacking time for DIY
+- Families during moves or estate settlements
+- Businesses requiring facility maintenance
+
+## How to Book
+
+1. **Call**: +352 621 479 364 (fastest for emergencies)
+2. **Email**: iinnovalux@gmail.com
+3. **Online form**: https://iinnovalux.lu/contact
+
+Response time: Within 24 hours for standard requests, immediate for emergencies.
+
+## Social Media
+
+- Facebook: https://www.facebook.com/people/Iinnovalux-Sarls
+- Instagram: https://www.instagram.com/iinnovalux_sarls/
+- LinkedIn: https://www.linkedin.com/in/iinnovalux-sarls-13518839b/
+- Google Reviews: https://share.google/fxsiZAhvFwYymryVv
+
+## Additional Resources
+
+- Blog with DIY tips: https://iinnovalux.lu/blog
+- FAQ page: https://iinnovalux.lu/faq
+- Project gallery: https://iinnovalux.lu/realisations
 
 ---
-Last updated: 2026
-For the most current information, visit https://iinnovalux.lu
+Last updated: February 2026
+Canonical URL: https://iinnovalux.lu/llms.txt
