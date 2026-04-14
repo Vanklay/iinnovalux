@@ -1,0 +1,120 @@
+---
+import ContactForm from './ContactForm.astro';
+---
+
+<section class="bg-gold relative overflow-hidden">
+  <!-- Animated blobs -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute top-[5%] left-[5%] w-[500px] h-[500px] bg-gold/40 rounded-full blur-[120px] animate-float-1"></div>
+    <div class="absolute top-[40%] right-[0%] w-[400px] h-[400px] bg-gold/35 rounded-full blur-[100px] animate-float-2"></div>
+    <div class="absolute bottom-[5%] left-[35%] w-[350px] h-[350px] bg-gold/25 rounded-full blur-[90px] animate-float-3"></div>
+  </div>
+
+  <div class="container mx-auto px-5 md:px-6 lg:px-16 relative z-10 py-20 md:py-28 lg:py-32">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-24 items-center">
+
+      <!-- Left: Cool title -->
+      <div data-cta-reveal>
+        <!-- Label -->
+        <div class="flex items-center gap-4 mb-8 md:mb-10">
+          <span class="h-px w-12 bg-dark-primary/30"></span>
+          <span class="text-dark-primary/60 text-xs tracking-[0.3em] uppercase">Contactez-nous</span>
+        </div>
+
+        <!-- Typographic title -->
+        <h2 class="font-display leading-[0.88] tracking-tight mb-8 md:mb-10">
+          <span class="block text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl font-bold text-dark-primary">
+            Envie
+          </span>
+          <span class="block text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl font-bold outlined-text mt-1">
+            d'un coup
+          </span>
+          <span class="block text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl font-bold text-dark-primary mt-1">
+            de fraîcheur&nbsp;?
+          </span>
+        </h2>
+
+        <!-- Trust signals -->
+        <div class="flex flex-col gap-3">
+          {[
+            'Devis gratuit et sans engagement',
+            'Réponse sous 24h garantie',
+            'Intervention dans tout le Luxembourg',
+          ].map((item) => (
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-dark-primary/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3 h-3 text-dark-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-dark-primary/80 text-sm md:text-base">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: Contact form (dark card) -->
+      <div data-cta-reveal data-cta-delay="1">
+        <ContactForm />
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom decorative line -->
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-primary/20 to-transparent"></div>
+</section>
+
+<style>
+  .outlined-text {
+    -webkit-text-stroke: 2px #1a1a1a;
+    color: transparent;
+  }
+
+  [data-cta-reveal] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    [data-cta-reveal] {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: ctaReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    [data-cta-delay="1"] {
+      animation-delay: 0.2s;
+    }
+
+    @keyframes ctaReveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .animate-float-1 { animation: float1 18s ease-in-out infinite; }
+  .animate-float-2 { animation: float2 22s ease-in-out infinite; }
+  .animate-float-3 { animation: float3 20s ease-in-out infinite; }
+
+  @keyframes float1 {
+    0%, 100% { transform: translate(0, 0); }
+    25%  { transform: translate(60px, 30px); }
+    50%  { transform: translate(100px, -20px); }
+    75%  { transform: translate(40px, -40px); }
+  }
+  @keyframes float2 {
+    0%, 100% { transform: translate(0, 0); }
+    25%  { transform: translate(-50px, 40px); }
+    50%  { transform: translate(-80px, 10px); }
+    75%  { transform: translate(-30px, -30px); }
+  }
+  @keyframes float3 {
+    0%, 100% { transform: translate(0, 0); }
+    25%  { transform: translate(40px, -25px); }
+    50%  { transform: translate(-30px, -40px); }
+    75%  { transform: translate(-50px, 20px); }
+  }
+</style>

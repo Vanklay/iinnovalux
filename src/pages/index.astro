@@ -6,7 +6,7 @@ import Stats from '../components/sections/Stats.astro';
 import WhyChooseUs from '../components/sections/WhyChooseUs.astro';
 import Testimonials from '../components/sections/Testimonials.astro';
 import GalleryPreview from '../components/sections/GalleryPreview.astro';
-import CTABanner from '../components/sections/CTABanner.astro';
+import HomeContact from '../components/sections/HomeContact.astro';
 import { services } from '../data/services';
 ---
 
@@ -26,10 +26,5 @@ import { services } from '../data/services';
   <WhyChooseUs />
   <Testimonials />
   <GalleryPreview />
-  <CTABanner
-    title="Envie d'un coup de fraîcheur ?"
-    subtitle="Demandez votre devis gratuit dès aujourd'hui"
-    buttonText="Contactez-nous"
-    buttonHref="/contact"
-  />
+  <HomeContact />
 </BaseLayout>
