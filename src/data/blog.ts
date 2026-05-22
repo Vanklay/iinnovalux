@@ -1,5 +1,6 @@
 export interface BlogPost {
   slug: string;
+  image: string;
   title: string;
   excerpt: string;
   content: string;
@@ -12,6 +13,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: 'bricoleur-luxembourg-comment-choisir',
+    image: '/images/petits-travaux.webp',
     title: 'Comment choisir un bricoleur au Luxembourg ?',
     excerpt: 'Guide complet pour trouver un handyman fiable au Luxembourg. Critères, prix et conseils pour vos travaux de maison.',
     date: '2026-01-15',
@@ -95,6 +97,7 @@ Que vous ayez besoin d'un montage de meubles, d'une réparation urgente ou d'un 
   },
   {
     slug: 'montage-meubles-ikea-luxembourg',
+    image: '/images/montage-meubles.webp',
     title: 'Montage de meubles IKEA : guide complet',
     excerpt: 'Vous avez acheté des meubles IKEA à Arlon ou en ligne ? Découvrez nos conseils pour un montage professionnel et sécurisé.',
     date: '2026-01-10',
@@ -171,6 +174,7 @@ Contactez-nous pour un devis rapide et gratuit. Nous vous répondons en moins de
   },
   {
     slug: 'entretien-jardin-luxembourg-printemps',
+    image: '/images/entretien-exterieur.webp',
     title: 'Préparer son jardin au printemps',
     excerpt: 'Guide pratique pour l\'entretien de votre jardin luxembourgeois au printemps. Taille, tonte, plantations et conseils locaux.',
     date: '2026-01-05',
@@ -293,6 +297,7 @@ Nous intervenons dans tout le Grand-Duché. Devis gratuit sous 24h, intervention
   },
   {
     slug: 'depannage-urgence-domicile-luxembourg',
+    image: '/images/depannage.webp',
     title: 'Dépannage d\'urgence à domicile au Luxembourg',
     excerpt: 'Fuite d\'eau, serrure bloquée, panne électrique ? Guide des interventions d\'urgence et contacts utiles au Luxembourg.',
     date: '2025-12-20',
@@ -386,6 +391,7 @@ Contactez-nous au **+352 621 479 364** — nous répondons en journée et pouvon
   },
   {
     slug: 'demenagement-luxembourg-conseils',
+    image: '/images/demenagement.webp',
     title: 'Déménager au Luxembourg : guide pratique',
     excerpt: 'Tout savoir pour réussir votre déménagement au Luxembourg. Checklist, démarches administratives et conseils pratiques.',
     date: '2025-12-15',
@@ -481,6 +487,7 @@ Nous intervenons dans tout le Luxembourg. Devis gratuit sous 24h.
   },
   {
     slug: 'demander-devis-travaux-luxembourg',
+    image: '/images/petits-travaux.webp',
     title: 'Comment demander un devis travaux',
     excerpt: 'Guide complet pour obtenir et comparer des devis de travaux au Luxembourg. Conseils pratiques pour bien préparer votre projet de rénovation.',
     date: '2026-01-20',
@@ -603,6 +610,7 @@ Aucun engagement, aucune pression. Contactez-nous pour obtenir votre devis gratu
   },
   {
     slug: 'checklist-maison-hiver-luxembourg',
+    image: '/images/petits-travaux.webp',
     title: 'Préparer sa maison pour l\'hiver : checklist',
     excerpt: 'Protégez votre maison du froid luxembourgeois avec notre checklist complète. Vérifications essentielles chauffage, isolation et sécurité avant l\'hiver.',
     date: '2025-11-15',
@@ -717,6 +725,7 @@ Nous intervenons dans tout le Grand-Duché de Luxembourg. Devis gratuit, interve
   },
   {
     slug: 'debarras-cave-grenier-luxembourg',
+    image: '/images/debarras.webp',
     title: 'Débarras de cave et grenier au Luxembourg',
     excerpt: 'Comment vider sa cave ou son grenier au Luxembourg ? Solutions de débarras, tri sélectif, recyclage et réglementation des encombrants.',
     date: '2025-12-01',
@@ -837,6 +846,7 @@ Nous intervenons dans tout le Grand-Duché. Devis gratuit, disponibilité rapide
   },
   {
     slug: 'reparation-parquet-luxembourg',
+    image: '/images/petits-travaux.webp',
     title: 'Réparation et entretien du parquet',
     excerpt: 'Parquet rayé, lames abîmées ou grincements ? Guide complet pour réparer et entretenir votre parquet au Luxembourg.',
     date: '2025-11-01',
@@ -955,6 +965,7 @@ Nous intervenons dans tout le Grand-Duché : Luxembourg-Ville, bassin minier, Ce
   },
   {
     slug: 'installer-television-murale-luxembourg',
+    image: '/images/petits-travaux.webp',
     title: 'Installation TV murale : guide pratique',
     excerpt: 'Comment fixer votre télévision au mur en toute sécurité au Luxembourg ? Guide complet avec conseils pour une installation professionnelle.',
     date: '2025-10-20',
@@ -1080,6 +1091,7 @@ Nous intervenons dans tout le Luxembourg. Devis gratuit, intervention rapide (so
   },
   {
     slug: 'petits-travaux-locataire-luxembourg',
+    image: '/images/petits-travaux.webp',
     title: 'Petits travaux : droits du locataire',
     excerpt: 'Quelles réparations incombent au locataire au Luxembourg ? Droits, obligations légales et conseils pratiques pour l\'entretien de votre logement.',
     date: '2025-10-10',
@@ -1200,6 +1212,7 @@ Devis gratuit dans tout le Luxembourg. Contactez-nous.
   },
   {
     slug: 'elagage-arbres-luxembourg-reglementation',
+    image: '/images/entretien-exterieur.webp',
     title: 'Élagage d\'arbres : réglementation',
     excerpt: 'Quelles sont les règles pour couper un arbre au Luxembourg ? Autorisations nécessaires, périodes de taille et conseils pratiques d\'élagage.',
     date: '2025-09-25',
@@ -1326,6 +1339,7 @@ Nous vérifions la réglementation applicable à votre situation et vous conseil
   },
   {
     slug: 'securiser-maison-vacances-luxembourg',
+    image: '/images/petits-travaux.webp',
     title: 'Sécuriser sa maison avant les vacances',
     excerpt: 'Checklist complète pour partir en vacances l\'esprit tranquille. Sécurité, entretien et astuces anti-cambriolage.',
     date: '2025-09-15',
@@ -1431,6 +1445,7 @@ Votre assurance habitation couvre en général les dommages liés au cambriolage
   },
   {
     slug: 'cuisine-equipee-installation-luxembourg',
+    image: '/images/petits-travaux.webp',
     title: 'Installation de cuisine équipée au Luxembourg',
     excerpt: 'Faire installer sa cuisine équipée par un professionnel au Luxembourg. Étapes, prix et conseils pour réussir votre projet cuisine.',
     date: '2025-09-01',
@@ -1544,6 +1559,7 @@ Nous couvrons l'ensemble du Grand-Duché de Luxembourg. Demandez votre devis gra
   },
   {
     slug: 'handyman-vs-artisan-difference-luxembourg',
+    image: '/images/petits-travaux.webp',
     title: 'Handyman ou artisan : quelle différence ?',
     excerpt: 'Bricoleur, handyman, artisan spécialisé... Qui appeler selon vos travaux au Luxembourg ? Guide complet pour faire le bon choix.',
     date: '2025-08-20',
@@ -1664,6 +1680,7 @@ Devis gratuit dans tout le Grand-Duché. Réponse sous 24h. Intervention souvent
   },
   {
     slug: 'amenager-terrasse-balcon-luxembourg',
+    image: '/images/entretien-exterieur.webp',
     title: 'Aménager sa terrasse ou son balcon',
     excerpt: 'Idées et conseils pratiques pour transformer votre terrasse ou balcon au Luxembourg. Mobilier, plantes et aménagements extérieurs.',
     date: '2025-08-10',
@@ -1800,6 +1817,7 @@ Nous intervenons dans tout le Grand-Duché de Luxembourg. Devis gratuit, répons
   },
   {
     slug: 'urgence-plomberie-que-faire-luxembourg',
+    image: '/images/depannage.webp',
     title: 'Urgence plomberie : les bons réflexes',
     excerpt: 'Fuite d\'eau, canalisation bouchée, chauffe-eau en panne au Luxembourg ? Guide des premiers gestes d\'urgence et contacts utiles.',
     date: '2025-07-25',
@@ -1915,6 +1933,7 @@ Contactez-nous au **+352 621 479 364**. Nous répondons rapidement et pouvons so
   },
   {
     slug: 'normes-electriques-luxembourg-locataire',
+    image: '/images/petits-travaux.webp',
     title: 'Normes électriques : guide pour locataires',
     excerpt: 'Prises, interrupteurs, tableau électrique... Les bases de la sécurité électrique pour les locataires au Luxembourg. Guide complet.',
     date: '2025-07-10',

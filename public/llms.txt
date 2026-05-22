@@ -2,13 +2,15 @@
 
 > Professional home maintenance and handyman services in Luxembourg. 10+ years experience, 5.0 Google rating, 24/7 emergency availability.
 
+License: https://creativecommons.org/licenses/by/4.0/
+
 ## Quick Facts
 
 - **Business**: IINNOVALUX SARL-s
 - **Industry**: Home maintenance, handyman services, bricolage
 - **Location**: Born, Luxembourg (serves all of Luxembourg)
 - **Founded**: 2015
-- **Rating**: 5.0/5 stars (24 Google reviews)
+- **Rating**: 5.0/5 stars (28 Google reviews)
 - **Languages**: French, Portuguese, English, German, Luxembourgish
 - **Emergency**: Available 24/7
 
@@ -151,5 +153,5 @@ Response time: Within 24 hours for standard requests, immediate for emergencies.
 - Project gallery: https://iinnovalux.lu/realisations
 
 ---
-Last updated: February 2026
+Last updated: May 2026
 Canonical URL: https://iinnovalux.lu/llms.txt

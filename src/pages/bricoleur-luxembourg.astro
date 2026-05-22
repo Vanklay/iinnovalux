@@ -1,0 +1,212 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServicesGrid from '../components/sections/ServicesGrid.astro';
+import Stats from '../components/sections/Stats.astro';
+import WhyChooseUs from '../components/sections/WhyChooseUs.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import HomeContact from '../components/sections/HomeContact.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+import { services } from '../data/services';
+import { company } from '../data/company';
+---
+
+<BaseLayout
+  title="Bricoleur au Luxembourg — Devis Gratuit"
+  description="Votre bricoleur professionnel au Luxembourg. IINNOVALUX intervient dans tout le Grand-Duché pour tous vos petits travaux. Devis gratuit. Appelez le +352 621 479 364"
+  keywords="bricoleur Luxembourg, handyman Luxembourg, bricoleur professionnel Luxembourg, petits travaux Luxembourg, réparations maison Luxembourg, bricoleur Grand-Duché"
+  breadcrumb={[{ label: 'Accueil', href: '/' }, { label: 'Bricoleur Luxembourg' }]}
+>
+
+  <!-- Service Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Bricoleur au Luxembourg",
+    "serviceType": "Handyman",
+    "description": "Services professionnels de bricolage et maintenance domicile au Luxembourg. Petits travaux, réparations, montage meubles, entretien général.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://iinnovalux.lu/#business",
+      "name": "IINNOVALUX SARL-s"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Luxembourg"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services de bricolage",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Petits travaux et réparations" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Montage de meubles IKEA" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Entretien extérieur et jardin" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dépannage urgence 24h/7" } }
+      ]
+    },
+    "offers": {
+      "@type": "Offer",
+      "description": "Devis gratuit, sans engagement",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  })} />
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-[5%] left-[10%] w-[500px] h-[500px] bg-gold/8 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-[10%] right-[5%] w-[300px] h-[300px] bg-gold/5 rounded-full blur-[80px]"></div>
+    </div>
+
+    <div class="relative container mx-auto px-4 lg:px-8 max-w-5xl">
+      <!-- Breadcrumb -->
+      <nav class="mb-8">
+        <ol class="flex items-center gap-2 text-sm flex-wrap">
+          <li><a href="/" class="text-white/40 hover:text-white transition-colors">Accueil</a></li>
+          <li class="text-white/20">/</li>
+          <li class="text-white/60">Bricoleur Luxembourg</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-3xl">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 mb-6">
+          <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+          <span class="text-gold text-sm font-medium">Disponible dans tout le Luxembourg</span>
+        </div>
+
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
+          Bricoleur au<br />
+          <span class="text-gold">Luxembourg</span>
+        </h1>
+
+        <p class="text-white/70 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
+          IINNOVALUX est votre bricoleur professionnel au Grand-Duché de Luxembourg. Depuis 2015, nous intervenons pour tous vos petits travaux, réparations et projets de maintenance à domicile. Notre équipe multilingue — français, portugais, anglais, allemand, luxembourgeois — s'occupe de votre maison avec sérieux et réactivité. Note Google 5.0/5, plus de 500 clients satisfaits, intervention en 48h, urgences sous 2h.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href={`tel:${company.phoneRaw}`}
+            class="inline-flex items-center justify-center gap-2 px-6 py-4 bg-gold text-dark-primary font-semibold rounded-full hover:bg-gold/90 transition-all hover:scale-105 shadow-lg shadow-gold/20"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            {company.phone}
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white/10 text-white font-medium rounded-full hover:bg-white/20 transition-all border border-white/20"
+          >
+            Devis gratuit en ligne
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Trust signals -->
+        <div class="flex flex-wrap items-center gap-6 mt-8 pt-8 border-t border-white/10">
+          <div class="flex items-center gap-2">
+            <div class="flex">
+              {Array.from({length: 5}).map(() => (
+                <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              ))}
+            </div>
+            <span class="text-white/60 text-sm">{company.reviewCount} avis Google</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-white/60 text-sm">10+ ans d'expérience</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-white/60 text-sm">Réponse sous 24h</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is a bricoleur section -->
+  <section class="py-16 md:py-20 bg-dark-secondary">
+    <div class="container mx-auto px-4 lg:px-8 max-w-5xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-gold text-sm font-medium uppercase tracking-wider mb-3">Qui sommes-nous ?</p>
+          <h2 class="font-display text-3xl md:text-4xl text-white mb-6">Un bricoleur, c'est quoi au Luxembourg ?</h2>
+          <div class="space-y-4 text-white/70 leading-relaxed">
+            <p>
+              Au Luxembourg, un <strong class="text-white">bricoleur professionnel</strong> (ou handyman) est un spécialiste polyvalent qui prend en charge les petits et moyens travaux que votre maison nécessite. À la différence d'un artisan spécialisé, il intervient sur une grande variété de tâches sans avoir besoin de plusieurs corps de métier.
+            </p>
+            <p>
+              Chez IINNOVALUX, notre bricoleur peut fixer une étagère, réparer une porte qui grince, monter vos meubles IKEA, entretenir votre jardin ou dépanner une urgence le soir même. Un seul interlocuteur, une facture claire, et un résultat garanti.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          {[
+            { title: 'Réparations', desc: 'Portes, fenêtres, plomberie légère, électricité courante' },
+            { title: 'Montage', desc: 'Meubles IKEA, cuisines équipées, étagères murales' },
+            { title: 'Jardin', desc: 'Tonte, taille, nettoyage, entretien extérieur' },
+            { title: 'Urgences', desc: 'Fuites, serrures, pannes — intervention sous 2h' },
+          ].map(item => (
+            <div class="bg-dark-primary rounded-xl border border-white/5 p-5">
+              <h3 class="font-display text-white text-base mb-2">{item.title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ServicesGrid
+    services={services}
+    label="Nos prestations"
+    title="Services de bricolage à domicile"
+    subtitle="De la petite réparation au chantier complet — votre bricoleur intervient partout au Luxembourg"
+  />
+
+  <Stats />
+  <WhyChooseUs />
+  <Testimonials />
+
+  <!-- Service areas -->
+  <section class="py-16 md:py-20 bg-dark-secondary">
+    <div class="container mx-auto px-4 lg:px-8 max-w-5xl text-center">
+      <p class="text-gold text-sm font-medium uppercase tracking-wider mb-3">Zone d'intervention</p>
+      <h2 class="font-display text-3xl md:text-4xl text-white mb-4">Votre bricoleur dans tout le Luxembourg</h2>
+      <p class="text-white/60 text-lg mb-10 max-w-2xl mx-auto">
+        Nous intervenons dans l'ensemble du Grand-Duché, de Luxembourg-Ville aux communes les plus reculées.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[
+          'Luxembourg-Ville', 'Esch-sur-Alzette', 'Differdange', 'Dudelange', 'Ettelbruck',
+          'Diekirch', 'Mersch', 'Echternach', 'Remich', 'Wiltz', 'Clervaux', 'Vianden',
+          'Grevenmacher', 'Mondorf-les-Bains', 'Strassen', 'Bertrange', 'Mamer', 'Hesperange'
+        ].map(city => (
+          <span class="px-4 py-2 rounded-full bg-dark-primary border border-white/5 text-white/60 text-sm">
+            {city}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <HomeContact />
+
+  <CTABanner
+    title="Besoin d'un bricoleur au Luxembourg ?"
+    subtitle="Devis gratuit — Réponse sous 24h — Intervention dans tout le Grand-Duché"
+    buttonText="Demander un devis"
+    buttonHref="/contact"
+  />
+</BaseLayout>

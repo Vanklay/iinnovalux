@@ -23,6 +23,7 @@ export const footerNavigation = {
   ],
   links: [
     { label: 'Accueil', href: '/' },
+    { label: 'Bricoleur Luxembourg', href: '/bricoleur-luxembourg' },
     { label: 'À propos', href: '/a-propos' },
     { label: 'Réalisations', href: '/realisations' },
     { label: 'Conseils & Astuces', href: '/blog' },

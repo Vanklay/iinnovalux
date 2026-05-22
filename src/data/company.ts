@@ -17,5 +17,8 @@ export const company = {
   hours: {
     weekdays: 'Lundi - Vendredi: 8h00 - 18h00',
     emergency: 'Urgences: 24h/7'
-  }
+  },
+  reviewCount: 28,
+  ratingValue: '5.0',
+  googleReviewUrl: 'https://share.google/fxsiZAhvFwYymryVv',
 };

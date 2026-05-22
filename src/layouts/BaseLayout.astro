@@ -18,6 +18,7 @@ interface Props {
   keywords?: string;
   type?: string;
   breadcrumb?: BreadcrumbItem[];
+  robots?: string;
 }
 
 const {
@@ -26,7 +27,8 @@ const {
   image = '/og-default.jpg',
   keywords = 'bricoleur Luxembourg, handyman Luxembourg, réparations maison, maintenance domicile, montage meubles, entretien jardin, dépannage urgence, déménagement Luxembourg, petits travaux, IINNOVALUX',
   type = 'website',
-  breadcrumb = []
+  breadcrumb = [],
+  robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
 } = Astro.props;
 
 // Generate breadcrumb schema
@@ -56,7 +58,7 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
 ---
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr-LU">
   <head>
     <!-- Google Tag Manager -->
     <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -72,7 +74,7 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content={siteName} />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="robots" content={robots} />
     <meta name="google-site-verification" content="whq3WFIEMoy95ZZSWihF3ykwX3YkGcyB8wpE44sOzTg" />
     <link rel="canonical" href={canonicalURL} />
 
@@ -83,8 +85,8 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
     <meta name="ICBM" content="49.7167, 6.1167" />
 
     <!-- Language -->
-    <meta http-equiv="content-language" content="fr" />
-    <link rel="alternate" hreflang="fr" href={canonicalURL} />
+    <meta http-equiv="content-language" content="fr-LU" />
+    <link rel="alternate" hreflang="fr-LU" href={canonicalURL} />
     <link rel="alternate" hreflang="x-default" href={canonicalURL} />
 
     <!-- Open Graph -->
@@ -96,7 +98,7 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
     <meta property="og:image:alt" content={`${title} - IINNOVALUX Luxembourg`} />
     <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale" content="fr_LU" />
     <meta property="og:site_name" content={siteName} />
 
     <!-- Twitter -->
@@ -118,23 +120,9 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHC2JTE58H"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-LHC2JTE58H');
-    </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
 
     <!-- Google Fonts - non-blocking -->
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
-    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
@@ -205,8 +193,7 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Saturday", "Sunday"],
           "opens": "00:00",
-          "closes": "23:59",
-          "description": "Urgences uniquement"
+          "closes": "23:59"
         }
       ],
       "priceRange": "€€",
@@ -292,11 +279,11 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "5.0",
+        "ratingValue": company.ratingValue,
         "bestRating": "5",
         "worstRating": "1",
-        "ratingCount": "28",
-        "reviewCount": "28"
+        "ratingCount": company.reviewCount,
+        "reviewCount": company.reviewCount
       },
       "foundingDate": "2015",
       "numberOfEmployees": {
@@ -306,25 +293,28 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
       },
       "slogan": "La solution pour une maison durable",
       "knowsLanguage": ["fr", "pt", "en", "de", "lb"],
+      "hasMap": "https://maps.google.com/maps?q=76+Haaptstrooss+L-6661+Born+Luxembourg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+352621479364",
+        "contactType": "customer service",
+        "availableLanguage": ["French", "Portuguese", "English", "German", "Luxembourgish"],
+        "hoursAvailable": "Mo-Fr 08:00-18:00"
+      },
       "sameAs": [
         "https://www.facebook.com/people/Iinnovalux-Sarls",
         "https://www.instagram.com/iinnovalux_sarls/",
         "https://www.linkedin.com/in/iinnovalux-sarls-13518839b/",
-        "https://share.google/tZHkjj44JctaMHj06"
+        company.googleReviewUrl
       ]
     })} />
 
-    <!-- WebSite Schema for Search Box -->
+    <!-- WebSite Schema -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "IINNOVALUX",
-      "url": "https://iinnovalux.lu",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://iinnovalux.lu/services?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "url": "https://iinnovalux.lu"
     })} />
 
     <!-- BreadcrumbList Schema -->
