@@ -12,9 +12,23 @@ const categories = [...new Set(blogPosts.map(post => post.category))];
 <BaseLayout
   title="Conseils et Astuces Bricolage Maison Luxembourg"
   description="Conseils pratiques pour l'entretien de votre maison au Luxembourg. Bricolage, jardinage, déménagement, prix des travaux et astuces de professionnels."
-  keywords="conseils bricolage Luxembourg, astuces maison, entretien domicile, prix travaux Luxembourg, blog handyman"
   breadcrumb={[{ label: 'Accueil', href: '/' }, { label: 'Conseils' }]}
 >
+  <!-- ItemList Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://iinnovalux.lu/blog#list",
+    "name": "Conseils et astuces IINNOVALUX",
+    "description": "Guides pratiques pour l'entretien de votre maison au Luxembourg",
+    "numberOfItems": sortedPosts.length,
+    "itemListElement": sortedPosts.map((post, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `https://iinnovalux.lu/blog/${post.slug}`,
+      "name": post.title
+    }))
+  })} />
   <!-- Hero -->
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
     <div class="absolute inset-0 pointer-events-none">

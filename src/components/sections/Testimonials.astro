@@ -323,27 +323,36 @@ const testimonials: Testimonial[] = [
   carousel?.addEventListener('mouseleave', startAutoPlay);
 </script>
 
-<!-- Review Schema for testimonials -->
+<!-- Review List Schema (references the main LocalBusiness entity) -->
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "IINNOVALUX SARL-s",
-  "@id": "https://iinnovalux.lu/#business",
-  "review": testimonials.map(testimonial => ({
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": testimonial.rating,
-      "bestRating": 5
-    },
-    "author": {
-      "@type": "Person",
-      "name": testimonial.name
-    },
-    "reviewBody": testimonial.text,
-    "publisher": {
-      "@type": "Organization",
-      "name": "Google"
+  "@type": "ItemList",
+  "name": "Avis clients IINNOVALUX",
+  "itemListElement": testimonials.map((testimonial, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "item": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": testimonial.rating,
+        "bestRating": 5,
+        "worstRating": 1
+      },
+      "author": {
+        "@type": "Person",
+        "name": testimonial.name
+      },
+      "reviewBody": testimonial.text,
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "@id": "https://iinnovalux.lu/#business",
+        "name": "IINNOVALUX SARL-s"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
     }
   }))
 })} />

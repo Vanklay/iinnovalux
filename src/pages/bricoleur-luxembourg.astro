@@ -8,6 +8,33 @@ import HomeContact from '../components/sections/HomeContact.astro';
 import CTABanner from '../components/sections/CTABanner.astro';
 import { services } from '../data/services';
 import { company } from '../data/company';
+
+const faqs = [
+  {
+    question: "Que fait un bricoleur au Luxembourg ?",
+    answer: "Un bricoleur professionnel au Luxembourg prend en charge tous les petits travaux qui ne nécessitent pas un artisan spécialisé : montage de meubles IKEA, fixations murales, réparations mineures de plomberie, peinture, pose de luminaires, entretien de jardin et dépannage d'urgence. IINNOVALUX intervient dans tout le Grand-Duché avec un seul interlocuteur pour l'ensemble de vos besoins."
+  },
+  {
+    question: "Quel est le tarif d'un bricoleur au Luxembourg ?",
+    answer: "IINNOVALUX applique des tarifs à l'heure ou au forfait selon la nature des travaux. Un devis gratuit et sans engagement est établi avant chaque intervention. Pour les urgences nocturnes (19h-8h) et le week-end, une majoration est appliquée et communiquée par téléphone avant tout déplacement. Minimum de facturation : 1 heure de main d'œuvre pour les petits travaux."
+  },
+  {
+    question: "Quel est le délai d'intervention ?",
+    answer: "Pour les travaux planifiés, nous intervenons généralement sous 48h dans tout le Luxembourg. Pour les urgences (fuites, serrurerie, pannes), notre équipe se déplace en moins de 2 heures, 24h/24 et 7j/7, partout dans le Grand-Duché."
+  },
+  {
+    question: "Dans quelles communes intervenez-vous au Luxembourg ?",
+    answer: "IINNOVALUX intervient dans l'ensemble du Grand-Duché de Luxembourg : Luxembourg-Ville, Esch-sur-Alzette, Differdange, Dudelange, Ettelbruck, Diekirch, Mersch, Echternach, Remich, Wiltz, Clervaux, Vianden, Grevenmacher, Mondorf-les-Bains, Strassen, Bertrange, Mamer, Hesperange et toutes les autres communes du pays."
+  },
+  {
+    question: "Quelles langues parle votre équipe ?",
+    answer: "Notre équipe est multilingue : nous parlons français, portugais, anglais, allemand et luxembourgeois. Vous pouvez nous contacter dans la langue de votre choix pour discuter de vos travaux."
+  },
+  {
+    question: "Quels travaux ne réalisez-vous pas ?",
+    answer: "Pour la sécurité de nos clients, nous ne réalisons pas les travaux nécessitant une certification spécifique : installation de gaz, remplacement complet de tableau électrique, travaux structurels portants, toiture à plus de 6m de hauteur, ou désamiantage. Pour ces interventions, nous pouvons vous orienter vers nos partenaires certifiés."
+  }
+];
 ---
 
 <BaseLayout
@@ -21,6 +48,7 @@ import { company } from '../data/company';
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": "https://iinnovalux.lu/bricoleur-luxembourg#service",
     "name": "Bricoleur au Luxembourg",
     "serviceType": "Handyman",
     "description": "Services professionnels de bricolage et maintenance domicile au Luxembourg. Petits travaux, réparations, montage meubles, entretien général.",
@@ -42,14 +70,22 @@ import { company } from '../data/company';
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Entretien extérieur et jardin" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dépannage urgence 24h/7" } }
       ]
-    },
-    "offers": {
-      "@type": "Offer",
-      "description": "Devis gratuit, sans engagement",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock"
     }
+  })} />
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://iinnovalux.lu/bricoleur-luxembourg#faq",
+    "mainEntity": faqs.map(({ question, answer }) => ({
+      "@type": "Question",
+      "name": question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": answer
+      }
+    }))
   })} />
 
   <!-- Hero -->
@@ -191,6 +227,68 @@ import { company } from '../data/company';
           <span class="px-4 py-2 rounded-full bg-dark-primary border border-white/5 text-white/60 text-sm">
             {city}
           </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing section -->
+  <section class="py-16 md:py-20" style="content-visibility:auto;contain-intrinsic-size:0 500px">
+    <div class="container mx-auto px-4 lg:px-8 max-w-5xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div>
+          <p class="text-gold text-sm font-medium uppercase tracking-wider mb-3">Tarifs</p>
+          <h2 class="font-display text-3xl md:text-4xl text-white mb-6">Combien coûte un bricoleur au Luxembourg ?</h2>
+          <div class="space-y-4 text-white/70 leading-relaxed">
+            <p>
+              IINNOVALUX applique des tarifs <strong class="text-white">à l'heure ou au forfait</strong> selon la nature des travaux. Chaque intervention démarre par un devis gratuit et sans engagement, établi sur place ou à distance après description précise de vos besoins.
+            </p>
+            <p>
+              Pour les <strong class="text-white">urgences nocturnes (19h-8h)</strong> et les <strong class="text-white">week-ends</strong>, une majoration est appliquée et communiquée par téléphone avant tout déplacement. Aucun frais caché : vous validez le devis avant le début des travaux.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-4">
+          {[
+            { label: 'Devis gratuit', desc: 'Établi sous 24h, sans engagement de votre part' },
+            { label: 'Facturation transparente', desc: 'À l\'heure ou au forfait, communiquée avant intervention' },
+            { label: 'Minimum 1h main d\'œuvre', desc: 'Couvre les frais de déplacement pour les petits travaux' },
+            { label: 'Paiement flexible', desc: 'Espèces, virement bancaire ou carte de crédit' },
+          ].map(item => (
+            <div class="bg-dark-secondary rounded-xl border border-white/5 p-5 flex items-start gap-4">
+              <svg class="w-5 h-5 text-gold flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <div>
+                <h3 class="font-medium text-white text-base mb-1">{item.label}</h3>
+                <p class="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ section -->
+  <section class="py-16 md:py-20 bg-dark-secondary" style="content-visibility:auto;contain-intrinsic-size:0 700px">
+    <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
+      <div class="text-center mb-12">
+        <p class="text-gold text-sm font-medium uppercase tracking-wider mb-3">FAQ</p>
+        <h2 class="font-display text-3xl md:text-4xl text-white mb-4">Questions fréquentes sur le bricoleur au Luxembourg</h2>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto">Tout ce que vous devez savoir avant de faire appel à un bricoleur professionnel.</p>
+      </div>
+      <div class="space-y-3">
+        {faqs.map(({ question, answer }) => (
+          <details class="bg-dark-primary rounded-xl border border-white/5 p-5 group">
+            <summary class="text-white font-medium cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>{question}</span>
+              <svg class="w-4 h-4 text-gold transition-transform group-open:rotate-180 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="text-white/60 text-sm leading-relaxed mt-4">{answer}</p>
+          </details>
         ))}
       </div>
     </div>

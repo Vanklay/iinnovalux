@@ -1,2 +1,8 @@
-# Remove trailing slashes
-/*/ /:splat 301
+# Strip .html extension (force, even when file exists)
+/*.html  /:splat  301!
+
+# Remove trailing slashes (except root)
+/*/  /:splat  301!
+
+# Explicit 404 fallback for unknown paths
+/*   /404.html  404

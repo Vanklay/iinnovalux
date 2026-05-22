@@ -10,9 +10,38 @@ import { company } from '../data/company';
 <BaseLayout
   title="À Propos - Artisan Bricoleur depuis 10 Ans"
   description="IINNOVALUX - 10+ ans d'expérience en maintenance domicile au Luxembourg. Équipe locale, artisans qualifiés, 500+ clients satisfaits. Basé à Born, Luxembourg."
-  keywords="IINNOVALUX Luxembourg, entreprise bricolage Luxembourg, artisan maintenance Luxembourg, société entretien maison, handyman professionnel Luxembourg"
   breadcrumb={[{ label: 'Accueil', href: '/' }, { label: 'À propos' }]}
 >
+  <!-- AboutPage + Organization Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": "https://iinnovalux.lu/a-propos#page",
+    "url": "https://iinnovalux.lu/a-propos",
+    "name": "À propos d'IINNOVALUX",
+    "description": "IINNOVALUX SARL-s — entreprise de maintenance et bricolage professionnel au Luxembourg depuis 2015.",
+    "inLanguage": "fr-LU",
+    "mainEntity": {
+      "@type": "Organization",
+      "@id": "https://iinnovalux.lu/#business",
+      "name": "IINNOVALUX SARL-s",
+      "legalName": "IINNOVALUX SARL-s",
+      "foundingDate": "2015",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Born, Luxembourg"
+      },
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "minValue": 2,
+        "maxValue": 10
+      },
+      "knowsLanguage": ["fr", "pt", "en", "de", "lb"],
+      "slogan": "La solution pour une maison durable",
+      "vatID": "LU37074055",
+      "taxID": "LU37074055"
+    }
+  })} />
   <HeroPage
     title="À propos d'IINNOVALUX"
     subtitle="Votre partenaire de confiance pour une maison durable"

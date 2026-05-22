@@ -31,14 +31,19 @@ const htmlContent = marked(post.content);
   type="article"
   breadcrumb={[{ label: 'Accueil', href: '/' }, { label: 'Conseils', href: '/blog' }, { label: post.title }]}
 >
-  <!-- Article Schema -->
+  <!-- BlogPosting Schema -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
+    "@id": `https://iinnovalux.lu/blog/${post.slug}#article`,
     "headline": post.title,
     "description": post.excerpt,
     "datePublished": post.date,
-    "dateModified": post.date,
+    "dateModified": post.lastModified || post.date,
+    "inLanguage": "fr-LU",
+    "articleSection": post.category,
+    "wordCount": post.content.trim().split(/\s+/).length,
+    "url": `https://iinnovalux.lu/blog/${post.slug}`,
     "image": {
       "@type": "ImageObject",
       "url": `https://iinnovalux.lu${post.image}`,
@@ -46,21 +51,28 @@ const htmlContent = marked(post.content);
       "height": 630
     },
     "author": {
-      "@type": "Organization",
-      "name": "IINNOVALUX",
-      "url": "https://iinnovalux.lu"
+      "@type": "Person",
+      "name": "Équipe IINNOVALUX",
+      "url": "https://iinnovalux.lu/a-propos"
     },
     "publisher": {
       "@type": "Organization",
+      "@id": "https://iinnovalux.lu/#business",
       "name": "IINNOVALUX",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://iinnovalux.lu/logo.svg"
+        "url": "https://iinnovalux.lu/logo.svg",
+        "width": 262,
+        "height": 134
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `https://iinnovalux.lu/blog/${post.slug}`
+    },
+    "about": {
+      "@type": "LocalBusiness",
+      "@id": "https://iinnovalux.lu/#business"
     }
   })} />
 

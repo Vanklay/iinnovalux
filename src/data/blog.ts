@@ -5,6 +5,7 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   date: string;
+  lastModified?: string;
   category: string;
   keywords: string;
   readTime: number;
@@ -23,11 +24,11 @@ export const blogPosts: BlogPost[] = [
     content: `
 ## Trouver le bon bricoleur au Luxembourg
 
-Vous avez des travaux à réaliser chez vous mais ne savez pas à qui faire appel ? Au Luxembourg, le marché du bricolage et de la petite rénovation est vaste, et il n'est pas toujours simple de faire le bon choix. Entre les auto-entrepreneurs, les grandes entreprises et les plateformes en ligne, voici un guide complet pour vous aider à trouver un handyman fiable au Luxembourg.
+Vous avez des travaux à réaliser chez vous mais ne savez pas à qui faire appel ? Au Luxembourg, le marché du bricolage et de la petite rénovation est vaste, et il n'est pas toujours simple de faire le bon choix. Entre les auto-entrepreneurs, les grandes entreprises et les plateformes en ligne, voici un guide complet pour vous aider à trouver un [bricoleur professionnel au Luxembourg](/bricoleur-luxembourg) fiable.
 
 ### Qu'est-ce qu'un bricoleur professionnel ?
 
-Un bricoleur professionnel — aussi appelé handyman — est un artisan polyvalent capable d'intervenir sur une large gamme de petits travaux : montage de meubles, petites réparations, peinture, pose de luminaires, fixation de meubles muraux, petits travaux de plomberie ou de jardinage. Contrairement à un artisan spécialisé (plombier, électricien), le handyman est la solution idéale pour des travaux variés qui ne nécessitent pas de qualification réglementée.
+Un bricoleur professionnel — aussi appelé handyman — est un artisan polyvalent capable d'intervenir sur une large gamme de [petits travaux](/services/petits-travaux) : [montage de meubles](/services/montage-meubles), petites réparations, peinture, pose de luminaires, fixation de meubles muraux, petits travaux de plomberie ou de jardinage. Contrairement à un artisan spécialisé (plombier, électricien), le handyman est la solution idéale pour des travaux variés qui ne nécessitent pas de qualification réglementée.
 
 Au Luxembourg, cette profession est en plein essor car de nombreux résidents, qu'ils soient propriétaires ou locataires, ont besoin de petites interventions ponctuelles sans avoir à mobiliser plusieurs corps de métier.
 
@@ -92,7 +93,7 @@ Avant de confier vos travaux, posez ces questions directement :
 
 Basés à Born, nous intervenons dans tout le Grand-Duché de Luxembourg avec une garantie de qualité et des prix transparents. Chaque devis est gratuit et sans engagement. Nos clients nous font confiance pour leur réactivité, leur sérieux et la qualité de leur travail — lisez leurs témoignages et constatez-le par vous-même.
 
-Que vous ayez besoin d'un montage de meubles, d'une réparation urgente ou d'un entretien régulier de votre domicile, IINNOVALUX est votre partenaire de confiance pour tous vos petits travaux au Luxembourg.
+Que vous ayez besoin d'un [montage de meubles](/services/montage-meubles), d'une [réparation urgente](/services/depannage) ou d'un [entretien régulier de votre domicile](/services/petits-travaux), [IINNOVALUX](/bricoleur-luxembourg) est votre partenaire de confiance pour tous vos petits travaux au Luxembourg.
     `
   },
   {
@@ -169,7 +170,7 @@ Pour que le montage se passe dans les meilleures conditions :
 
 Nous intervenons dans tout le Grand-Duché : Luxembourg-Ville, Esch-sur-Alzette, Differdange, Dudelange, Pétange, Ettelbruck, Diekirch, Echternach, Grevenmacher, Remich, et toutes les communes environnantes. Intervention possible également dans la Grande Région (Arlon, Thionville, Trèves) sur demande.
 
-Contactez-nous pour un devis rapide et gratuit. Nous vous répondons en moins de 24h et pouvons souvent intervenir dans la semaine.
+[Contactez-nous](/contact) pour un devis rapide et gratuit sur notre [service de montage de meubles](/services/montage-meubles). Nous vous répondons en moins de 24h et pouvons souvent intervenir dans la semaine.
     `
   },
   {
@@ -382,11 +383,11 @@ Les situations d'urgence sont malheureusement propices aux abus. Quelques règle
 
 ### Notre service de dépannage au Luxembourg
 
-Chez IINNOVALUX, nous intervenons sur l'ensemble du territoire luxembourgeois pour les urgences du quotidien. Basés à Born, nous couvrons les principaux bassins : Luxembourg-Ville, Esch-sur-Alzette, la région du Sud, le Centre et l'Est du pays.
+Chez [IINNOVALUX](/bricoleur-luxembourg), nous intervenons sur l'ensemble du territoire luxembourgeois pour les [urgences du quotidien](/services/depannage). Basés à Born, nous couvrons les principaux bassins : Luxembourg-Ville, Esch-sur-Alzette, la région du Sud, le Centre et l'Est du pays.
 
 Nos tarifs sont transparents, communiqués avant intervention. Nous privilégions les devis gratuits même en situation urgente, et nous vous indiquons honnêtement si la situation nécessite un spécialiste plutôt que nos services.
 
-Contactez-nous au **+352 621 479 364** — nous répondons en journée et pouvons souvent intervenir le jour même.
+[Contactez-nous au +352 621 479 364](/contact) — nous répondons en journée et pouvons souvent intervenir le jour même.
     `
   },
   {
@@ -474,15 +475,15 @@ Le Luxembourg a ses propres règles et contraintes à connaître avant de démé
 
 ### Nos services d'aide au déménagement
 
-IINNOVALUX propose une aide flexible et abordable pour vos déménagements dans tout le Grand-Duché :
+[IINNOVALUX propose une aide flexible et abordable pour vos déménagements](/services/demenagement) dans tout le Grand-Duché :
 
 - **Transport de meubles et cartons** avec véhicule utilitaire assuré
-- **Démontage et remontage de meubles** sur place
+- **[Démontage et remontage de meubles](/services/montage-meubles)** sur place
 - **Manutention lourde** : piano, coffre-fort, appareils électroménagers
 - **Nettoyage fin de bail** (remise en état du logement quitté)
 - **Intervention d'appoint** : si votre déménageur principal a besoin de renfort ponctuel
 
-Nous intervenons dans tout le Luxembourg. Devis gratuit sous 24h.
+Nous intervenons dans tout le Luxembourg. [Devis gratuit sous 24h](/contact).
     `
   },
   {
@@ -826,7 +827,7 @@ Après évacuation, pensez à :
 
 ### Nos services de débarras au Luxembourg
 
-IINNOVALUX propose un service de débarras complet, adapté à vos besoins :
+[IINNOVALUX propose un service de débarras complet](/services/debarras), adapté à vos besoins :
 
 **Formule clé en main**
 Nous nous occupons de tout :
@@ -1324,7 +1325,7 @@ Après un élagage ou abattage, les déchets doivent être traités correctement
 
 ### Nos services d'élagage et d'entretien extérieur
 
-IINNOVALUX propose une gamme complète de services pour l'entretien de vos espaces verts au Luxembourg :
+[IINNOVALUX propose une gamme complète de services pour l'entretien de vos espaces verts](/services/entretien-exterieur) au Luxembourg :
 
 - **Taille de haies** : haies taillées régulièrement, avec évacuation des résidus
 - **Élagage d'arbres** jusqu'à 8-10 mètres (sans nacelle)

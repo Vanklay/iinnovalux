@@ -69,11 +69,27 @@ Local and cross-border moves (Luxembourg, Belgium, France, Germany). Packing mat
 
 ## Pricing
 
-- Free quotes (devis gratuit)
-- No obligation estimates
-- On-site visits for accurate pricing on larger projects
-- Transparent hourly or project-based rates
+- Free quotes (devis gratuit) — no obligation
+- Pricing model: hourly rate or project-based flat fee
+- Quote communicated before any intervention starts
+- Emergency (after 19h, weekends, holidays): surcharge announced by phone before dispatch
+- Minimum billing: 1 hour of labour for small jobs (covers travel and setup)
+- On-site visit available for accurate quotes on larger projects
+- Payment methods: cash, bank transfer, credit card
 - No hidden fees
+
+## Services NOT Provided
+
+For safety and compliance, IINNOVALUX does not perform:
+
+- Gas installation or gas plumbing (requires certified gasfitter)
+- Full electrical panel replacement (requires certified electrician)
+- Load-bearing structural work
+- Roofing work above 6 metres height
+- Asbestos removal
+- Major chimney work
+
+For these services we can refer you to certified Luxembourg partners.
 
 ## Why Choose IINNOVALUX
 
@@ -155,3 +171,4 @@ Response time: Within 24 hours for standard requests, immediate for emergencies.
 ---
 Last updated: May 2026
 Canonical URL: https://iinnovalux.lu/llms.txt
+

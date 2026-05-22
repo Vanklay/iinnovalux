@@ -155,6 +155,14 @@ const serviceOptions = [
         if (response.ok) {
           form.classList.add('hidden');
           successMessage?.classList.remove('hidden');
+
+          // Fire conversion event for GTM/GA4
+          (window as any).dataLayer = (window as any).dataLayer || [];
+          (window as any).dataLayer.push({
+            event: 'lead_form_submit',
+            form_name: 'contact',
+            form_destination: window.location.pathname
+          });
         } else {
           throw new Error('Form submission failed');
         }

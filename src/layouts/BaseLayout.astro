@@ -25,7 +25,6 @@ const {
   title,
   description,
   image = '/og-default.jpg',
-  keywords = 'bricoleur Luxembourg, handyman Luxembourg, réparations maison, maintenance domicile, montage meubles, entretien jardin, dépannage urgence, déménagement Luxembourg, petits travaux, IINNOVALUX',
   type = 'website',
   breadcrumb = [],
   robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -51,7 +50,10 @@ const breadcrumbSchema = {
   ]
 };
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const cleanPath = Astro.url.pathname
+  .replace(/\.html$/, '')
+  .replace(/\/index$/, '/') || '/';
+const canonicalURL = new URL(cleanPath, Astro.site);
 const fullImageURL = new URL(image, Astro.site);
 const siteName = 'IINNOVALUX';
 const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxembourg | ${siteName}` : `${title} | ${siteName}`;
@@ -72,7 +74,6 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
     <meta name="author" content={siteName} />
     <meta name="robots" content={robots} />
     <meta name="google-site-verification" content="whq3WFIEMoy95ZZSWihF3ykwX3YkGcyB8wpE44sOzTg" />
@@ -157,6 +158,7 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
       "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
       "@id": "https://iinnovalux.lu/#business",
       "name": "IINNOVALUX SARL-s",
+      "legalName": "IINNOVALUX SARL-s",
       "alternateName": "IINNOVALUX",
       "description": "Services professionnels de maintenance, réparations et travaux à domicile au Luxembourg. Bricoleur, montage meubles, entretien jardin, dépannage 24h/7, déménagement.",
       "url": "https://iinnovalux.lu",
@@ -166,7 +168,14 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
         "width": 262,
         "height": 134
       },
-      "image": "https://iinnovalux.lu/og-default.jpg",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://iinnovalux.lu/og-default.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "vatID": "LU37074055",
+      "taxID": "LU37074055",
       "telephone": "+352621479364",
       "email": "iinnovalux@gmail.com",
       "address": {
@@ -188,12 +197,6 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
           "opens": "08:00",
           "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday", "Sunday"],
-          "opens": "00:00",
-          "closes": "23:59"
         }
       ],
       "priceRange": "€€",
@@ -293,32 +296,54 @@ const fullTitle = title === 'Accueil' ? `Travaux, Réparation & Maintenance Luxe
       },
       "slogan": "La solution pour une maison durable",
       "knowsLanguage": ["fr", "pt", "en", "de", "lb"],
+      "knowsAbout": [
+        "Bricolage et petits travaux Luxembourg",
+        "Montage de meubles IKEA",
+        "Entretien de jardin et abattage d'arbres",
+        "Dépannage d'urgence à domicile",
+        "Débarras de caves, greniers et appartements",
+        "Déménagement résidentiel Luxembourg",
+        "Réparations plomberie courante",
+        "Petits travaux d'électricité"
+      ],
       "hasMap": "https://maps.google.com/maps?q=76+Haaptstrooss+L-6661+Born+Luxembourg",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+352621479364",
         "contactType": "customer service",
         "availableLanguage": ["French", "Portuguese", "English", "German", "Luxembourgish"],
-        "hoursAvailable": "Mo-Fr 08:00-18:00"
+        "hoursAvailable": "Mo-Fr 08:00-18:00, Sa-Su urgences uniquement"
       },
       "sameAs": [
         "https://www.facebook.com/people/Iinnovalux-Sarls",
         "https://www.instagram.com/iinnovalux_sarls/",
-        "https://www.linkedin.com/in/iinnovalux-sarls-13518839b/",
-        company.googleReviewUrl
-      ]
+        "https://www.linkedin.com/in/iinnovalux-sarls-13518839b/"
+      ],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://iinnovalux.lu/#website"
+      }
     })} />
 
     <!-- WebSite Schema -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
+      "@id": "https://iinnovalux.lu/#website",
       "name": "IINNOVALUX",
-      "url": "https://iinnovalux.lu"
+      "alternateName": "IINNOVALUX SARL-s",
+      "url": "https://iinnovalux.lu",
+      "inLanguage": "fr-LU",
+      "publisher": {
+        "@type": "LocalBusiness",
+        "@id": "https://iinnovalux.lu/#business"
+      }
     })} />
 
-    <!-- BreadcrumbList Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <!-- BreadcrumbList Schema (only when meaningful) -->
+    {breadcrumb.length > 0 && (
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    )}
   </head>
   <body class="min-h-screen flex flex-col">
     <!-- Google Tag Manager (noscript) -->

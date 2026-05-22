@@ -9,9 +9,22 @@ import Map from '../components/sections/Map.astro';
 <BaseLayout
   title="Devis Gratuit et Contact Bricoleur Luxembourg"
   description="Contactez IINNOVALUX pour un devis gratuit au Luxembourg. Appelez +352 621 479 364 ou écrivez-nous. Réponse rapide sous 24h. Born, Luxembourg."
-  keywords="contact IINNOVALUX, devis gratuit Luxembourg, bricoleur Luxembourg contact, handyman Luxembourg téléphone, réparations maison devis"
   breadcrumb={[{ label: 'Accueil', href: '/' }, { label: 'Contact' }]}
 >
+  <!-- ContactPage Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": "https://iinnovalux.lu/contact#page",
+    "url": "https://iinnovalux.lu/contact",
+    "name": "Contactez IINNOVALUX - Devis Gratuit",
+    "description": "Contactez IINNOVALUX pour un devis gratuit au Luxembourg. Réponse sous 24h.",
+    "inLanguage": "fr-LU",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "@id": "https://iinnovalux.lu/#business"
+    }
+  })} />
   <HeroPage
     title="Contactez-nous"
     subtitle="Nous sommes à votre disposition pour répondre à toutes vos questions"
