@@ -1,8 +1,5 @@
-# Strip .html extension (force, even when file exists)
+# Strip .html extension (force redirect even when the .html file exists)
 /*.html  /:splat  301!
 
-# Remove trailing slashes (except root)
-/*/  /:splat  301!
-
-# Explicit 404 fallback for unknown paths
-/*   /404.html  404
+# Remove trailing slashes (only fires for unmatched paths so root "/" is safe)
+/*/  /:splat  301
