@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "iinnovalux Dev",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd /Users/marciobarros/Documents/client-slash/iinnovalux && npm run dev -- --port 4322"],
+      "port": 4322
+    },
+    {
+      "name": "iinnovalux Preview",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd /Users/marciobarros/Documents/client-slash/iinnovalux && npm run preview -- --port 4323"],
+      "port": 4323
+    }
+  ]
+}
